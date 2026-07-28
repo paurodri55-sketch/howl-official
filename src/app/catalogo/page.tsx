@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
 import { CatalogGrid } from "@/components/product/CatalogGrid";
 import { getAllProducts, getCategories } from "@/lib/products";
+import type { ProductCategory } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "Catálogo — ÓXIDO",
-  description: "Todas las camisetas, sudaderas y accesorios de ÓXIDO.",
+  title: "Catálogo — HOWL",
+  description: "Todas las camisetas, sudaderas y accesorios de HOWL.",
 };
 
-export default function CatalogoPage() {
+export default async function CatalogoPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ cat?: string }>;
+}) {
+  const { cat } = await searchParams;
   const products = getAllProducts();
   const categories = getCategories();
 
@@ -16,7 +22,11 @@ export default function CatalogoPage() {
       <h1 className="font-display uppercase text-cream text-4xl sm:text-5xl mb-8">
         Catálogo
       </h1>
-      <CatalogGrid products={products} categories={categories} />
+      <CatalogGrid
+        products={products}
+        categories={categories}
+        initialCategory={cat as ProductCategory | undefined}
+      />
     </div>
   );
 }

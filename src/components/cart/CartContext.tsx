@@ -73,10 +73,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
             slug: product.slug,
             name: product.name,
             band: product.band,
+            tourYear: product.tourYear,
             price: product.price,
             size,
             color,
             graphic: product.graphic,
+            logoStyle: product.logoStyle,
+            artworkImage: product.artworkImage,
             quantity,
           },
         ];

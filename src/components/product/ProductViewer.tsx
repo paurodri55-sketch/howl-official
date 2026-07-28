@@ -1,0 +1,267 @@
+"use client";
+
+import { useState } from "react";
+import type { Product } from "@/lib/types";
+import { useCart } from "@/components/cart/CartContext";
+import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
+import { TeeMockup } from "@/components/product/TeeMockup";
+import { PrintArt } from "@/components/product/PrintArt";
+import { StarRating } from "@/components/ui/StarRating";
+import { formatPrice } from "@/lib/format";
+import { getModelBackPhoto, getModelPhoto, getProductPhoto } from "@/lib/photos";
+
+type View = "foto" | "modelo" | "modelo-back" | "front" | "back" | "diseno";
+
+const viewLabels: Record<View, string> = {
+  foto: "Foto",
+  modelo: "Modelo",
+  "modelo-back": "Modelo (espalda)",
+  front: "Delantera",
+  back: "Trasera",
+  diseno: "Diseño",
+};
+
+// La foto de modelo se generó con la prenda en negro; se muestra siempre,
+// como referencia de estilo, independientemente del color seleccionado.
+const MODEL_COLOR_NOTE = "Negro desteñido";
+
+export function ProductViewer({ product }: { product: Product }) {
+  const { addItem } = useCart();
+  const [size, setSize] = useState(product.sizes[0]);
+  const [color, setColor] = useState(product.colors[0]);
+  const [quantity, setQuantity] = useState(1);
+  const photo = getProductPhoto(product, product.colors[0]);
+  const [view, setView] = useState<View>(photo ? "foto" : "front");
+  const [justAdded, setJustAdded] = useState(false);
+  const currentPhoto = getProductPhoto(product, color);
+  const modelPhoto = getModelPhoto(product, color);
+  const modelBackPhoto = getModelBackPhoto(product);
+  const views = [
+    ...(currentPhoto ? ["foto"] : []),
+    ...(modelPhoto ? ["modelo"] : []),
+    ...(modelBackPhoto ? ["modelo-back"] : []),
+    "front",
+    "back",
+    "diseno",
+  ] as View[];
+  const activeView = views.includes(view) ? view : views[0];
+
+  function handleAddToCart() {
+    addItem(product, size, color, quantity);
+    setJustAdded(true);
+    window.setTimeout(() => setJustAdded(false), 1800);
+  }
+
+  return (
+    <div className="grid gap-10 md:grid-cols-2">
+      <div>
+        {activeView === "diseno" ? (
+          <PrintArt product={product} className="aspect-square w-full" />
+        ) : activeView === "foto" && currentPhoto ? (
+          <div className="aspect-square w-full overflow-hidden border border-ink-line bg-ink-soft">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={currentPhoto}
+              alt={`${product.name} — foto real`}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ) : activeView === "modelo" && modelPhoto ? (
+          <div className="relative aspect-square w-full overflow-hidden border border-ink-line bg-ink-soft">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={modelPhoto}
+              alt={`${product.name} — modelo`}
+              className="w-full h-full object-cover"
+            />
+            {!product.frontLogoOnly && <ModelCaption product={product} />}
+          </div>
+        ) : activeView === "modelo-back" && modelBackPhoto ? (
+          <div className="relative aspect-square w-full overflow-hidden border border-ink-line bg-ink-soft">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={modelBackPhoto}
+              alt={`${product.name} — modelo, espalda`}
+              className="w-full h-full object-cover"
+            />
+            <ModelCaption product={product} />
+          </div>
+        ) : (
+          <TeeMockup
+            product={product}
+            color={color}
+            view={activeView === "back" ? "back" : "front"}
+            className="aspect-square w-full"
+          />
+        )}
+        <div className="mt-4 flex gap-2">
+          {views.map((v) => (
+            <button
+              key={v}
+              type="button"
+              onClick={() => setView(v)}
+              className={`font-condensed uppercase tracking-widest text-xs px-3.5 py-2 border transition-colors ${
+                activeView === v
+                  ? "border-rust bg-rust text-cream"
+                  : "border-cream/30 text-cream-dim hover:border-cream"
+              }`}
+            >
+              {viewLabels[v]}
+            </button>
+          ))}
+        </div>
+        {activeView === "modelo-back" && color.name !== MODEL_COLOR_NOTE && (
+          <p className="mt-2 text-xs text-cream-dim">
+            Foto de referencia en {MODEL_COLOR_NOTE.toLowerCase()}.
+          </p>
+        )}
+      </div>
+
+      <div>
+        {product.isNew && (
+          <div className="mb-3">
+            <Badge>Nuevo</Badge>
+          </div>
+        )}
+        <p className="font-condensed uppercase tracking-widest text-sm text-rust-light">
+          {product.band}
+          {product.tourYear && ` · ${product.editionLabel ?? "Gira"} ${product.tourYear}`}
+        </p>
+        <h1 className="font-display uppercase text-cream text-4xl sm:text-5xl mt-1">
+          {product.name}
+        </h1>
+        {product.rating !== undefined && (
+          <div className="mt-2 flex items-center gap-3">
+            <StarRating rating={product.rating} reviewCount={product.reviewCount} />
+            {product.purchases !== undefined && (
+              <span className="font-condensed text-xs text-cream-dim">
+                {new Intl.NumberFormat("es-ES").format(product.purchases)} vendidas
+              </span>
+            )}
+          </div>
+        )}
+        <p className="flex items-baseline gap-3 font-condensed text-2xl text-cream mt-4">
+          {formatPrice(product.price)}
+          {product.compareAtPrice && (
+            <span className="text-base text-cream-dim/60 line-through">
+              {formatPrice(product.compareAtPrice)}
+            </span>
+          )}
+        </p>
+        <p className="mt-4 text-cream-dim leading-relaxed">
+          {product.description}
+        </p>
+
+        <div className="mt-8 flex flex-col gap-6">
+          <div>
+            <p className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-2">
+              Color — {color.name}
+            </p>
+            <div className="flex gap-2">
+              {product.colors.map((c) => (
+                <button
+                  key={c.name}
+                  type="button"
+                  aria-label={c.name}
+                  onClick={() => setColor(c)}
+                  className={`h-9 w-9 rounded-full border-2 transition-colors ${
+                    c.name === color.name
+                      ? "border-rust"
+                      : "border-transparent hover:border-cream/40"
+                  }`}
+                  style={{ backgroundColor: c.hex }}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-2">
+              Talla — {size}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {product.sizes.map((s) => (
+                <button
+                  key={s}
+                  type="button"
+                  onClick={() => setSize(s)}
+                  className={`font-condensed uppercase tracking-wide text-sm px-3.5 py-2 border transition-colors ${
+                    s === size
+                      ? "border-rust bg-rust text-cream"
+                      : "border-cream/30 text-cream-dim hover:border-cream"
+                  }`}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-2">
+              Cantidad
+            </p>
+            <div className="inline-flex items-center border border-cream/30">
+              <button
+                type="button"
+                onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                className="px-3 py-2 text-cream-dim hover:text-cream"
+                aria-label="Reducir cantidad"
+              >
+                −
+              </button>
+              <span className="px-4 font-condensed text-cream">{quantity}</span>
+              <button
+                type="button"
+                onClick={() => setQuantity((q) => Math.min(10, q + 1))}
+                className="px-3 py-2 text-cream-dim hover:text-cream"
+                aria-label="Aumentar cantidad"
+              >
+                +
+              </button>
+            </div>
+          </div>
+
+          <Button onClick={handleAddToCart} className="w-full sm:w-auto">
+            {justAdded ? "Añadido ✓" : "Añadir al carrito"}
+          </Button>
+        </div>
+
+        <ul className="mt-10 space-y-1.5 border-t border-ink-line pt-6 text-sm text-cream-dim">
+          {product.details.map((detail) => (
+            <li key={detail} className="flex gap-2">
+              <span className="text-rust">—</span>
+              {detail}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function ModelCaption({ product }: { product: Product }) {
+  const accentColor = product.logoStyle.accentColor ?? "#efe4c8";
+  return (
+    <div
+      className="pointer-events-none absolute inset-x-0 flex flex-col items-center text-center px-4"
+      style={{ top: "20%" }}
+    >
+      <p
+        className="font-display uppercase font-black leading-[0.85] text-cream text-lg sm:text-2xl"
+        style={{ textShadow: "0 1px 6px rgba(0,0,0,0.8)" }}
+      >
+        {product.band}
+      </p>
+      {product.tagline && (
+        <p
+          className="uppercase font-bold text-[9px] sm:text-[10px] mt-1"
+          style={{ color: accentColor, textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}
+        >
+          {product.tagline}
+        </p>
+      )}
+    </div>
+  );
+}

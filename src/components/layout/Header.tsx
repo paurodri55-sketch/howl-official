@@ -20,7 +20,7 @@ export function Header() {
           href="/"
           className="font-display text-2xl sm:text-3xl tracking-wide text-cream"
         >
-          ÓXIDO
+          HOWL
         </Link>
 
         <nav className="flex items-center gap-6 font-condensed uppercase tracking-widest text-sm">

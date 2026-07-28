@@ -22,9 +22,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ÓXIDO — Camisetas vintage de gira",
+  title: "HOWL — Ropa de diseño propio",
   description:
-    "Camisetas y sudaderas estilo band tee vintage. Serigrafía envejecida, algodón pesado, tiradas limitadas.",
+    "Camisetas y sudaderas de diseño propio. Estampados trabajados a mano, algodón pesado, tiradas limitadas.",
+  openGraph: {
+    title: "HOWL — Ropa de diseño propio",
+    description:
+      "Camisetas y sudaderas de diseño propio. Estampados trabajados a mano, algodón pesado, tiradas limitadas.",
+    images: ["/logo-wolf.png"],
+  },
 };
 
 export default function RootLayout({

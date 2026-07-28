@@ -1,22 +1,40 @@
 import Link from "next/link";
 import type { Product } from "@/lib/types";
 import { formatPrice } from "@/lib/format";
-import { TeeArt } from "@/components/product/TeeArt";
+import { isDarkGarment, pickShowcaseColor } from "@/lib/color";
+import { TeeMockup } from "@/components/product/TeeMockup";
 import { Badge } from "@/components/ui/Badge";
+import { StarRating } from "@/components/ui/StarRating";
+import { getProductPhoto } from "@/lib/photos";
 
 export function ProductCard({ product }: { product: Product }) {
+  const showcaseColor = pickShowcaseColor(product);
+  const photo = getProductPhoto(product, showcaseColor);
+
   return (
     <Link
       href={`/producto/${product.slug}`}
       className="group flex flex-col"
     >
       <div className="relative">
-        <TeeArt
-          band={product.band}
-          tourYear={product.tourYear}
-          graphic={product.graphic}
-          className="aspect-[4/5] w-full transition-transform duration-300 group-hover:scale-[1.02]"
-        />
+        {photo ? (
+          <div className="aspect-[4/5] w-full overflow-hidden border border-ink-line bg-ink-soft">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={photo}
+              alt={product.name}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.05]"
+            />
+          </div>
+        ) : (
+          <TeeMockup
+            product={product}
+            color={showcaseColor}
+            className="aspect-[4/5] w-full transition-transform duration-300 group-hover:scale-[1.02]"
+            compact
+            lift={isDarkGarment(showcaseColor.hex)}
+          />
+        )}
         {(product.isNew || product.featured) && (
           <div className="absolute top-3 left-3 flex flex-col gap-2">
             {product.isNew && <Badge>Nuevo</Badge>}
@@ -29,10 +47,24 @@ export function ProductCard({ product }: { product: Product }) {
             {product.name}
           </p>
           <p className="text-cream-dim text-xs">{product.band}</p>
+          {product.rating !== undefined && (
+            <StarRating
+              rating={product.rating}
+              reviewCount={product.reviewCount}
+              className="mt-1"
+            />
+          )}
         </div>
-        <p className="font-condensed text-rust-light text-sm whitespace-nowrap">
-          {formatPrice(product.price)}
-        </p>
+        <div className="text-right whitespace-nowrap">
+          <p className="font-condensed text-rust-light text-sm">
+            {formatPrice(product.price)}
+          </p>
+          {product.compareAtPrice && (
+            <p className="font-condensed text-cream-dim/60 text-xs line-through">
+              {formatPrice(product.compareAtPrice)}
+            </p>
+          )}
+        </div>
       </div>
     </Link>
   );

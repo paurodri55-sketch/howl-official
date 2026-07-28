@@ -7,11 +7,15 @@ import { ProductCard } from "@/components/product/ProductCard";
 export function CatalogGrid({
   products,
   categories,
+  initialCategory,
 }: {
   products: Product[];
   categories: ProductCategory[];
+  initialCategory?: ProductCategory;
 }) {
-  const [active, setActive] = useState<ProductCategory | "Todos">("Todos");
+  const [active, setActive] = useState<ProductCategory | "Todos">(
+    initialCategory ?? "Todos"
+  );
 
   const visible =
     active === "Todos" ? products : products.filter((p) => p.category === active);

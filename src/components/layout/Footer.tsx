@@ -6,10 +6,10 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="grid gap-10 sm:grid-cols-3">
           <div>
-            <p className="font-display text-2xl text-cream">ÓXIDO</p>
+            <p className="font-display text-2xl text-cream">HOWL</p>
             <p className="mt-2 text-sm text-cream-dim max-w-xs">
-              Camisetas de gira que nunca existió. Algodón pesado, serigrafía
-              envejecida, tiradas limitadas.
+              Ropa de diseño propio. Algodón pesado, estampados trabajados a
+              mano, tiradas limitadas.
             </p>
           </div>
 
@@ -36,14 +36,14 @@ export function Footer() {
               Info
             </p>
             <p className="text-sm text-cream-dim max-w-xs">
-              Bandas, giras y años son ficticios. Proyecto de demostración sin
-              afiliación con artistas reales.
+              Marcas, bandas y colecciones son ficticias. Proyecto de
+              demostración sin afiliación con marcas o artistas reales.
             </p>
           </div>
         </div>
 
         <div className="mt-10 border-t border-ink-line pt-6 text-xs text-cream-dim/70">
-          © {new Date().getFullYear()} ÓXIDO. Todos los derechos reservados.
+          © {new Date().getFullYear()} HOWL. Todos los derechos reservados.
         </div>
       </div>
     </footer>

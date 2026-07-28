@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCart } from "@/components/cart/CartContext";
-import { TeeArt } from "@/components/product/TeeArt";
+import { TeeMockup } from "@/components/product/TeeMockup";
 import { LinkButton } from "@/components/ui/Button";
 import { formatPrice } from "@/lib/format";
 
@@ -37,12 +37,11 @@ export default function CarritoPage() {
                 href={`/producto/${item.slug}`}
                 className="shrink-0 w-20 h-20"
               >
-                <TeeArt
-                  band={item.band}
-                  tourYear=""
-                  graphic={item.graphic}
+                <TeeMockup
+                  product={item}
+                  color={item.color}
                   className="w-20 h-20"
-                  compact
+                  tiny
                 />
               </Link>
 
