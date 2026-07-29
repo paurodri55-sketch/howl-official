@@ -11,7 +11,9 @@ interface TeeMockupProduct {
   tourYear: string;
   artworkImage?: string;
   backArtworkImage?: string;
+  backBand?: string;
   frontLogoOnly?: boolean;
+  textOnly?: boolean;
   tagline?: string;
   editionLabel?: string;
 }
@@ -150,7 +152,13 @@ export function TeeMockup({
             />
           )
         ) : frontLogoOnly ? (
-          product.artworkImage ? (
+          product.textOnly ? (
+            <PrintMark
+              product={{ ...product, tagline: undefined }}
+              ink={ink}
+              size="sm"
+            />
+          ) : product.artworkImage ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={product.artworkImage}
@@ -171,6 +179,7 @@ export function TeeMockup({
             <PrintMark
               product={{
                 ...product,
+                band: product.backBand ?? product.band,
                 artworkImage: product.backArtworkImage ?? product.artworkImage,
               }}
               ink={ink}

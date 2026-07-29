@@ -8,6 +8,8 @@ interface PrintMarkProduct {
   artworkImage?: string;
   tagline?: string;
   tourYear: string;
+  /** Si es true, omite el recuadro de ilustración (solo tipografía). */
+  textOnly?: boolean;
 }
 
 const sizeConfig = {
@@ -56,39 +58,41 @@ export function PrintMark({
         </p>
       )}
 
-      <div
-        className="relative flex items-center justify-center"
-        style={{ width: cfg.frame, height: cfg.frame }}
-      >
-        {product.artworkImage ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={product.artworkImage}
-            alt=""
-            className="w-full h-full object-contain"
-          />
-        ) : (
-          <GraphicIconSvg
-            graphic={product.graphic}
-            ink={ink}
-            className="w-full h-full"
-          />
-        )}
-        {product.tourYear && (
-          <span
-            className="absolute uppercase font-bold px-1"
-            style={{
-              fontSize: cfg.year,
-              bottom: 2,
-              right: -2,
-              backgroundColor: accentColor,
-              color: "#100d0a",
-            }}
-          >
-            {product.tourYear}
-          </span>
-        )}
-      </div>
+      {!product.textOnly && (
+        <div
+          className="relative flex items-center justify-center"
+          style={{ width: cfg.frame, height: cfg.frame }}
+        >
+          {product.artworkImage ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={product.artworkImage}
+              alt=""
+              className="w-full h-full object-contain"
+            />
+          ) : (
+            <GraphicIconSvg
+              graphic={product.graphic}
+              ink={ink}
+              className="w-full h-full"
+            />
+          )}
+          {product.tourYear && (
+            <span
+              className="absolute uppercase font-bold px-1"
+              style={{
+                fontSize: cfg.year,
+                bottom: 2,
+                right: -2,
+                backgroundColor: accentColor,
+                color: "#100d0a",
+              }}
+            >
+              {product.tourYear}
+            </span>
+          )}
+        </div>
+      )}
     </div>
   );
 }

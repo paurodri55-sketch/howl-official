@@ -28,6 +28,7 @@ export function PrintArt({
         <PrintMark
           product={{
             ...product,
+            band: product.backBand ?? product.band,
             artworkImage: product.backArtworkImage ?? product.artworkImage,
           }}
           ink="#efe4c8"

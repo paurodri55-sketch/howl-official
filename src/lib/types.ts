@@ -57,6 +57,10 @@ export interface Product {
   backArtworkImage?: string;
   /** Si es true, la vista delantera muestra solo un logo pequeño (sin nombre ni frase), estilo pecho. */
   frontLogoOnly?: boolean;
+  /** Si es true, el estampado es solo tipografía (sin ilustración ni recuadro). */
+  textOnly?: boolean;
+  /** Texto de cabecera distinto para la vista trasera (si no se define, se reutiliza band). */
+  backBand?: string;
   /** Frase/cita corta estilo bootleg tee, en mayúsculas, bajo el nombre de banda. */
   tagline?: string;
   /** Valoración media (0-5) mostrada como estrellas. */

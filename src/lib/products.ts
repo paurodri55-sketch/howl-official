@@ -630,6 +630,31 @@ export const products: Product[] = [
     tourDates: [],
     isNew: true,
   },
+  {
+    id: "p23",
+    slug: "howl-project-basics",
+    name: "Howl Project",
+    band: "HOWL",
+    backBand: "HOWL PROJECT",
+    tourYear: "N.12",
+    editionLabel: "Colección",
+    price: 22.9,
+    compareAtPrice: 28.9,
+    rating: 4.5,
+    reviewCount: 7,
+    description:
+      "Básica de la colección Horizonte. Solo tipografía, sin ilustración — para los días de \"menos es más\".",
+    details: lifestyleDetails,
+    category: "Camisetas",
+    sizes: tourTeeSizes,
+    colors: [inkBlack, agedCream, washedDenim],
+    graphic: "landscape",
+    frontLogoOnly: true,
+    textOnly: true,
+    logoStyle: { tracking: "wide", decoration: "none", accent: "—", accentColor: "#efe4c8" },
+    tourDates: [],
+    isNew: true,
+  },
 ];
 
 export function getAllProducts(): Product[] {
