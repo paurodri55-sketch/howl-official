@@ -95,21 +95,27 @@ export function ProductViewer({ product }: { product: Product }) {
             className="aspect-square w-full"
           />
         )}
-        <div className="mt-4 flex gap-2">
-          {views.map((v) => (
-            <button
-              key={v}
-              type="button"
-              onClick={() => setView(v)}
-              className={`font-condensed uppercase tracking-widest text-xs px-3.5 py-2 border transition-colors ${
-                activeView === v
-                  ? "border-rust bg-rust text-cream"
-                  : "border-cream/30 text-cream-dim hover:border-cream"
-              }`}
-            >
-              {viewLabels[v]}
-            </button>
-          ))}
+        <div className="relative">
+          <div
+            className="flex gap-2 overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap"
+            style={{ scrollbarWidth: "none" }}
+          >
+            {views.map((v) => (
+              <button
+                key={v}
+                type="button"
+                onClick={() => setView(v)}
+                className={`shrink-0 whitespace-nowrap font-condensed uppercase tracking-widest text-xs px-3.5 py-2 border transition-colors ${
+                  activeView === v
+                    ? "border-rust bg-rust text-cream"
+                    : "border-cream/30 text-cream-dim hover:border-cream"
+                }`}
+              >
+                {viewLabels[v]}
+              </button>
+            ))}
+          </div>
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-ink to-transparent sm:hidden" />
         </div>
         {activeView === "modelo-back" && color.name !== MODEL_COLOR_NOTE && (
           <p className="mt-2 text-xs text-cream-dim">
@@ -228,7 +234,7 @@ export function ProductViewer({ product }: { product: Product }) {
           </Button>
         </div>
 
-        <ul className="mt-10 space-y-1.5 border-t border-ink-line pt-6 text-sm text-cream-dim">
+        <ul className="mt-10 space-y-1.5 border-t border-ink-line pt-6 text-sm text-cream-dim pb-20 sm:pb-0">
           {product.details.map((detail) => (
             <li key={detail} className="flex gap-2">
               <span className="text-rust">—</span>
@@ -236,6 +242,16 @@ export function ProductViewer({ product }: { product: Product }) {
             </li>
           ))}
         </ul>
+      </div>
+
+      {/* Barra fija de compra en móvil */}
+      <div className="sm:hidden fixed bottom-0 inset-x-0 z-40 border-t border-ink-line bg-ink/95 backdrop-blur px-4 py-3 flex items-center gap-3">
+        <p className="font-condensed text-cream text-lg whitespace-nowrap">
+          {formatPrice(product.price)}
+        </p>
+        <Button onClick={handleAddToCart} className="flex-1">
+          {justAdded ? "Añadido ✓" : "Añadir al carrito"}
+        </Button>
       </div>
     </div>
   );

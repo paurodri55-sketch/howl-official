@@ -35,8 +35,9 @@ export function ProductCard({ product }: { product: Product }) {
             lift={isDarkGarment(showcaseColor.hex)}
           />
         )}
-        {(product.isNew || product.featured) && (
+        {(product.isNew || (product.purchases ?? 0) > 500) && (
           <div className="absolute top-3 left-3 flex flex-col gap-2">
+            {(product.purchases ?? 0) > 500 && <Badge>Más vendido</Badge>}
             {product.isNew && <Badge>Nuevo</Badge>}
           </div>
         )}
@@ -48,11 +49,14 @@ export function ProductCard({ product }: { product: Product }) {
           </p>
           <p className="text-cream-dim text-xs">{product.band}</p>
           {product.rating !== undefined && (
-            <StarRating
-              rating={product.rating}
-              reviewCount={product.reviewCount}
-              className="mt-1"
-            />
+            <div className="mt-1 flex items-center gap-1.5">
+              <StarRating rating={product.rating} reviewCount={product.reviewCount} />
+              {(product.purchases ?? 0) > 500 && (
+                <span className="font-condensed text-[10px] text-rust-light">
+                  · {new Intl.NumberFormat("es-ES").format(product.purchases!)} vendidas
+                </span>
+              )}
+            </div>
           )}
         </div>
         <div className="text-right whitespace-nowrap">
