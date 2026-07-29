@@ -29,6 +29,9 @@ export function getBackProductPhoto(
   product: Product,
   color: ProductColor
 ): string | null {
+  if (product.backHeroPhoto) {
+    return `/photos/${product.backHeroPhoto}.png`;
+  }
   const slug = COLOR_SLUGS[color.hex];
   if (!slug) return null;
   if (product.backArtworkImage && product.backTextBaked) {

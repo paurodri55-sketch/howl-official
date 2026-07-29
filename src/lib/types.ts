@@ -65,6 +65,13 @@ export interface Product {
   backTextBaked?: boolean;
   /** Si es true, no mostrar pestañas de "Modelo" (aún no hay foto real de modelo para este producto). */
   skipModelPhotos?: boolean;
+  /**
+   * Nombre base (sin extensión) de una foto real de la trasera en
+   * /photos/, generada solo en negro. Se muestra siempre como
+   * referencia de estilo, igual que las fotos de modelo en negro,
+   * independientemente del color seleccionado.
+   */
+  backHeroPhoto?: string;
   /** Frase/cita corta estilo bootleg tee, en mayúsculas, bajo el nombre de banda. */
   tagline?: string;
   /** Valoración media (0-5) mostrada como estrellas. */

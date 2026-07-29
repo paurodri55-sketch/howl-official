@@ -133,7 +133,9 @@ export function ProductViewer({ product }: { product: Product }) {
           </div>
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-ink to-transparent sm:hidden" />
         </div>
-        {activeView === "modelo-back" && color.name !== MODEL_COLOR_NOTE && (
+        {((activeView === "modelo-back") ||
+          (activeView === "back" && product.backHeroPhoto)) &&
+          color.name !== MODEL_COLOR_NOTE && (
           <p className="mt-2 text-xs text-cream-dim">
             Foto de referencia en {MODEL_COLOR_NOTE.toLowerCase()}.
           </p>
