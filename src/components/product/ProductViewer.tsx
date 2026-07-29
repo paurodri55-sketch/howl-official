@@ -244,19 +244,22 @@ export function ProductViewer({ product }: { product: Product }) {
 function ModelCaption({ product }: { product: Product }) {
   const accentColor = product.logoStyle.accentColor ?? "#efe4c8";
   return (
+    // Fijo en 29%: justo debajo del cuello/collar y por encima del estampado
+    // (que empieza ~33% en todas las fotos de modelo). No subir de aquí — en
+    // varias fotos base la cara cae más abajo de lo que parece a simple vista.
     <div
       className="pointer-events-none absolute inset-x-0 flex flex-col items-center text-center px-4"
-      style={{ top: "20%" }}
+      style={{ top: "32%" }}
     >
       <p
-        className="font-display uppercase font-black leading-[0.85] text-cream text-lg sm:text-2xl"
+        className="font-display uppercase font-black leading-[0.85] text-cream text-base sm:text-lg"
         style={{ textShadow: "0 1px 6px rgba(0,0,0,0.8)" }}
       >
         {product.band}
       </p>
       {product.tagline && (
         <p
-          className="uppercase font-bold text-[9px] sm:text-[10px] mt-1"
+          className="uppercase font-bold text-[7px] sm:text-[8px] mt-0.5 leading-tight"
           style={{ color: accentColor, textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}
         >
           {product.tagline}
