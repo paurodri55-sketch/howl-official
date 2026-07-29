@@ -606,6 +606,30 @@ export const products: Product[] = [
     tourDates: [],
     isNew: true,
   },
+  {
+    id: "p22",
+    slug: "camel-desert",
+    name: "Camel",
+    band: "CAMEL",
+    tourYear: "N.11",
+    editionLabel: "Colección",
+    price: 25.9,
+    compareAtPrice: 32.9,
+    rating: 4.6,
+    reviewCount: 10,
+    description:
+      "Camiseta de la colección Horizonte. Un camello ornamentado frente a la puesta de sol del desierto.",
+    details: lifestyleDetails,
+    category: "Camisetas",
+    sizes: tourTeeSizes,
+    colors: [agedCream, inkBlack, oxideRust],
+    graphic: "landscape",
+    artworkImage: "/artwork/camel.png",
+    tagline: "RELENTLESS IN THE DESERT",
+    logoStyle: { tracking: "wide", decoration: "none", accent: "☉", accentColor: "#d9a441" },
+    tourDates: [],
+    isNew: true,
+  },
 ];
 
 export function getAllProducts(): Product[] {
