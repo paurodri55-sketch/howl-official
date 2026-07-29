@@ -137,7 +137,13 @@ export function TeeMockup({
 
       <div className="absolute flex flex-col items-center" style={printWrapperStyle}>
         {tiny ? (
-          product.artworkImage ? (
+          product.textOnly ? (
+            <PrintMark
+              product={{ ...product, tagline: undefined }}
+              ink={ink}
+              size="sm"
+            />
+          ) : product.artworkImage ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={product.artworkImage}
