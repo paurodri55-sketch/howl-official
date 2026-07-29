@@ -515,6 +515,7 @@ export const products: Product[] = [
     logoStyle: { tracking: "wide", decoration: "none", accent: "波", accentColor: "#c9463e" },
     tourDates: [],
     isNew: true,
+    backHeroPhoto: "herotop-tradition-innovation-crane",
   },
   {
     id: "p22",
