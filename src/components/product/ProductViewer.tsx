@@ -10,7 +10,7 @@ import { TeeMockup } from "@/components/product/TeeMockup";
 import { PrintArt } from "@/components/product/PrintArt";
 import { StarRating } from "@/components/ui/StarRating";
 import { formatPrice } from "@/lib/format";
-import { getModelBackPhoto, getModelPhoto, getProductPhoto } from "@/lib/photos";
+import { getBackProductPhoto, getModelBackPhoto, getModelPhoto, getProductPhoto } from "@/lib/photos";
 
 type View = "foto" | "modelo" | "modelo-back" | "front" | "back" | "diseno";
 
@@ -36,6 +36,7 @@ export function ProductViewer({ product }: { product: Product }) {
   const [view, setView] = useState<View>(photo ? "foto" : "front");
   const [justAdded, setJustAdded] = useState(false);
   const currentPhoto = getProductPhoto(product, color);
+  const backPhoto = getBackProductPhoto(product, color);
   const modelPhoto = getModelPhoto(product, color);
   const modelBackPhoto = getModelBackPhoto(product);
   const views = [
@@ -91,6 +92,16 @@ export function ProductViewer({ product }: { product: Product }) {
               className="object-cover"
             />
             <ModelCaption product={product} />
+          </div>
+        ) : activeView === "back" && backPhoto ? (
+          <div className="relative aspect-square w-full overflow-hidden border border-ink-line bg-ink-soft">
+            <Image
+              src={backPhoto}
+              alt={`${product.name} — foto real, espalda`}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
           </div>
         ) : (
           <TeeMockup

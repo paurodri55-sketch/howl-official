@@ -16,6 +16,7 @@ interface TeeMockupProduct {
   textOnly?: boolean;
   tagline?: string;
   editionLabel?: string;
+  backTextBaked?: boolean;
 }
 
 const FRONT_BODY =
@@ -180,6 +181,13 @@ export function TeeMockup({
           )
         ) : view === "front" ? (
           <PrintMark product={product} ink={ink} size={compact ? "sm" : "md"} />
+        ) : product.backTextBaked && (product.backArtworkImage ?? product.artworkImage) ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={product.backArtworkImage ?? product.artworkImage}
+            alt=""
+            className="w-full h-auto pointer-events-none object-contain"
+          />
         ) : (
           <div className="flex flex-col items-center gap-2">
             <PrintMark

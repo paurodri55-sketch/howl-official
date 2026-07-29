@@ -25,19 +25,30 @@ export function PrintArt({
       <div className="pointer-events-none absolute inset-4 border border-cream/15" />
 
       <div className="relative flex flex-col items-center gap-4 text-center text-cream">
-        <PrintMark
-          product={{
-            ...product,
-            band: product.backBand ?? product.band,
-            artworkImage: product.backArtworkImage ?? product.artworkImage,
-          }}
-          ink="#efe4c8"
-          size="lg"
-        />
-        {product.tourYear && (
-          <p className="font-condensed uppercase tracking-[0.45em] text-[11px] text-rust-light">
-            {product.editionLabel ?? "World Tour"} {product.tourYear}
-          </p>
+        {product.backTextBaked && (product.backArtworkImage ?? product.artworkImage) ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={product.backArtworkImage ?? product.artworkImage}
+            alt=""
+            className="w-full max-w-xs h-auto object-contain"
+          />
+        ) : (
+          <>
+            <PrintMark
+              product={{
+                ...product,
+                band: product.backBand ?? product.band,
+                artworkImage: product.backArtworkImage ?? product.artworkImage,
+              }}
+              ink="#efe4c8"
+              size="lg"
+            />
+            {product.tourYear && (
+              <p className="font-condensed uppercase tracking-[0.45em] text-[11px] text-rust-light">
+                {product.editionLabel ?? "World Tour"} {product.tourYear}
+              </p>
+            )}
+          </>
         )}
 
         <div className="mt-2 grid grid-cols-2 gap-x-6 gap-y-1.5 font-condensed text-[11px] sm:text-xs uppercase tracking-wide text-cream-dim">

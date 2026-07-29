@@ -61,6 +61,10 @@ export interface Product {
   textOnly?: boolean;
   /** Texto de cabecera distinto para la vista trasera (si no se define, se reutiliza band). */
   backBand?: string;
+  /** Si es true, backArtworkImage ya incluye todo el texto grabado (foto real): no superponer band/tagline/año encima. */
+  backTextBaked?: boolean;
+  /** Si es true, no mostrar pestañas de "Modelo" (aún no hay foto real de modelo para este producto). */
+  skipModelPhotos?: boolean;
   /** Frase/cita corta estilo bootleg tee, en mayúsculas, bajo el nombre de banda. */
   tagline?: string;
   /** Valoración media (0-5) mostrada como estrellas. */
