@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import type { Product } from "@/lib/types";
 import { useCart } from "@/components/cart/CartContext";
 import { Button } from "@/components/ui/Button";
@@ -59,31 +60,35 @@ export function ProductViewer({ product }: { product: Product }) {
         {activeView === "diseno" ? (
           <PrintArt product={product} className="aspect-square w-full" />
         ) : activeView === "foto" && currentPhoto ? (
-          <div className="aspect-square w-full overflow-hidden border border-ink-line bg-ink-soft">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+          <div className="relative aspect-square w-full overflow-hidden border border-ink-line bg-ink-soft">
+            <Image
               src={currentPhoto}
               alt={`${product.name} — foto real`}
-              className="w-full h-full object-cover"
+              fill
+              priority
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
             />
           </div>
         ) : activeView === "modelo" && modelPhoto ? (
           <div className="relative aspect-square w-full overflow-hidden border border-ink-line bg-ink-soft">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={modelPhoto}
               alt={`${product.name} — modelo`}
-              className="w-full h-full object-cover"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
             />
             {!product.frontLogoOnly && <ModelCaption product={product} />}
           </div>
         ) : activeView === "modelo-back" && modelBackPhoto ? (
           <div className="relative aspect-square w-full overflow-hidden border border-ink-line bg-ink-soft">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={modelBackPhoto}
               alt={`${product.name} — modelo, espalda`}
-              className="w-full h-full object-cover"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
             />
             <ModelCaption product={product} />
           </div>

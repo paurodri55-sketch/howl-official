@@ -13,6 +13,7 @@ import {
 import { getProductPhoto } from "@/lib/photos";
 import { Logo } from "@/components/ui/Logo";
 import Link from "next/link";
+import Image from "next/image";
 
 const lookbook = [
   { slug: "answer-the-call-wolf", photo: "/photos/models/wolfmoon-front.png" },
@@ -126,12 +127,15 @@ export default function Home() {
                   className="group relative block overflow-hidden border border-ink-line"
                 >
                   {photo ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={photo}
-                      alt={category}
-                      className="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
+                    <div className="relative aspect-[4/5] w-full overflow-hidden">
+                      <Image
+                        src={photo}
+                        alt={category}
+                        fill
+                        sizes="(min-width: 768px) 33vw, 100vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
                   ) : (
                     <TeeMockup
                       product={product}
@@ -199,12 +203,13 @@ export default function Home() {
             return (
               <Reveal key={slug} delay={(i % 3) * 100}>
                 <Link href={`/producto/${slug}`} className="group block">
-                  <div className="aspect-[4/5] w-full overflow-hidden border border-ink-line bg-ink-soft">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                  <div className="relative aspect-[4/5] w-full overflow-hidden border border-ink-line bg-ink-soft">
+                    <Image
                       src={photo}
                       alt={product.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <p className="mt-2 font-condensed uppercase tracking-wide text-cream text-sm">
