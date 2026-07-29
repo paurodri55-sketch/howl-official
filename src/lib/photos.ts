@@ -19,16 +19,26 @@ export function getProductPhoto(
   return `/photos/${designName}-${slug}.png`;
 }
 
-/** Foto real de la prenda por detrás (sin modelo), solo si el diseño trasero viene de una foto de estudio real. */
+/**
+ * Foto real de la prenda por detrás (sin modelo). Si el producto tiene diseño
+ * trasero propio (foto de estudio real), se usa esa. Si no, y el producto ya
+ * tiene foto real delantera, se usa la camiseta lisa real como trasera (mejor
+ * que el mockup vectorial, que no combina con el resto de fotos reales).
+ */
 export function getBackProductPhoto(
   product: Product,
   color: ProductColor
 ): string | null {
-  if (!product.backArtworkImage || !product.backTextBaked) return null;
   const slug = COLOR_SLUGS[color.hex];
   if (!slug) return null;
-  const designName = product.backArtworkImage.split("/").pop()?.replace(/\.png$/, "");
-  return `/photos/${designName}-${slug}.png`;
+  if (product.backArtworkImage && product.backTextBaked) {
+    const designName = product.backArtworkImage.split("/").pop()?.replace(/\.png$/, "");
+    return `/photos/${designName}-${slug}.png`;
+  }
+  if (product.artworkImage) {
+    return `/photos/blank-shirt-${slug}.png`;
+  }
+  return null;
 }
 
 /** Foto real con modelo llevando la prenda (delante), en el color dado. */

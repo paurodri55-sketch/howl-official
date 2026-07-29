@@ -43,7 +43,7 @@ export function ProductViewer({ product }: { product: Product }) {
     ...(currentPhoto ? ["foto"] : []),
     ...(modelPhoto ? ["modelo"] : []),
     ...(modelBackPhoto ? ["modelo-back"] : []),
-    "front",
+    ...(currentPhoto ? [] : ["front"]),
     "back",
     "diseno",
   ] as View[];
@@ -59,9 +59,9 @@ export function ProductViewer({ product }: { product: Product }) {
     <div className="grid gap-10 md:grid-cols-2">
       <div>
         {activeView === "diseno" ? (
-          <PrintArt product={product} className="aspect-square w-full" />
+          <PrintArt product={product} className="aspect-[4/5] w-full" />
         ) : activeView === "foto" && currentPhoto ? (
-          <div className="relative aspect-square w-full overflow-hidden border border-ink-line bg-ink-soft">
+          <div className="relative aspect-[4/5] w-full overflow-hidden border border-ink-line bg-ink-soft">
             <Image
               src={currentPhoto}
               alt={`${product.name} — foto real`}
@@ -72,7 +72,7 @@ export function ProductViewer({ product }: { product: Product }) {
             />
           </div>
         ) : activeView === "modelo" && modelPhoto ? (
-          <div className="relative aspect-square w-full overflow-hidden border border-ink-line bg-ink-soft">
+          <div className="relative aspect-[4/5] w-full overflow-hidden border border-ink-line bg-ink-soft">
             <Image
               src={modelPhoto}
               alt={`${product.name} — modelo`}
@@ -83,7 +83,7 @@ export function ProductViewer({ product }: { product: Product }) {
             {!product.frontLogoOnly && <ModelCaption product={product} />}
           </div>
         ) : activeView === "modelo-back" && modelBackPhoto ? (
-          <div className="relative aspect-square w-full overflow-hidden border border-ink-line bg-ink-soft">
+          <div className="relative aspect-[4/5] w-full overflow-hidden border border-ink-line bg-ink-soft">
             <Image
               src={modelBackPhoto}
               alt={`${product.name} — modelo, espalda`}
@@ -94,7 +94,7 @@ export function ProductViewer({ product }: { product: Product }) {
             <ModelCaption product={product} />
           </div>
         ) : activeView === "back" && backPhoto ? (
-          <div className="relative aspect-square w-full overflow-hidden border border-ink-line bg-ink-soft">
+          <div className="relative aspect-[4/5] w-full overflow-hidden border border-ink-line bg-ink-soft">
             <Image
               src={backPhoto}
               alt={`${product.name} — foto real, espalda`}
@@ -108,7 +108,7 @@ export function ProductViewer({ product }: { product: Product }) {
             product={product}
             color={color}
             view={activeView === "back" ? "back" : "front"}
-            className="aspect-square w-full"
+            className="aspect-[4/5] w-full"
           />
         )}
         <div className="relative">
@@ -148,7 +148,6 @@ export function ProductViewer({ product }: { product: Product }) {
         )}
         <p className="font-condensed uppercase tracking-widest text-sm text-rust-light">
           {product.band}
-          {product.tourYear && ` · ${product.editionLabel ?? "Gira"} ${product.tourYear}`}
         </p>
         <h1 className="font-display uppercase text-cream text-4xl sm:text-5xl mt-1">
           {product.name}
