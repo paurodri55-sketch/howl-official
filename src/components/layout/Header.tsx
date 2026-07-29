@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCart } from "@/components/cart/CartContext";
+import { Logo } from "@/components/ui/Logo";
 
 const navLinks = [
   { href: "/", label: "Inicio" },
@@ -18,8 +19,9 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
         <Link
           href="/"
-          className="font-display text-2xl sm:text-3xl tracking-wide text-cream"
+          className="flex items-center gap-2 font-display text-2xl sm:text-3xl tracking-wide text-cream"
         >
+          <Logo className="h-7 w-auto sm:h-8" />
           HOWL
         </Link>
 

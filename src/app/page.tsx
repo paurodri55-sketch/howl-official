@@ -78,7 +78,7 @@ export default function Home() {
           </p>
           <h1 className="font-display uppercase leading-[0.9] text-cream text-5xl sm:text-7xl md:text-8xl">
             Ropa con
-            <br />carácter propio
+            <br />sello propio
           </h1>
           <p className="mt-6 max-w-xl mx-auto text-cream-dim text-base sm:text-lg">
             Camisetas y sudaderas de diseño propio. Algodón pesado, estampados
