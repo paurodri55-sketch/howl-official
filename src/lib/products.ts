@@ -47,6 +47,7 @@ export const products: Product[] = [
     tourDates: [],
     featured: true,
     backHeroPhoto: "herotop-everglades-serpent",
+    modelCaptionTop: "35%",
   },
   {
     id: "p4",
@@ -76,6 +77,7 @@ export const products: Product[] = [
       { city: "Salt Lake City, UT", date: "14 Oct" },
       { city: "Denver, CO", date: "19 Oct" },
     ],
+    modelCaptionTop: "35%",
   },
   {
     id: "p5",
@@ -541,6 +543,7 @@ export const products: Product[] = [
     logoStyle: { tracking: "wide", decoration: "none", accent: "☉", accentColor: "#d9a441" },
     tourDates: [],
     isNew: true,
+    modelCaptionTop: "35%",
   },
   {
     id: "p23",

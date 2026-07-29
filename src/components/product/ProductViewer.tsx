@@ -282,7 +282,7 @@ function ModelCaption({ product }: { product: Product }) {
     // varias fotos base la cara cae más abajo de lo que parece a simple vista.
     <div
       className="pointer-events-none absolute inset-x-0 flex flex-col items-center text-center px-4"
-      style={{ top: "32%" }}
+      style={{ top: product.modelCaptionTop ?? "32%" }}
     >
       <p
         className="font-display uppercase font-black leading-[0.85] text-cream text-base sm:text-lg"

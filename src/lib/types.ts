@@ -72,6 +72,8 @@ export interface Product {
    * independientemente del color seleccionado.
    */
   backHeroPhoto?: string;
+  /** Override de posición vertical del texto sobre la foto de modelo (por defecto "32%"). */
+  modelCaptionTop?: string;
   /** Frase/cita corta estilo bootleg tee, en mayúsculas, bajo el nombre de banda. */
   tagline?: string;
   /** Valoración media (0-5) mostrada como estrellas. */

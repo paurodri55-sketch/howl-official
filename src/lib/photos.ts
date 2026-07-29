@@ -12,7 +12,7 @@ export function getProductPhoto(
   product: Product,
   color: ProductColor
 ): string | null {
-  if (!product.artworkImage) return null;
+  if (!product.artworkImage || product.category === "Accesorios") return null;
   const slug = COLOR_SLUGS[color.hex];
   if (!slug) return null;
   const designName = product.artworkImage.split("/").pop()?.replace(/\.png$/, "");
@@ -49,7 +49,7 @@ export function getModelPhoto(
   product: Product,
   color: ProductColor
 ): string | null {
-  if (!product.artworkImage || product.skipModelPhotos) return null;
+  if (!product.artworkImage || product.skipModelPhotos || product.category === "Accesorios") return null;
   const slug = COLOR_SLUGS[color.hex];
   if (!slug) return null;
   const designName = product.artworkImage.split("/").pop()?.replace(/\.png$/, "");
