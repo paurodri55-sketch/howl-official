@@ -16,12 +16,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 const lookbook = [
-  { slug: "answer-the-call-wolf", photo: "/photos/models/wolfmoon-front.png" },
+  { slug: "answer-the-call-wolf", photo: "/photos/models/wolfmoon-front-black.png" },
   { slug: "swamp-crocodile", photo: "/photos/models/croc_lake-back.png" },
-  { slug: "wild-west-cowboy", photo: "/photos/models/cowboy-front.png" },
-  { slug: "ufo-obsession", photo: "/photos/models/ufo_chest-front.png" },
-  { slug: "hollow-saints-midnight-mass", photo: "/photos/models/moon-front.png" },
-  { slug: "tradition-innovation-crane", photo: "/photos/models/japan_crane-front.png" },
+  { slug: "wild-west-cowboy", photo: "/photos/models/cowboy-front-black.png" },
+  { slug: "ufo-obsession", photo: "/photos/models/ufo_chest-front-black.png" },
+  { slug: "hollow-saints-midnight-mass", photo: "/photos/models/moon-front-black.png" },
+  { slug: "tradition-innovation-crane", photo: "/photos/models/japan_crane-front-black.png" },
 ];
 
 // Nombres del marquee derivados de los productos reales, para que nunca
