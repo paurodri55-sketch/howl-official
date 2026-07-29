@@ -39,7 +39,7 @@ export function getBackProductPhoto(
     return `/photos/${designName}-${slug}.png`;
   }
   if (product.artworkImage) {
-    return `/photos/blank-shirt-${slug}.png`;
+    return `/photos/blank-shirt-back-${slug}.png`;
   }
   return null;
 }

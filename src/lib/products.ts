@@ -491,6 +491,7 @@ export const products: Product[] = [
     logoStyle: { tracking: "wide", decoration: "none", accent: "✦", accentColor: "#8fb8c9" },
     tourDates: [],
     isNew: true,
+    backHeroPhoto: "ufo_scene-black",
   },
   {
     id: "p21",
