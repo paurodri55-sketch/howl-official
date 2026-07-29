@@ -430,6 +430,7 @@ export const products: Product[] = [
     artworkImage: "/artwork/croc_chest.png",
     backArtworkImage: "/artwork/croc_lake.png",
     frontLogoOnly: true,
+    backTextBaked: true,
     tagline: "PATIENCE PAYS OFF",
     logoStyle: { tracking: "wide", decoration: "none", accent: "≈", accentColor: "#7a9a3f" },
     tourDates: [],
