@@ -32,7 +32,7 @@ const marqueeBands = Array.from(
 
 const categoryTiles = [
   { category: "Camisetas" as const, slug: "rattlesnake-kings-scorched-earth" },
-  { category: "Sudaderas" as const, slug: "gravel-glory-open-road" },
+  { category: "Sudaderas" as const, slug: "midnight-combine-harvest-of-noise" },
   { category: "Accesorios" as const, slug: "rustbelt-choir-patch" },
 ];
 

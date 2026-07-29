@@ -658,7 +658,7 @@ const FEATURED_ORDER = [
   "everglades-serpent",
   "rattlesnake-kings-scorched-earth",
   "nothing-like-home-cottage",
-  "tour-87-black-orchard",
+  "ufo-obsession",
 ];
 
 export function getNewProducts(limit = 8): Product[] {
