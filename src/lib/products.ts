@@ -1285,6 +1285,36 @@ export const products: Product[] = [
     tourDates: [],
     isNew: true,
   },
+  {
+    id: "p55",
+    slug: "dad-hat-h",
+    name: "Dad Hat H",
+    band: "HOWL",
+    tourYear: "",
+    editionLabel: "Colección",
+    price: 22.0,
+    compareAtPrice: 27.0,
+    rating: 4.6,
+    reviewCount: 2,
+    description:
+      "Gorra dad hat de lona lavada, corte bajo sin estructurar, hebilla metálica trasera ajustable. Letra H bordada en relieve al frente.",
+    details: [
+      "Lona de algodón 100% lavada, tacto suave desde el primer uso",
+      "Corte bajo sin estructurar, visera curva",
+      "Hebilla metálica ajustable trasera, talla única",
+      "Letra H bordada en relieve al frente",
+    ],
+    category: "Accesorios",
+    sizes: ["Única"],
+    colors: [inkBlack, agedCream],
+    graphic: "landscape",
+    artworkImage: "/artwork/dadhat_front.png",
+    frontLogoOnly: true,
+    skipModelPhotos: true,
+    logoStyle: { tracking: "wide", decoration: "none", accent: "H", accentColor: "#efe4c8" },
+    tourDates: [],
+    isNew: true,
+  },
 ];
 
 export function getAllProducts(): Product[] {

@@ -14,7 +14,7 @@ export function getProductPhoto(
   color: ProductColor
 ): string | null {
   if (product.photoOverride) return `/photos/${product.photoOverride}.png`;
-  if (!product.artworkImage || product.category === "Accesorios") return null;
+  if (!product.artworkImage) return null;
   const slug = COLOR_SLUGS[color.hex];
   if (!slug) return null;
   const designName = product.artworkImage.split("/").pop()?.replace(/\.png$/, "");
@@ -40,7 +40,7 @@ export function getBackProductPhoto(
     const designName = product.backArtworkImage.split("/").pop()?.replace(/\.png$/, "");
     return `/photos/${designName}-${slug}.png`;
   }
-  if (product.artworkImage) {
+  if (product.artworkImage && product.category === "Camisetas") {
     return `/photos/blank-shirt-back-${slug}.png`;
   }
   return null;

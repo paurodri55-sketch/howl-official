@@ -44,7 +44,9 @@ export function ProductViewer({ product }: { product: Product }) {
     ...(modelPhoto ? ["modelo"] : []),
     ...(modelBackPhoto ? ["modelo-back"] : []),
     ...(currentPhoto ? [] : ["front"]),
-    "back",
+    ...(backPhoto || product.category === "Camisetas" || product.category === "Sudaderas"
+      ? ["back"]
+      : []),
     "diseno",
   ] as View[];
   const activeView = views.includes(view) ? view : views[0];
