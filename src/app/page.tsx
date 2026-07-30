@@ -31,7 +31,7 @@ const marqueeBands = Array.from(
 );
 
 const categoryTiles = [
-  { category: "Camisetas" as const, slug: "rattlesnake-kings-scorched-earth" },
+  { category: "Camisetas" as const, slug: "answer-the-call-wolf" },
   { category: "Sudaderas" as const, slug: "midnight-combine-harvest-of-noise" },
   { category: "Stickers" as const, slug: "sticker-wolf-badge" },
 ];
