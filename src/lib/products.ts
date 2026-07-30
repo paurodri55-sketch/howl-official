@@ -1229,6 +1229,31 @@ export const products: Product[] = [
     tourDates: [],
     isNew: true,
   },
+  {
+    id: "p53",
+    slug: "la-trattoria-da-enzo",
+    name: "La Trattoria",
+    band: "DA ENZO",
+    tourYear: "1974",
+    editionLabel: "Colección",
+    price: 27.9,
+    compareAtPrice: 34.9,
+    rating: 4.7,
+    reviewCount: 3,
+    description:
+      "Camiseta de la colección Italiana. Sello vintage de trattoria desgastado al pecho — 'Ristorante Pizzeria Da Enzo, dal 1974'. Aire de menú de barrio italiano de los 80.",
+    details: lifestyleDetails,
+    category: "Camisetas",
+    sizes: tourTeeSizes,
+    colors: [agedCream, inkBlack],
+    graphic: "landscape",
+    artworkImage: "/artwork/trattoria_chest.png",
+    frontLogoOnly: true,
+    skipModelPhotos: true,
+    logoStyle: { tracking: "wide", decoration: "none", accent: "🍕", accentColor: "#8a2e2e" },
+    tourDates: [],
+    isNew: true,
+  },
 ];
 
 export function getAllProducts(): Product[] {
