@@ -72,6 +72,8 @@ export interface Product {
    * independientemente del color seleccionado.
    */
   backHeroPhoto?: string;
+  /** Nombre base (sin extensión) de una foto real en /photos/ que se usa siempre como "Foto", sea cual sea la categoría o el color (para accesorios como stickers). */
+  photoOverride?: string;
   /** Override de posición vertical del texto sobre la foto de modelo (por defecto "32%"). */
   modelCaptionTop?: string;
   /** Frase/cita corta estilo bootleg tee, en mayúsculas, bajo el nombre de banda. */

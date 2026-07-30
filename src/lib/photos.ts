@@ -13,6 +13,7 @@ export function getProductPhoto(
   product: Product,
   color: ProductColor
 ): string | null {
+  if (product.photoOverride) return `/photos/${product.photoOverride}.png`;
   if (!product.artworkImage || product.category === "Accesorios") return null;
   const slug = COLOR_SLUGS[color.hex];
   if (!slug) return null;
