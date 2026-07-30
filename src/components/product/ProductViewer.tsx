@@ -10,14 +10,12 @@ import { TeeMockup } from "@/components/product/TeeMockup";
 import { PrintArt } from "@/components/product/PrintArt";
 import { StarRating } from "@/components/ui/StarRating";
 import { formatPrice } from "@/lib/format";
-import { getBackProductPhoto, getModelBackPhoto, getModelPhoto, getProductPhoto } from "@/lib/photos";
+import { getBackProductPhoto, getProductPhoto } from "@/lib/photos";
 
-type View = "foto" | "modelo" | "modelo-back" | "front" | "back" | "diseno";
+type View = "foto" | "front" | "back" | "diseno";
 
 const viewLabels: Record<View, string> = {
   foto: "Foto",
-  modelo: "Modelo",
-  "modelo-back": "Modelo (espalda)",
   front: "Delantera",
   back: "Trasera",
   diseno: "Diseño",
@@ -37,12 +35,8 @@ export function ProductViewer({ product }: { product: Product }) {
   const [justAdded, setJustAdded] = useState(false);
   const currentPhoto = getProductPhoto(product, color);
   const backPhoto = getBackProductPhoto(product, color);
-  const modelPhoto = getModelPhoto(product, color);
-  const modelBackPhoto = getModelBackPhoto(product);
   const views = [
     ...(currentPhoto ? ["foto"] : []),
-    ...(modelPhoto ? ["modelo"] : []),
-    ...(modelBackPhoto ? ["modelo-back"] : []),
     ...(currentPhoto ? [] : ["front"]),
     ...(backPhoto || product.category === "Camisetas" || product.category === "Sudaderas"
       ? ["back"]
@@ -95,28 +89,6 @@ export function ProductViewer({ product }: { product: Product }) {
               className="object-cover"
             />
           </div>
-        ) : activeView === "modelo" && modelPhoto ? (
-          <div className="relative aspect-[4/5] w-full overflow-hidden border border-ink-line bg-ink-soft">
-            <Image
-              src={modelPhoto}
-              alt={`${product.name} — modelo`}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
-            />
-            {!product.frontLogoOnly && <ModelCaption product={product} />}
-          </div>
-        ) : activeView === "modelo-back" && modelBackPhoto ? (
-          <div className="relative aspect-[4/5] w-full overflow-hidden border border-ink-line bg-ink-soft">
-            <Image
-              src={modelBackPhoto}
-              alt={`${product.name} — modelo, espalda`}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover"
-            />
-            <ModelCaption product={product} />
-          </div>
         ) : activeView === "back" && backPhoto ? (
           <div className="relative aspect-[4/5] w-full overflow-hidden border border-ink-line bg-ink-soft">
             <Image
@@ -158,8 +130,8 @@ export function ProductViewer({ product }: { product: Product }) {
           </div>
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-ink to-transparent sm:hidden" />
         </div>
-        {((activeView === "modelo-back") ||
-          (activeView === "back" && product.backHeroPhoto)) &&
+        {activeView === "back" &&
+          product.backHeroPhoto &&
           color.name !== MODEL_COLOR_NOTE && (
           <p className="mt-2 text-xs text-cream-dim">
             Foto de referencia en {MODEL_COLOR_NOTE.toLowerCase()}.
@@ -299,30 +271,3 @@ export function ProductViewer({ product }: { product: Product }) {
   );
 }
 
-function ModelCaption({ product }: { product: Product }) {
-  const accentColor = product.logoStyle.accentColor ?? "#efe4c8";
-  return (
-    // Fijo en 29%: justo debajo del cuello/collar y por encima del estampado
-    // (que empieza ~33% en todas las fotos de modelo). No subir de aquí — en
-    // varias fotos base la cara cae más abajo de lo que parece a simple vista.
-    <div
-      className="pointer-events-none absolute inset-x-0 flex flex-col items-center text-center px-4"
-      style={{ top: product.modelCaptionTop ?? "32%" }}
-    >
-      <p
-        className="font-display uppercase font-black leading-[0.85] text-cream text-base sm:text-lg"
-        style={{ textShadow: "0 1px 6px rgba(0,0,0,0.8)" }}
-      >
-        {product.band}
-      </p>
-      {product.tagline && (
-        <p
-          className="uppercase font-bold text-[7px] sm:text-[8px] mt-0.5 leading-tight"
-          style={{ color: accentColor, textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}
-        >
-          {product.tagline}
-        </p>
-      )}
-    </div>
-  );
-}
