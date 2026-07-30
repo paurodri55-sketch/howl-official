@@ -1315,6 +1315,35 @@ export const products: Product[] = [
     tourDates: [],
     isNew: true,
   },
+  {
+    id: "p56",
+    slug: "crew-socks-howl",
+    name: "Crew Socks",
+    band: "HOWL",
+    tourYear: "",
+    editionLabel: "Colección",
+    price: 12.0,
+    compareAtPrice: 15.0,
+    rating: 4.7,
+    reviewCount: 2,
+    description:
+      "Calcetines de caña alta, algodón grueso con canalé. Logotipo HOWL bordado en el lateral.",
+    details: [
+      "Algodón grueso con canalé, caña alta",
+      "Logotipo HOWL bordado en el lateral",
+      "Talla única, un par por pedido",
+    ],
+    category: "Accesorios",
+    sizes: ["Única"],
+    colors: [inkBlack, agedCream],
+    graphic: "landscape",
+    artworkImage: "/artwork/socks_pair.png",
+    frontLogoOnly: true,
+    skipModelPhotos: true,
+    logoStyle: { tracking: "wide", decoration: "none", accent: "—", accentColor: "#efe4c8" },
+    tourDates: [],
+    isNew: true,
+  },
 ];
 
 export function getAllProducts(): Product[] {
