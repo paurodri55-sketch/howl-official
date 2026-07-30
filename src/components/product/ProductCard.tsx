@@ -45,13 +45,13 @@ export function ProductCard({ product }: { product: Product }) {
         )}
       </div>
       <div className="mt-3 flex items-start justify-between gap-2">
-        <div>
-          <p className="font-condensed uppercase tracking-wide text-cream text-sm">
+        <div className="min-w-0">
+          <p className="font-condensed uppercase tracking-wide text-cream text-sm truncate">
             {product.name}
           </p>
-          <p className="text-cream-dim text-xs">{product.band}</p>
+          <p className="text-cream-dim text-xs truncate">{product.band}</p>
           {product.rating !== undefined && (
-            <div className="mt-1 flex items-center gap-1.5">
+            <div className="mt-1 flex items-center gap-1.5 flex-wrap">
               <StarRating rating={product.rating} reviewCount={product.reviewCount} />
               {(product.purchases ?? 0) > 500 && (
                 <span className="font-condensed text-[10px] text-rust-light">
@@ -61,7 +61,7 @@ export function ProductCard({ product }: { product: Product }) {
             </div>
           )}
         </div>
-        <div className="text-right whitespace-nowrap">
+        <div className="text-right whitespace-nowrap shrink-0">
           <p className="font-condensed text-rust-light text-sm">
             {formatPrice(product.price)}
           </p>

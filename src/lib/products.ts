@@ -463,11 +463,9 @@ export const products: Product[] = [
     colors: [oxideRust, inkBlack, washedDenim],
     graphic: "landscape",
     artworkImage: "/artwork/cowboy.png",
-    tagline: "HARD TIMES BUILD HARD MEN",
     logoStyle: { tracking: "wide", decoration: "none", accent: "★", accentColor: "#4a7ab8" },
     tourDates: [],
     isNew: true,
-    backHeroPhoto: "herotop-wild-west-cowboy",
   },
   {
     id: "p20",
