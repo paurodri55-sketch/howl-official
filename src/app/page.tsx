@@ -10,7 +10,7 @@ import {
   getNewProducts,
   getProductBySlug,
 } from "@/lib/products";
-import { getBackProductPhoto, getProductPhoto } from "@/lib/photos";
+import { getProductPhoto } from "@/lib/photos";
 import { Logo } from "@/components/ui/Logo";
 import Link from "next/link";
 import Image from "next/image";
@@ -59,10 +59,6 @@ const testimonials = [
 export default function Home() {
   const featured = getFeaturedProducts();
   const newArrivals = getNewProducts();
-  const heroProduct = getProductBySlug("answer-the-call-wolf");
-  const heroPhoto = heroProduct
-    ? getBackProductPhoto(heroProduct, heroProduct.colors[0])
-    : null;
 
   return (
     <div>
@@ -75,64 +71,24 @@ export default function Home() {
               "radial-gradient(ellipse at 50% 0%, rgba(181,80,46,0.25), transparent 55%)",
           }}
         />
-        <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-16 sm:px-6 sm:pt-20 sm:pb-24">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-            <div className="text-center lg:text-left">
-              <Logo className="mx-auto lg:mx-0 mb-4 h-20 w-auto sm:h-24" />
-              <p className="font-condensed uppercase tracking-[0.4em] text-xs text-rust-light mb-4">
-                Diseños propios · Edición limitada
-              </p>
-              <h1 className="font-display uppercase leading-[0.9] text-cream text-5xl sm:text-6xl md:text-7xl">
-                Ropa con
-                <br />sello propio
-              </h1>
-              <p className="mt-6 max-w-xl mx-auto lg:mx-0 text-cream-dim text-base sm:text-lg">
-                Camisetas y sudaderas de diseño propio. Algodón pesado, estampados
-                trabajados a mano y tiradas que no vuelven.
-              </p>
-              <div className="mt-8 flex justify-center lg:justify-start gap-4">
-                <LinkButton href="/catalogo">Ver catálogo</LinkButton>
-                {heroProduct && (
-                  <LinkButton href={`/producto/${heroProduct.slug}`} variant="outline">
-                    La pieza insignia
-                  </LinkButton>
-                )}
-              </div>
-            </div>
-
-            {heroProduct && heroPhoto && (
-              <Reveal delay={100}>
-                <Link
-                  href={`/producto/${heroProduct.slug}`}
-                  className="group relative block overflow-hidden border border-ink-line bg-ink-soft"
-                >
-                  <div className="relative aspect-[4/5] w-full">
-                    <Image
-                      src={heroPhoto}
-                      alt={heroProduct.name}
-                      fill
-                      priority
-                      sizes="(min-width: 1024px) 45vw, 100vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/5 to-transparent opacity-90" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 flex items-center justify-between">
-                    <div>
-                      <p className="font-condensed uppercase tracking-widest text-xs text-rust-light mb-1">
-                        La pieza insignia · {heroProduct.reviewCount ?? 0}+ reseñas
-                      </p>
-                      <p className="font-display uppercase text-cream text-2xl">
-                        {heroProduct.name}
-                      </p>
-                    </div>
-                    <span className="font-condensed text-cream-dim text-sm transition-transform duration-300 group-hover:translate-x-1">
-                      Ver →
-                    </span>
-                  </div>
-                </Link>
-              </Reveal>
-            )}
+        <div className="relative mx-auto max-w-6xl px-4 pt-20 pb-16 sm:px-6 sm:pt-28 sm:pb-24 text-center">
+          <Logo className="mx-auto mb-4 h-24 w-auto sm:h-32" />
+          <p className="font-condensed uppercase tracking-[0.4em] text-xs text-rust-light mb-4">
+            Diseños propios · Edición limitada
+          </p>
+          <h1 className="font-display uppercase leading-[0.9] text-cream text-5xl sm:text-7xl md:text-8xl">
+            Ropa con
+            <br />sello propio
+          </h1>
+          <p className="mt-6 max-w-xl mx-auto text-cream-dim text-base sm:text-lg">
+            Camisetas y sudaderas de diseño propio. Algodón pesado, estampados
+            trabajados a mano y tiradas que no vuelven.
+          </p>
+          <div className="mt-8 flex justify-center gap-4">
+            <LinkButton href="/catalogo">Ver catálogo</LinkButton>
+            <LinkButton href="#destacados" variant="outline">
+              Destacados
+            </LinkButton>
           </div>
         </div>
 
