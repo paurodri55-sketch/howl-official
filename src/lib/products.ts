@@ -99,7 +99,10 @@ export const products: Product[] = [
     colors: [inkBlack, agedCream],
     graphic: "moon",
     artworkImage: "/artwork/moon.png",
-    tagline: "SINNERS AFTER DARK",
+    frontLogoOnly: true,
+    backHeroPhoto: "moon-back-black",
+    skipModelPhotos: true,
+    tagline: "STILL AWAKE. STILL NORMAL.",
     logoStyle: { tracking: "normal", decoration: "bar-over", accent: "✶", accentColor: "#7ec8e3" },
     tourDates: [
       { city: "Providence, RI", date: "01 Nov" },
