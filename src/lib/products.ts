@@ -1344,6 +1344,37 @@ export const products: Product[] = [
     tourDates: [],
     isNew: true,
   },
+  {
+    id: "p57",
+    slug: "answer-the-call-hoodie",
+    name: "Answer The Call Hoodie",
+    band: "HOWL",
+    tourYear: "N.07",
+    editionLabel: "Colección",
+    price: 57.9,
+    compareAtPrice: 69.9,
+    rating: 4.8,
+    reviewCount: 2,
+    description:
+      "Sudadera con capucha, algodón grueso de alto gramaje. El lobo y la luna de nuestra pieza insignia, ahora en formato sudadera.",
+    details: [
+      "Algodón/poliéster 340 g/m², interior perchado",
+      "Capucha forrada, bolsillo canguro",
+      "Corte oversize unisex",
+      "Wolf + luna serigrafiado al pecho",
+    ],
+    category: "Sudaderas",
+    sizes: tourTeeSizes,
+    colors: [inkBlack, agedCream],
+    graphic: "landscape",
+    artworkImage: "/artwork/hoodie_wolf_chest.png",
+    backHeroPhoto: "hoodie-back-black",
+    frontLogoOnly: true,
+    skipModelPhotos: true,
+    logoStyle: { tracking: "wide", decoration: "none", accent: "☾", accentColor: "#9aa0a6" },
+    tourDates: [],
+    isNew: true,
+  },
 ];
 
 export function getAllProducts(): Product[] {
