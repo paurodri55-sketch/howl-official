@@ -39,6 +39,7 @@ export const products: Product[] = [
       "Camiseta de la colección Horizonte. Una serpiente enroscada para quien prefiere el pantano a la ciudad.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, oxideRust, agedCream],
     graphic: "serpent",
@@ -65,6 +66,7 @@ export const products: Product[] = [
       "Diseño inspirado en la portada de 'Static' de Coyote Wire. Rayo estampado a mano, colorido apagado por el sol.",
     details: standardDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, washedDenim, agedCream],
     graphic: "bolt",
@@ -128,6 +130,7 @@ export const products: Product[] = [
       "Alas oxidadas y letras resquebrajadas para la gira 'Southbound' de Iron Magnolia. Un clásico de mercadillo de discos.",
     details: standardDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, agedCream],
     graphic: "wings",
@@ -193,6 +196,7 @@ export const products: Product[] = [
       "Camiseta de la gira 'Scorched Earth' de Rattlesnake Kings. Escorpión al acecho estampado en tinta única, para las noches más calurosas del desierto.",
     details: standardDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [oxideRust, inkBlack, agedCream],
     graphic: "scorpion",
@@ -225,6 +229,7 @@ export const products: Product[] = [
       "Camiseta de la colección Horizonte. Un cielo real, colinas verdes y una frase que dice todo lo que hace falta.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [agedCream, washedDenim, inkBlack],
     graphic: "landscape",
@@ -250,6 +255,7 @@ export const products: Product[] = [
       "Camiseta de la colección Horizonte. Una casita de campo inglesa, jardín florido y ganas de quedarse en casa.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [agedCream, oxideRust, inkBlack],
     graphic: "landscape",
@@ -301,6 +307,7 @@ export const products: Product[] = [
       "Camiseta de la colección Horizonte. Palmeras, atardecer y el recordatorio de que no pasa nada por ir más despacio.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [agedCream, washedDenim, inkBlack],
     graphic: "landscape",
@@ -326,6 +333,7 @@ export const products: Product[] = [
       "Camiseta de la colección Horizonte. Rascacielos, reflejos en el agua y esa energía que solo tiene la ciudad de noche.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, washedDenim, oxideRust],
     graphic: "landscape",
@@ -351,6 +359,7 @@ export const products: Product[] = [
       "Camiseta de la colección Horizonte. Una furgoneta, una carretera del desierto y ninguna prisa por llegar.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, washedDenim],
     graphic: "landscape",
@@ -506,6 +515,7 @@ export const products: Product[] = [
       "Camiseta de la colección Horizonte. Un camello ornamentado frente a la puesta de sol del desierto.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [agedCream, inkBlack],
     graphic: "landscape",
@@ -558,6 +568,7 @@ export const products: Product[] = [
       "Camiseta de la colección Horizonte. Una llama, un icono, y la calma de saber que todo va bien.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, washedDenim, oxideRust],
     graphic: "landscape",
@@ -639,6 +650,7 @@ export const products: Product[] = [
       "Camiseta minimalista de la colección Horizonte. Un halcón en picado, línea fina, una tinta.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, agedCream, washedDenim],
     graphic: "wings",
@@ -662,6 +674,7 @@ export const products: Product[] = [
       "Camiseta minimalista de la colección Horizonte. Una polilla nocturna descendiendo hacia la llama.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, agedCream, oxideRust],
     graphic: "moon",
@@ -685,6 +698,7 @@ export const products: Product[] = [
       "Camiseta minimalista de la colección Horizonte. Una brújula vieja, mellada, aguja torcida.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, agedCream, washedDenim],
     graphic: "star",
@@ -708,6 +722,7 @@ export const products: Product[] = [
       "Camiseta minimalista de la colección Horizonte. Un ancla y una cuerda deshilachada — desanclarse.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, washedDenim, agedCream],
     graphic: "cross",
@@ -731,6 +746,7 @@ export const products: Product[] = [
       "Camiseta minimalista de la colección Horizonte. Casco motero vintage con gafas de aviador.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, oxideRust, agedCream],
     graphic: "skull",
@@ -754,6 +770,7 @@ export const products: Product[] = [
       "Camiseta minimalista de la colección Horizonte. Nudo marinero en figura de ocho — vínculo, lealtad.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, agedCream, washedDenim],
     graphic: "cross",
@@ -778,6 +795,7 @@ export const products: Product[] = [
       "Camiseta de la colección Horizonte. Lobo aullando sobre roca, grabado vintage, tipografía stencil.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [agedCream, washedDenim],
     graphic: "moon",
@@ -801,6 +819,7 @@ export const products: Product[] = [
       "Camiseta de la colección Horizonte. Tipografía brutalista, collage punk/fanzine.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [agedCream, oxideRust],
     graphic: "bolt",
@@ -825,6 +844,7 @@ export const products: Product[] = [
       "Camiseta de la colección Horizonte. Muscle car de los 70 al atardecer, script retro.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, agedCream, oxideRust],
     graphic: "landscape",
@@ -849,6 +869,7 @@ export const products: Product[] = [
       "Camiseta de la colección Horizonte. Cráneo de lobo en plano técnico, estilo patente antigua.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, washedDenim, agedCream],
     graphic: "landscape",
@@ -899,6 +920,7 @@ export const products: Product[] = [
       "Camiseta amarilla de la colección Horizonte. Cerezas vintage y wordmark universitario en el pecho.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [sunYellow],
     graphic: "landscape",
@@ -949,6 +971,7 @@ export const products: Product[] = [
       "Camiseta de la colección Horizonte. Yin-yang pequeño al pecho, grande y con caligrafía china a la espalda.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [washedDenim, inkBlack],
     graphic: "landscape",
@@ -1130,6 +1153,7 @@ export const products: Product[] = [
       "Camiseta de la colección Horizonte. Logo pequeño de rueda alada al pecho, motorista en la carretera grabado a la espalda.",
     details: lifestyleDetails,
     category: "Camisetas",
+    visible: false,
     sizes: tourTeeSizes,
     colors: [inkBlack, agedCream],
     graphic: "landscape",
@@ -1397,8 +1421,13 @@ const FEATURED_ORDER = [
   "ufo-obsession",
 ];
 
+/** Productos navegables en catálogo/inicio (excluye los ocultos por stock reducido temporal). */
+export function getVisibleProducts(): Product[] {
+  return products.filter((p) => p.visible !== false);
+}
+
 export function getNewProducts(limit = 8): Product[] {
-  return products
+  return getVisibleProducts()
     .filter((p) => p.isNew)
     .slice()
     .reverse()
@@ -1407,7 +1436,7 @@ export function getNewProducts(limit = 8): Product[] {
 
 export function getFeaturedProducts(): Product[] {
   return FEATURED_ORDER.map((slug) => products.find((p) => p.slug === slug)).filter(
-    (p): p is Product => Boolean(p)
+    (p): p is Product => Boolean(p && p.visible !== false)
   );
 }
 
@@ -1416,7 +1445,7 @@ export function getProductBySlug(slug: string): Product | undefined {
 }
 
 export function getRelatedProducts(product: Product, limit = 3): Product[] {
-  return products
+  return getVisibleProducts()
     .filter((p) => p.id !== product.id && p.category === product.category)
     .slice(0, limit);
 }

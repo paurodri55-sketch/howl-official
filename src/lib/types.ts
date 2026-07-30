@@ -51,6 +51,8 @@ export interface Product {
   tourDates: TourDate[];
   featured?: boolean;
   isNew?: boolean;
+  /** Si es false, el producto no aparece en catálogo/inicio pero sigue accesible por enlace directo (stock reducido temporal). Por defecto true. */
+  visible?: boolean;
   /** Ilustración real (PNG, fondo transparente) que sustituye al icono SVG cuando está presente. */
   artworkImage?: string;
   /** Ilustración distinta para la vista trasera (si no se define, se reutiliza artworkImage). */

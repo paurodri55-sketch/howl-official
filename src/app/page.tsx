@@ -20,7 +20,7 @@ const lookbook = [
   { slug: "wild-west-cowboy", photo: "/photos/models/cowboy-front-black.png" },
   { slug: "ufo-obsession", photo: "/photos/models/ufo_chest-front-black.png" },
   { slug: "hollow-saints-midnight-mass", photo: "/photos/models/moon-front-black.png" },
-  { slug: "tradition-innovation-crane", photo: "/photos/models/japan_crane-front-black.png" },
+  { slug: "chase-the-horizon-mountains", photo: "/photos/models/mountains-front-black.png" },
 ];
 
 // Nombres del marquee derivados de los productos reales, para que nunca

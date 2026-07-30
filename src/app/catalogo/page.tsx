@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CatalogGrid } from "@/components/product/CatalogGrid";
-import { getAllProducts, getCategories } from "@/lib/products";
+import { getCategories, getVisibleProducts } from "@/lib/products";
 import type { ProductCategory } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default async function CatalogoPage({
   searchParams: Promise<{ cat?: string }>;
 }) {
   const { cat } = await searchParams;
-  const products = getAllProducts();
+  const products = getVisibleProducts();
   const categories = getCategories();
 
   return (
