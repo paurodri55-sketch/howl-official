@@ -1157,7 +1157,7 @@ export const products: Product[] = [
     rating: 4.9,
     reviewCount: 3,
     description:
-      "Camiseta de la colección Horizonte. Logo pequeño de púa alada al pecho, escena de concierto underground grabada a la espalda.",
+      "Camiseta de la colección Horizonte. Logo pequeño de púa alada al pecho, guitarra Les Paul grabada a la espalda.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
