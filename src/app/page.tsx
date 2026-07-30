@@ -16,7 +16,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const lookbook = [
-  { slug: "answer-the-call-wolf", photo: "/photos/models/wolfmoon-front-black.png" },
   { slug: "swamp-crocodile", photo: "/photos/models/croc_lake-back.png" },
   { slug: "wild-west-cowboy", photo: "/photos/models/cowboy-front-black.png" },
   { slug: "ufo-obsession", photo: "/photos/models/ufo_chest-front-black.png" },
