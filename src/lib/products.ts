@@ -164,7 +164,8 @@ export const products: Product[] = [
     colors: [inkBlack, agedCream],
     graphic: "flame",
     artworkImage: "/artwork/flame.png",
-    tagline: "BORN OF THE FIRE\nHOWLIN FOR YA",
+    backHeroPhoto: "hoodie-back-black",
+    frontLogoOnly: true,
     logoStyle: { tracking: "normal", skew: -4, decoration: "bar-under", accent: "‡", accentColor: "#e8452c" },
     tourDates: [
       { city: "Des Moines, IA", date: "02 Ago" },
