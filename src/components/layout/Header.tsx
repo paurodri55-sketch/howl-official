@@ -21,7 +21,7 @@ export function Header() {
           href="/"
           className="flex items-center gap-2 font-display text-2xl sm:text-3xl tracking-wide text-cream"
         >
-          <Logo className="h-7 w-auto sm:h-8" />
+          <Logo className="h-10 w-auto sm:h-12" />
           HOWL
         </Link>
 

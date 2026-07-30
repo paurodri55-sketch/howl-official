@@ -72,7 +72,7 @@ export default function Home() {
           }}
         />
         <div className="relative mx-auto max-w-6xl px-4 pt-20 pb-16 sm:px-6 sm:pt-28 sm:pb-24 text-center">
-          <Logo className="mx-auto mb-4 h-16 w-auto sm:h-20" />
+          <Logo className="mx-auto mb-4 h-24 w-auto sm:h-32" />
           <p className="font-condensed uppercase tracking-[0.4em] text-xs text-rust-light mb-4">
             Diseños propios · Edición limitada
           </p>
