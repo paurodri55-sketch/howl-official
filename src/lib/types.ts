@@ -18,7 +18,7 @@ export type GraphicIcon =
   | "scorpion"
   | "landscape";
 
-export type ProductCategory = "Camisetas" | "Sudaderas" | "Accesorios";
+export type ProductCategory = "Camisetas" | "Sudaderas" | "Accesorios" | "Stickers";
 
 export interface TourDate {
   city: string;

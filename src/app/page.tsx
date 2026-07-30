@@ -34,6 +34,7 @@ const categoryTiles = [
   { category: "Camisetas" as const, slug: "rattlesnake-kings-scorched-earth" },
   { category: "Sudaderas" as const, slug: "midnight-combine-harvest-of-noise" },
   { category: "Accesorios" as const, slug: "rustbelt-choir-patch" },
+  { category: "Stickers" as const, slug: "sticker-wolf-badge" },
 ];
 
 const testimonials = [
@@ -114,7 +115,7 @@ export default function Home() {
             Compra por categoría
           </h2>
         </Reveal>
-        <div className="grid gap-6 sm:grid-cols-3">
+        <div className="grid gap-6 grid-cols-2 sm:grid-cols-4">
           {categoryTiles.map(({ category, slug }, i) => {
             const product = getProductBySlug(slug);
             if (!product) return null;

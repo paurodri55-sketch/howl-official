@@ -121,6 +121,13 @@ export default function CarritoPage() {
           <LinkButton href="/checkout" className="w-full">
             Finalizar compra
           </LinkButton>
+          <p className="mt-4 text-xs text-cream-dim text-center">
+            🎁 Sticker HOWL de regalo en cada pedido.{" "}
+            <Link href="/catalogo?cat=Stickers" className="text-rust-light hover:underline">
+              Descubre la colección de stickers
+            </Link>
+            .
+          </p>
         </div>
       </div>
     </div>
