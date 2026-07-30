@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import type { Product } from "@/lib/types";
 import { useCart } from "@/components/cart/CartContext";
@@ -51,6 +51,27 @@ export function ProductViewer({ product }: { product: Product }) {
   ] as View[];
   const activeView = views.includes(view) ? view : views[0];
 
+  const touchStartX = useRef<number | null>(null);
+
+  function handleTouchStart(e: React.TouchEvent) {
+    touchStartX.current = e.touches[0].clientX;
+  }
+
+  function handleTouchEnd(e: React.TouchEvent) {
+    if (touchStartX.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    const SWIPE_THRESHOLD = 50;
+    if (Math.abs(deltaX) < SWIPE_THRESHOLD) return;
+    const currentIndex = views.indexOf(activeView);
+    if (currentIndex === -1) return;
+    const nextIndex =
+      deltaX < 0
+        ? (currentIndex + 1) % views.length
+        : (currentIndex - 1 + views.length) % views.length;
+    setView(views[nextIndex]);
+  }
+
   function handleAddToCart() {
     addItem(product, size, color, quantity);
     setJustAdded(true);
@@ -60,6 +81,7 @@ export function ProductViewer({ product }: { product: Product }) {
   return (
     <div className="grid gap-10 md:grid-cols-2">
       <div>
+        <div onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         {activeView === "diseno" ? (
           <PrintArt product={product} className="aspect-[4/5] w-full" />
         ) : activeView === "foto" && currentPhoto ? (
@@ -113,6 +135,7 @@ export function ProductViewer({ product }: { product: Product }) {
             className="aspect-[4/5] w-full"
           />
         )}
+        </div>
         <div className="relative">
           <div
             className="flex gap-2 overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap"
