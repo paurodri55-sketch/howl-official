@@ -1254,6 +1254,37 @@ export const products: Product[] = [
     tourDates: [],
     isNew: true,
   },
+  {
+    id: "p54",
+    slug: "crewneck-basics",
+    name: "Crewneck Básica",
+    band: "HOWL",
+    tourYear: "",
+    editionLabel: "Colección",
+    price: 49.9,
+    compareAtPrice: 59.9,
+    rating: 4.7,
+    reviewCount: 2,
+    description:
+      "Sudadera crewneck de algodón grueso de alto gramaje, sin capucha, corte vintage. Wordmark HOWL pequeño al pecho — la básica de armario que no falla.",
+    details: [
+      "Algodón grueso 320 g/m², cuello redondo acanalado",
+      "Puños y bajo acanalados, corte vintage oversize",
+      "Wordmark HOWL serigrafiado al pecho",
+      "Tirada limitada — no se reimprime",
+    ],
+    category: "Sudaderas",
+    sizes: tourTeeSizes,
+    colors: [inkBlack, agedCream],
+    graphic: "landscape",
+    artworkImage: "/artwork/crewneck_chest.png",
+    backHeroPhoto: "crewneck_back-black",
+    frontLogoOnly: true,
+    skipModelPhotos: true,
+    logoStyle: { tracking: "wide", decoration: "none", accent: "—", accentColor: "#efe4c8" },
+    tourDates: [],
+    isNew: true,
+  },
 ];
 
 export function getAllProducts(): Product[] {
