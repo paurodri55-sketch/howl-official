@@ -15,14 +15,6 @@ import { Logo } from "@/components/ui/Logo";
 import Link from "next/link";
 import Image from "next/image";
 
-const lookbook = [
-  { slug: "swamp-crocodile", photo: "/photos/models/croc_lake-back.png" },
-  { slug: "wild-west-cowboy", photo: "/photos/models/cowboy-front-black.png" },
-  { slug: "ufo-obsession", photo: "/photos/models/ufo_chest-front-black.png" },
-  { slug: "hollow-saints-midnight-mass", photo: "/photos/models/moon-front-black.png" },
-  { slug: "chase-the-horizon-mountains", photo: "/photos/models/mountains-front-black.png" },
-];
-
 // Nombres del marquee derivados de los productos reales, para que nunca
 // quede desactualizado cuando se añaden o retiran diseños.
 const marqueeBands = Array.from(
@@ -182,42 +174,6 @@ export default function Home() {
               <ProductCard product={product} />
             </Reveal>
           ))}
-        </div>
-      </section>
-
-      {/* Lookbook */}
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <Reveal>
-          <h2 className="font-display uppercase text-cream text-3xl sm:text-4xl mb-2">
-            Así se ven puestas
-          </h2>
-          <p className="text-cream-dim text-sm mb-8">
-            Antes de comprar, mira cómo sientan de verdad.
-          </p>
-        </Reveal>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6">
-          {lookbook.map(({ slug, photo }, i) => {
-            const product = getProductBySlug(slug);
-            if (!product) return null;
-            return (
-              <Reveal key={slug} delay={(i % 3) * 100}>
-                <Link href={`/producto/${slug}`} className="group block">
-                  <div className="relative aspect-[4/5] w-full overflow-hidden border border-ink-line bg-ink-soft">
-                    <Image
-                      src={photo}
-                      alt={product.name}
-                      fill
-                      sizes="(min-width: 768px) 33vw, 100vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <p className="mt-2 font-condensed uppercase tracking-wide text-cream text-sm">
-                    {product.name}
-                  </p>
-                </Link>
-              </Reveal>
-            );
-          })}
         </div>
       </section>
 
