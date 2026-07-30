@@ -5,6 +5,7 @@ const COLOR_SLUGS: Record<string, string> = {
   "#e7d9b8": "cream",
   "#a8452a": "rust",
   "#3c4a5c": "denim",
+  "#e0b23c": "yellow",
 };
 
 /** Foto real compuesta (prenda fotografiada + estampado), si existe para ese color. */

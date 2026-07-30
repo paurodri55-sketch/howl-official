@@ -4,6 +4,7 @@ const inkBlack: ProductColor = { name: "Negro desteñido", hex: "#1c1712" };
 const agedCream: ProductColor = { name: "Crema envejecida", hex: "#e7d9b8" };
 const oxideRust: ProductColor = { name: "Óxido", hex: "#a8452a" };
 const washedDenim: ProductColor = { name: "Azul lavado", hex: "#3c4a5c" };
+const sunYellow: ProductColor = { name: "Amarillo cereza", hex: "#e0b23c" };
 
 const tourTeeSizes: Product["sizes"] = ["S", "M", "L", "XL", "XXL"];
 
@@ -163,7 +164,7 @@ export const products: Product[] = [
     colors: [inkBlack, agedCream],
     graphic: "flame",
     artworkImage: "/artwork/flame.png",
-    tagline: "BORN OF THE FIRE",
+    tagline: "BORN OF THE FIRE\nHOWLIN FOR YA",
     logoStyle: { tracking: "normal", skew: -4, decoration: "bar-under", accent: "‡", accentColor: "#e8452c" },
     tourDates: [
       { city: "Des Moines, IA", date: "02 Ago" },
@@ -570,6 +571,7 @@ export const products: Product[] = [
     logoStyle: { tracking: "wide", decoration: "none", accent: "—", accentColor: "#efe4c8" },
     tourDates: [],
     isNew: true,
+    backHeroPhoto: "howl-project-back",
   },
   {
     id: "p24",
@@ -910,6 +912,29 @@ export const products: Product[] = [
     backTextBaked: true,
     skipModelPhotos: true,
     logoStyle: { tracking: "wide", decoration: "none", accent: "★", accentColor: "#efe4c8" },
+    tourDates: [],
+    isNew: true,
+  },
+  {
+    id: "p39",
+    slug: "cherry-howl-supply-co",
+    name: "Cherry Supply Co.",
+    band: "HOWL SUPPLY CO.",
+    tourYear: "MMXXIV",
+    price: 24.9,
+    compareAtPrice: 31.9,
+    rating: 4.8,
+    reviewCount: 6,
+    description:
+      "Camiseta amarilla de la colección Horizonte. Cerezas vintage y wordmark universitario en el pecho.",
+    details: lifestyleDetails,
+    category: "Camisetas",
+    sizes: tourTeeSizes,
+    colors: [sunYellow],
+    graphic: "landscape",
+    artworkImage: "/artwork/cherry_howl.png",
+    skipModelPhotos: false,
+    logoStyle: { tracking: "wide", decoration: "none", accent: "🍒", accentColor: "#a8231c" },
     tourDates: [],
     isNew: true,
   },

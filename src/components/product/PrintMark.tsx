@@ -51,7 +51,7 @@ export function PrintMark({
 
       {product.tagline && (
         <p
-          className="uppercase font-bold leading-tight max-w-[85%]"
+          className="uppercase font-bold leading-tight max-w-[85%] whitespace-pre-line"
           style={{ fontSize: cfg.tagline, color: accentColor, letterSpacing: "0.08em" }}
         >
           {product.tagline}
