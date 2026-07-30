@@ -1375,6 +1375,35 @@ export const products: Product[] = [
     tourDates: [],
     isNew: true,
   },
+  {
+    id: "p58",
+    slug: "tote-bag-howl",
+    name: "Tote Bag",
+    band: "HOWL",
+    tourYear: "",
+    editionLabel: "Colección",
+    price: 23.0,
+    compareAtPrice: 28.0,
+    rating: 4.8,
+    reviewCount: 2,
+    description:
+      "Bolsa de algodón grueso resistente, wordmark HOWL minimalista al frente. Para el día a día — y para llegar al envío gratis.",
+    details: [
+      "Algodón grueso 100%, asas planas reforzadas",
+      "Wordmark HOWL serigrafiado al frente",
+      "Talla única",
+    ],
+    category: "Accesorios",
+    sizes: ["Única"],
+    colors: [inkBlack, agedCream],
+    graphic: "landscape",
+    artworkImage: "/artwork/tote_bag.png",
+    frontLogoOnly: true,
+    skipModelPhotos: true,
+    logoStyle: { tracking: "wide", decoration: "none", accent: "—", accentColor: "#efe4c8" },
+    tourDates: [],
+    isNew: true,
+  },
 ];
 
 export function getAllProducts(): Product[] {
