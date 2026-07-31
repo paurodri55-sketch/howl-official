@@ -153,7 +153,7 @@ export const products: Product[] = [
     reviewCount: 13,
     purchases: 150,
     description:
-      "Sudadera pesada de la gira 'Harvest Of Noise'. Interior perchado, estampado envejecido a juego con la camiseta original.",
+      "Sudadera con capucha de algodón pesado. Llama pequeña al pecho con el HOWL escondido dentro — interior perchado, sin nada a la espalda.",
     details: [
       "Algodón/poliéster 320 g/m², interior perchado",
       "Serigrafía envejecida con lavado ácido",
