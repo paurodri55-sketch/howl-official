@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NewsletterForm } from "@/components/newsletter/NewsletterForm";
 
 export function Footer() {
   return (
@@ -11,6 +12,10 @@ export function Footer() {
               Ropa de diseño propio. Algodón pesado, estampados trabajados a
               mano, tiradas limitadas.
             </p>
+            <p className="mt-5 font-condensed uppercase tracking-widest text-xs text-cream-dim/70 mb-2">
+              Acceso anticipado a nuevas tiradas
+            </p>
+            <NewsletterForm variant="footer" source="footer" />
           </div>
 
           <div>

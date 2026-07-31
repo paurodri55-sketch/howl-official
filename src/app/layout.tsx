@@ -4,6 +4,7 @@ import "./globals.css";
 import { CartProvider } from "@/components/cart/CartContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { NewsletterModal } from "@/components/newsletter/NewsletterModal";
 
 const anton = Anton({
   variable: "--font-anton",
@@ -50,6 +51,7 @@ export default function RootLayout({
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+          <NewsletterModal />
         </CartProvider>
       </body>
     </html>

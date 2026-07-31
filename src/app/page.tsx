@@ -12,6 +12,7 @@ import {
 } from "@/lib/products";
 import { getProductPhoto } from "@/lib/photos";
 import { Logo } from "@/components/ui/Logo";
+import { NewsletterSection } from "@/components/newsletter/NewsletterSection";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -224,6 +225,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <NewsletterSection />
 
       {/* Testimonios */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
