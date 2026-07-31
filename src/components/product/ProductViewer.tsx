@@ -196,27 +196,29 @@ export function ProductViewer({ product }: { product: Product }) {
             </div>
           </div>
 
-          <div>
-            <p className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-2">
-              Talla — {size}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {product.sizes.map((s) => (
-                <button
-                  key={s}
-                  type="button"
-                  onClick={() => setSize(s)}
-                  className={`font-condensed uppercase tracking-wide text-sm px-3.5 py-2 border transition-colors ${
-                    s === size
-                      ? "border-rust bg-rust text-cream"
-                      : "border-cream/30 text-cream-dim hover:border-cream"
-                  }`}
-                >
-                  {s}
-                </button>
-              ))}
+          {product.sizes.length > 1 && (
+            <div>
+              <p className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-2">
+                Talla — {size}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {product.sizes.map((s) => (
+                  <button
+                    key={s}
+                    type="button"
+                    onClick={() => setSize(s)}
+                    className={`font-condensed uppercase tracking-wide text-sm px-3.5 py-2 border transition-colors ${
+                      s === size
+                        ? "border-rust bg-rust text-cream"
+                        : "border-cream/30 text-cream-dim hover:border-cream"
+                    }`}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           <div>
             <p className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-2">
@@ -243,9 +245,11 @@ export function ProductViewer({ product }: { product: Product }) {
             </div>
           </div>
 
-          <Button onClick={handleAddToCart} className="w-full sm:w-auto">
-            {justAdded ? "Añadido ✓" : "Añadir al carrito"}
-          </Button>
+          <div className="hidden sm:block">
+            <Button onClick={handleAddToCart}>
+              {justAdded ? "Añadido ✓" : "Añadir al carrito"}
+            </Button>
+          </div>
         </div>
 
         <ul className="mt-10 space-y-1.5 border-t border-ink-line pt-6 text-sm text-cream-dim pb-20 sm:pb-0">
