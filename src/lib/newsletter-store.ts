@@ -3,7 +3,7 @@
  * Independiente del ESP (Mailchimp, ver lib/mailchimp.ts) — esto es la fuente
  * de verdad de qué emails se han apuntado, exista o no Mailchimp conectado.
  */
-import { kv } from "@vercel/kv";
+import { Redis } from "@upstash/redis";
 
 const SET_KEY = "newsletter:emails";
 const LIST_KEY = "newsletter:signups";
@@ -11,6 +11,13 @@ const LIST_KEY = "newsletter:signups";
 const isKvConfigured = Boolean(
   process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN
 );
+
+const redis = isKvConfigured
+  ? new Redis({
+      url: process.env.KV_REST_API_URL!,
+      token: process.env.KV_REST_API_TOKEN!,
+    })
+  : null;
 
 export interface SaveSignupResult {
   configured: boolean;
@@ -21,16 +28,16 @@ export async function saveSignup(
   email: string,
   source: string
 ): Promise<SaveSignupResult> {
-  if (!isKvConfigured) {
+  if (!redis) {
     return { configured: false, isNew: true };
   }
 
   const normalized = email.trim().toLowerCase();
-  const added = await kv.sadd(SET_KEY, normalized);
+  const added = await redis.sadd(SET_KEY, normalized);
   const isNew = added === 1;
 
   if (isNew) {
-    await kv.lpush(
+    await redis.lpush(
       LIST_KEY,
       JSON.stringify({ email: normalized, source, date: new Date().toISOString() })
     );
@@ -40,6 +47,6 @@ export async function saveSignup(
 }
 
 export async function countSignups(): Promise<number> {
-  if (!isKvConfigured) return 0;
-  return kv.scard(SET_KEY);
+  if (!redis) return 0;
+  return redis.scard(SET_KEY);
 }
