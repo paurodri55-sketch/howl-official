@@ -1219,7 +1219,6 @@ export const products: Product[] = [
     graphic: "landscape",
     artworkImage: "/artwork/stampede_chest.png",
     backArtworkImage: "/artwork/stampede_back.png",
-    backHeroPhoto: "stampede_back-black",
     frontLogoOnly: true,
     backTextBaked: true,
     skipModelPhotos: true,
