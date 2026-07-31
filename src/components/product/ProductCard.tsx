@@ -7,6 +7,7 @@ import { TeeMockup } from "@/components/product/TeeMockup";
 import { Badge } from "@/components/ui/Badge";
 import { StarRating } from "@/components/ui/StarRating";
 import { getProductPhoto } from "@/lib/photos";
+import { SHOW_SOCIAL_PROOF } from "@/lib/config";
 
 export function ProductCard({ product }: { product: Product }) {
   const showcaseColor = pickShowcaseColor(product);
@@ -37,9 +38,9 @@ export function ProductCard({ product }: { product: Product }) {
             lift={isDarkGarment(showcaseColor.hex)}
           />
         )}
-        {(product.isNew || (product.purchases ?? 0) > 500) && (
+        {(product.isNew || (SHOW_SOCIAL_PROOF && (product.purchases ?? 0) > 500)) && (
           <div className="absolute top-3 left-3 flex flex-col gap-2">
-            {(product.purchases ?? 0) > 500 && <Badge>Más vendido</Badge>}
+            {SHOW_SOCIAL_PROOF && (product.purchases ?? 0) > 500 && <Badge>Más vendido</Badge>}
             {product.isNew && <Badge>Nuevo</Badge>}
           </div>
         )}
@@ -50,7 +51,7 @@ export function ProductCard({ product }: { product: Product }) {
             {product.name}
           </p>
           <p className="text-cream-dim text-xs truncate">{product.band}</p>
-          {product.rating !== undefined && (
+          {SHOW_SOCIAL_PROOF && product.rating !== undefined && (
             <div className="mt-1 flex items-center gap-1.5 flex-wrap">
               <StarRating rating={product.rating} reviewCount={product.reviewCount} />
               {(product.purchases ?? 0) > 500 && (

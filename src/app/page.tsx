@@ -13,6 +13,7 @@ import {
 import { getProductPhoto } from "@/lib/photos";
 import { Logo } from "@/components/ui/Logo";
 import { NewsletterSection } from "@/components/newsletter/NewsletterSection";
+import { SHOW_SOCIAL_PROOF } from "@/lib/config";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -229,30 +230,32 @@ export default function Home() {
       <NewsletterSection />
 
       {/* Testimonios */}
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <Reveal>
-          <h2 className="font-display uppercase text-cream text-3xl sm:text-4xl mb-8">
-            Lo que dice quien ya pidió
-          </h2>
-        </Reveal>
-        <div className="grid gap-6 sm:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Reveal
-              key={t.name}
-              delay={i * 100}
-              className="border border-ink-line bg-ink-soft p-6"
-            >
-              <StarRating rating={t.rating} className="mb-3" />
-              <p className="text-cream-dim text-sm leading-relaxed">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-              <p className="mt-4 font-condensed uppercase tracking-widest text-xs text-rust-light">
-                {t.name}
-              </p>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      {SHOW_SOCIAL_PROOF && (
+        <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+          <Reveal>
+            <h2 className="font-display uppercase text-cream text-3xl sm:text-4xl mb-8">
+              Lo que dice quien ya pidió
+            </h2>
+          </Reveal>
+          <div className="grid gap-6 sm:grid-cols-3">
+            {testimonials.map((t, i) => (
+              <Reveal
+                key={t.name}
+                delay={i * 100}
+                className="border border-ink-line bg-ink-soft p-6"
+              >
+                <StarRating rating={t.rating} className="mb-3" />
+                <p className="text-cream-dim text-sm leading-relaxed">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <p className="mt-4 font-condensed uppercase tracking-widest text-xs text-rust-light">
+                  {t.name}
+                </p>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* CTA final */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 text-center">

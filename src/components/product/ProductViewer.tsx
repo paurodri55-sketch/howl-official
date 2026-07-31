@@ -11,6 +11,7 @@ import { PrintArt } from "@/components/product/PrintArt";
 import { StarRating } from "@/components/ui/StarRating";
 import { formatPrice } from "@/lib/format";
 import { getBackProductPhoto, getProductPhoto } from "@/lib/photos";
+import { SHOW_SOCIAL_PROOF } from "@/lib/config";
 
 type View = "foto" | "front" | "back" | "diseno";
 
@@ -151,7 +152,7 @@ export function ProductViewer({ product }: { product: Product }) {
         <h1 className="font-display uppercase text-cream text-4xl sm:text-5xl mt-1">
           {product.name}
         </h1>
-        {product.rating !== undefined && (
+        {SHOW_SOCIAL_PROOF && product.rating !== undefined && (
           <div className="mt-2 flex items-center gap-3">
             <StarRating rating={product.rating} reviewCount={product.reviewCount} />
             {product.purchases !== undefined && (
