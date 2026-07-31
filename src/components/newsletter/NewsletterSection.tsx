@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { NewsletterForm } from "@/components/newsletter/NewsletterForm";
+import { getDaysUntilLaunch } from "@/lib/launch";
 
 export function NewsletterSection() {
+  const days = getDaysUntilLaunch();
   return (
     <section className="relative overflow-hidden border-y border-ink-line">
       <div className="absolute inset-0">
@@ -26,6 +28,9 @@ export function NewsletterSection() {
         <p className="mt-4 max-w-md mx-auto text-cream-dim text-sm sm:text-base">
           Cada tirada es única y no vuelve. Quien está dentro, sabe antes que
           nadie cuándo sale la siguiente.
+        </p>
+        <p className="mt-3 font-condensed uppercase tracking-widest text-xs text-rust-light">
+          Faltan {days} días — 21 de noviembre, el inicio de HOWL
         </p>
         <div className="mt-8 flex justify-center">
           <NewsletterForm variant="section" source="homepage-section" />

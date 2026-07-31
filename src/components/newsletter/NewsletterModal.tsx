@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { NewsletterForm } from "@/components/newsletter/NewsletterForm";
+import { getDaysUntilLaunch } from "@/lib/launch";
 
 const SEEN_KEY = "howl_newsletter_modal_seen";
 const TIME_TRIGGER_MS = 20_000;
@@ -85,6 +86,9 @@ export function NewsletterModal() {
         </h3>
         <p className="mt-3 text-cream-dim text-sm">
           Un aviso cuando sale la siguiente tirada. Nada más.
+        </p>
+        <p className="mt-2 font-condensed uppercase tracking-widest text-xs text-rust-light">
+          Faltan {getDaysUntilLaunch()} días — 21 de noviembre
         </p>
         <div className="mt-6 flex justify-center">
           <NewsletterForm variant="modal" source="exit-intent-modal" />
