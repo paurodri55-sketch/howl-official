@@ -48,7 +48,7 @@ export function NewsletterForm({
             : "font-condensed text-cream"
         }
       >
-        Estás dentro — serás de los primeros en enterarte.
+        Dentro. Sabrás antes que nadie cuándo sale la tirada — y cuándo se agota.
       </p>
     );
   }
