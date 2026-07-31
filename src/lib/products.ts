@@ -402,7 +402,7 @@ export const products: Product[] = [
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
-    colors: [agedCream, inkBlack, washedDenim],
+    colors: [agedCream],
     graphic: "landscape",
     artworkImage: "/artwork/croc_chest.png",
     backArtworkImage: "/artwork/croc_lake.png",

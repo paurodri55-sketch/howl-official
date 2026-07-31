@@ -3,6 +3,7 @@
 // Uso:
 //   node scripts/gemini-designer.mjs review <imagen.png> ["pregunta opcional"]
 //   node scripts/gemini-designer.mjs generate "<prompt>" <salida.png>
+//   node scripts/gemini-designer.mjs edit <imagen_entrada.png> "<instrucción>" <salida.png>
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -91,6 +92,27 @@ async function generate(prompt, outputPath) {
   console.log("Guardado en", outputPath);
 }
 
+async function edit(imagePath, instruction, outputPath) {
+  const imgBuffer = readFileSync(imagePath);
+  const b64 = imgBuffer.toString("base64");
+  const mimeType = imagePath.endsWith(".jpg") || imagePath.endsWith(".jpeg")
+    ? "image/jpeg"
+    : "image/png";
+  const data = await callGemini(IMAGE_MODEL, [
+    { text: `${DESIGNER_PERSONA}\n\nEdita esta imagen exacta según esta instrucción, sin cambiar nada más (mismo encuadre, mismo diseño, misma composición, solo el cambio pedido): ${instruction}` },
+    { inline_data: { mime_type: mimeType, data: b64 } },
+  ]);
+  const imgPart = data.candidates?.[0]?.content?.parts?.find((p) => p.inline_data || p.inlineData);
+  const inline = imgPart?.inline_data ?? imgPart?.inlineData;
+  if (!inline) {
+    console.error("No se recibió imagen editada. Respuesta completa:");
+    console.error(JSON.stringify(data, null, 2));
+    process.exit(1);
+  }
+  writeFileSync(outputPath, Buffer.from(inline.data, "base64"));
+  console.log("Guardado en", outputPath);
+}
+
 const [, , cmd, ...args] = process.argv;
 
 try {
@@ -102,6 +124,10 @@ try {
     const [prompt, outputPath] = args;
     if (!prompt || !outputPath) throw new Error('Uso: generate "<prompt>" <salida.png>');
     await generate(prompt, outputPath);
+  } else if (cmd === "edit") {
+    const [imagePath, instruction, outputPath] = args;
+    if (!imagePath || !instruction || !outputPath) throw new Error('Uso: edit <entrada.png> "<instrucción>" <salida.png>');
+    await edit(imagePath, instruction, outputPath);
   } else {
     console.error('Uso:\n  gemini-designer.mjs review <imagen.png> ["pregunta"]\n  gemini-designer.mjs generate "<prompt>" <salida.png>');
     process.exit(1);
