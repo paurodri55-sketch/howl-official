@@ -39,7 +39,7 @@ export default async function ProductPage({
   const related = getRelatedProducts(product);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:py-12 sm:px-6">
       <nav className="text-xs text-cream-dim mb-8 font-condensed uppercase tracking-widest">
         <Link href="/catalogo" className="hover:text-cream">
           Catálogo

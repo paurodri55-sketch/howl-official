@@ -26,10 +26,7 @@ export interface TourDate {
 }
 
 export interface LogoStyle {
-  tracking: "tight" | "normal" | "wide" | "wider";
   skew?: number;
-  decoration?: "bar-both" | "bar-under" | "bar-over" | "none";
-  accent: string;
   /** Color vivo de marca (barras + glifos de acento + resplandor del texto). */
   accentColor?: string;
 }
@@ -49,7 +46,6 @@ export interface Product {
   graphic: GraphicIcon;
   logoStyle: LogoStyle;
   tourDates: TourDate[];
-  featured?: boolean;
   isNew?: boolean;
   /** Si es false, el producto no aparece en catálogo/inicio pero sigue accesible por enlace directo (stock reducido temporal). Por defecto true. */
   visible?: boolean;
@@ -65,8 +61,6 @@ export interface Product {
   backBand?: string;
   /** Si es true, backArtworkImage ya incluye todo el texto grabado (foto real): no superponer band/tagline/año encima. */
   backTextBaked?: boolean;
-  /** Si es true, no mostrar pestañas de "Modelo" (aún no hay foto real de modelo para este producto). */
-  skipModelPhotos?: boolean;
   /**
    * Nombre base (sin extensión) de una foto real de la trasera en
    * /photos/, generada solo en negro. Se muestra siempre como
@@ -76,8 +70,6 @@ export interface Product {
   backHeroPhoto?: string;
   /** Nombre base (sin extensión) de una foto real en /photos/ que se usa siempre como "Foto", sea cual sea la categoría o el color (para accesorios como stickers). */
   photoOverride?: string;
-  /** Override de posición vertical del texto sobre la foto de modelo (por defecto "32%"). */
-  modelCaptionTop?: string;
   /** Frase/cita corta estilo bootleg tee, en mayúsculas, bajo el nombre de banda. */
   tagline?: string;
   /** Valoración media (0-5) mostrada como estrellas. */

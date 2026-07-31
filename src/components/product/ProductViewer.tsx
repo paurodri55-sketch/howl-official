@@ -73,7 +73,7 @@ export function ProductViewer({ product }: { product: Product }) {
   }
 
   return (
-    <div className="grid gap-10 md:grid-cols-2">
+    <div className="grid gap-6 md:gap-10 md:grid-cols-2">
       <div>
         <div onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         {activeView === "diseno" ? (
