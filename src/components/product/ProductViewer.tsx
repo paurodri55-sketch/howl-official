@@ -19,7 +19,7 @@ const viewLabels: Record<View, string> = {
   foto: "Foto",
   front: "Delantera",
   back: "Trasera",
-  diseno: "Diseño",
+  diseno: "Arte trasero",
 };
 
 // La foto de modelo se generó con la prenda en negro; se muestra siempre,
