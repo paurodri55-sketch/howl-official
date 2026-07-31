@@ -54,21 +54,33 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="#"
-                  className="hover:text-rust-light"
+                  href="https://www.instagram.com/howlofficial_/"
+                  className="flex items-center gap-2 hover:text-rust-light"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-5 w-5 fill-none stroke-current"
+                    strokeWidth={1.6}
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                  </svg>
                   Instagram
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="hover:text-rust-light"
+                  href="https://www.tiktok.com/@howlofficial"
+                  className="flex items-center gap-2 hover:text-rust-light"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
+                  <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current">
+                    <path d="M16.5 3c.3 1.9 1.5 3.3 3.5 3.6v2.6c-1.3 0-2.5-.4-3.5-1.1v6.6c0 3-2.4 5.3-5.3 5.3S5.9 17.6 5.9 14.6c0-2.9 2.3-5.2 5.1-5.3v2.7c-1.4.1-2.5 1.3-2.5 2.7 0 1.5 1.2 2.7 2.7 2.7s2.7-1.2 2.7-2.7V3h2.6z" />
+                  </svg>
                   TikTok
                 </a>
               </li>
