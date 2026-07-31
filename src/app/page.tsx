@@ -14,6 +14,7 @@ import { getProductPhoto } from "@/lib/photos";
 import { Logo } from "@/components/ui/Logo";
 import { NewsletterSection } from "@/components/newsletter/NewsletterSection";
 import { SHOW_SOCIAL_PROOF } from "@/lib/config";
+import { getDaysUntilLaunch } from "@/lib/launch";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -53,6 +54,7 @@ const testimonials = [
 export default function Home() {
   const featured = getFeaturedProducts();
   const newArrivals = getNewProducts();
+  const daysUntilLaunch = getDaysUntilLaunch();
 
   return (
     <div>
@@ -151,6 +153,34 @@ export default function Home() {
               </Reveal>
             );
           })}
+        </div>
+      </section>
+
+      {/* Cuenta atrás */}
+      <section className="border-y border-ink-line bg-ink">
+        <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6 text-center">
+          <Reveal>
+            <p className="font-condensed uppercase tracking-[0.4em] text-xs text-rust-light mb-4">
+              Próximamente
+            </p>
+            <h2 className="font-display uppercase text-cream text-3xl sm:text-4xl">
+              21 de noviembre
+            </h2>
+            <p className="mt-6 font-display text-cream text-8xl sm:text-9xl leading-none">
+              {daysUntilLaunch}
+            </p>
+            <p className="font-condensed uppercase tracking-widest text-sm text-cream-dim mt-1">
+              días
+            </p>
+            <p className="mt-6 text-cream-dim text-sm sm:text-base">
+              El primer drop de HOWL sale ese día. No antes.
+            </p>
+            <div className="mt-8">
+              <LinkButton href="#newsletter" variant="ghost">
+                Avísame cuando salga →
+              </LinkButton>
+            </div>
+          </Reveal>
         </div>
       </section>
 
