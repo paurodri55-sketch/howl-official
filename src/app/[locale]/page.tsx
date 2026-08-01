@@ -18,6 +18,7 @@ import { getDaysUntilLaunch } from "@/lib/launch";
 import Link from "next/link";
 import Image from "next/image";
 import { withLocale, type Locale } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/dictionaries";
 
 // Nombres del marquee derivados de los productos reales, para que nunca
 // quede desactualizado cuando se añaden o retiran diseños.
@@ -31,33 +32,13 @@ const categoryTiles = [
   { category: "Stickers" as const, slug: "sticker-wolf-badge" },
 ];
 
-const testimonials = [
-  {
-    name: "Marcos R.",
-    quote:
-      "La tela es densa de verdad, no como esas camisetas finas de otras tiendas. El estampado del escorpión parece serigrafiado a mano.",
-    rating: 5,
-  },
-  {
-    name: "Elena V.",
-    quote:
-      "Pedí la de Hollow Saints y llegó en 3 días. La luna gótica se ve brutal en persona, mejor que en las fotos.",
-    rating: 5,
-  },
-  {
-    name: "Diego T.",
-    quote:
-      "Tirada limitada de verdad — quise repetir color y ya no estaba. Al menos el envío fue rápido.",
-    rating: 4,
-  },
-];
-
 export default async function Home({
   params,
 }: {
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
+  const t = getDictionary(locale).home;
   const featured = getFeaturedProducts();
   const newArrivals = getNewProducts();
   const daysUntilLaunch = getDaysUntilLaunch();
@@ -76,20 +57,19 @@ export default async function Home({
         <div className="relative mx-auto max-w-6xl px-4 pt-20 pb-16 sm:px-6 sm:pt-28 sm:pb-24 text-center">
           <Logo className="mx-auto mb-4 h-24 w-auto sm:h-32" />
           <p className="font-condensed uppercase tracking-[0.4em] text-xs text-rust-light mb-4">
-            Diseños propios · Edición limitada
+            {t.heroEyebrow}
           </p>
           <h1 className="font-display uppercase leading-[0.9] text-cream text-5xl sm:text-7xl md:text-8xl">
-            Ropa con
-            <br />sello propio
+            {t.heroHeading1}
+            <br />{t.heroHeading2}
           </h1>
           <p className="mt-6 max-w-xl mx-auto text-cream-dim text-base sm:text-lg">
-            Camisetas y sudaderas de diseño propio. Algodón pesado, estampados
-            trabajados a mano y tiradas que no vuelven.
+            {t.heroBody}
           </p>
           <div className="mt-8 flex justify-center gap-4">
-            <LinkButton href={withLocale("/catalogo", locale)}>Ver catálogo</LinkButton>
+            <LinkButton href={withLocale("/catalogo", locale)}>{t.heroCtaCatalog}</LinkButton>
             <LinkButton href="#destacados" variant="outline">
-              Destacados
+              {t.heroCtaFeatured}
             </LinkButton>
           </div>
         </div>
@@ -112,7 +92,7 @@ export default async function Home({
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <Reveal>
           <h2 className="font-display uppercase text-cream text-3xl sm:text-4xl mb-8">
-            Compra por categoría
+            {t.categoryHeading}
           </h2>
         </Reveal>
         <div className="grid gap-6 sm:grid-cols-3">
@@ -152,7 +132,7 @@ export default async function Home({
                       {category}
                     </p>
                     <span className="font-condensed text-cream-dim text-sm transition-transform duration-300 group-hover:translate-x-1">
-                      Ver →
+                      {t.viewArrow}
                     </span>
                   </div>
                 </Link>
@@ -167,23 +147,23 @@ export default async function Home({
         <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6 text-center">
           <Reveal>
             <p className="font-condensed uppercase tracking-[0.4em] text-xs text-rust-light mb-4">
-              Próximamente
+              {t.countdownEyebrow}
             </p>
             <h2 className="font-display uppercase text-cream text-3xl sm:text-4xl">
-              21 de noviembre
+              {t.countdownHeading}
             </h2>
             <p className="mt-6 font-display text-cream text-8xl sm:text-9xl leading-none">
               {daysUntilLaunch}
             </p>
             <p className="font-condensed uppercase tracking-widest text-sm text-cream-dim mt-1">
-              días
+              {t.countdownDaysLabel}
             </p>
             <p className="mt-6 text-cream-dim text-sm sm:text-base">
-              El primer drop de HOWL sale ese día. No antes.
+              {t.countdownBody}
             </p>
             <div className="mt-8">
               <LinkButton href="#newsletter" variant="ghost">
-                Avísame cuando salga →
+                {t.countdownCta}
               </LinkButton>
             </div>
           </Reveal>
@@ -195,10 +175,10 @@ export default async function Home({
         <Reveal>
           <div className="flex items-end justify-between mb-8">
             <h2 className="font-display uppercase text-cream text-3xl sm:text-4xl">
-              Novedades
+              {t.newArrivalsHeading}
             </h2>
             <LinkButton href={withLocale("/catalogo", locale)} variant="ghost" className="px-0">
-              Ver todo →
+              {t.viewAllLabel}
             </LinkButton>
           </div>
         </Reveal>
@@ -220,10 +200,10 @@ export default async function Home({
         <Reveal>
           <div className="flex items-end justify-between mb-8">
             <h2 className="font-display uppercase text-cream text-3xl sm:text-4xl">
-              Destacados
+              {t.featuredHeading}
             </h2>
             <LinkButton href={withLocale("/catalogo", locale)} variant="ghost" className="px-0">
-              Ver todo →
+              {t.viewAllLabel}
             </LinkButton>
           </div>
         </Reveal>
@@ -239,20 +219,7 @@ export default async function Home({
       {/* Por qué HOWL */}
       <section className="border-y border-ink-line bg-ink-soft">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 grid gap-10 sm:grid-cols-3">
-          {[
-            {
-              title: "Algodón 240–320 g/m²",
-              text: "Percha ancha, corte clásico. Nada de camisetas de papel.",
-            },
-            {
-              title: "Serigrafía envejecida",
-              text: "Lavado ácido y craquelado a mano para que parezca que sobrevivió a la gira.",
-            },
-            {
-              title: "Tiradas limitadas",
-              text: "Cada diseño se imprime una vez. Cuando se agota, no vuelve.",
-            },
-          ].map((item, i) => (
+          {t.whyHowl.map((item, i) => (
             <Reveal key={item.title} delay={i * 100}>
               <p className="font-condensed uppercase tracking-widest text-rust-light text-sm mb-2">
                 {item.title}
@@ -270,22 +237,22 @@ export default async function Home({
         <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <Reveal>
             <h2 className="font-display uppercase text-cream text-3xl sm:text-4xl mb-8">
-              Lo que dice quien ya pidió
+              {t.testimonialsHeading}
             </h2>
           </Reveal>
           <div className="grid gap-6 sm:grid-cols-3">
-            {testimonials.map((t, i) => (
+            {t.testimonials.map((item, i) => (
               <Reveal
-                key={t.name}
+                key={item.name}
                 delay={i * 100}
                 className="border border-ink-line bg-ink-soft p-6"
               >
-                <StarRating rating={t.rating} className="mb-3" />
+                <StarRating rating={item.rating} className="mb-3" />
                 <p className="text-cream-dim text-sm leading-relaxed">
-                  &ldquo;{t.quote}&rdquo;
+                  &ldquo;{item.quote}&rdquo;
                 </p>
                 <p className="mt-4 font-condensed uppercase tracking-widest text-xs text-rust-light">
-                  {t.name}
+                  {item.name}
                 </p>
               </Reveal>
             ))}
@@ -297,13 +264,13 @@ export default async function Home({
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 text-center">
         <Reveal>
           <h2 className="font-display uppercase text-cream text-3xl sm:text-5xl">
-            Nueva colección en la calle
+            {t.finalCtaHeading}
           </h2>
           <p className="mt-4 text-cream-dim">
-            Antes de que se agote la talla M, otra vez.
+            {t.finalCtaBody}
           </p>
           <div className="mt-8">
-            <LinkButton href={withLocale("/catalogo", locale)}>Entrar a la tienda</LinkButton>
+            <LinkButton href={withLocale("/catalogo", locale)}>{t.finalCtaButton}</LinkButton>
           </div>
         </Reveal>
       </section>
