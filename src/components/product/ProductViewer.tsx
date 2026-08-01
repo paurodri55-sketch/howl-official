@@ -12,21 +12,27 @@ import { StarRating } from "@/components/ui/StarRating";
 import { formatPrice } from "@/lib/format";
 import { getBackProductPhoto, getProductPhoto } from "@/lib/photos";
 import { SHOW_SOCIAL_PROOF } from "@/lib/config";
+import { useLocale } from "@/lib/i18n/client";
+import { getDictionary } from "@/lib/i18n/dictionaries";
 
 type View = "foto" | "front" | "back" | "diseno";
-
-const viewLabels: Record<View, string> = {
-  foto: "Foto",
-  front: "Delantera",
-  back: "Trasera",
-  diseno: "Arte trasero",
-};
 
 // La foto de modelo se generó con la prenda en negro; se muestra siempre,
 // como referencia de estilo, independientemente del color seleccionado.
 const MODEL_COLOR_NOTE = "Negro desteñido";
 
 export function ProductViewer({ product }: { product: Product }) {
+  const locale = useLocale();
+  const dict = getDictionary(locale);
+  const t = dict.viewer;
+  const viewLabels: Record<View, string> = {
+    foto: t.viewPhoto,
+    front: t.viewFront,
+    back: t.viewBack,
+    diseno: t.viewArt,
+  };
+  const description =
+    locale === "en" && product.descriptionEn ? product.descriptionEn : product.description;
   const { addItem } = useCart();
   const [size, setSize] = useState(product.sizes[0]);
   const [color, setColor] = useState(product.colors[0]);
@@ -135,7 +141,7 @@ export function ProductViewer({ product }: { product: Product }) {
           product.backHeroPhoto &&
           color.name !== MODEL_COLOR_NOTE && (
           <p className="mt-2 text-xs text-cream-dim">
-            Foto de referencia en {MODEL_COLOR_NOTE.toLowerCase()}.
+            {t.referencePhotoNote(dict.colorNames["#1c1712"] ?? MODEL_COLOR_NOTE)}
           </p>
         )}
       </div>
@@ -143,7 +149,7 @@ export function ProductViewer({ product }: { product: Product }) {
       <div>
         {product.isNew && (
           <div className="mb-3">
-            <Badge>Nuevo</Badge>
+            <Badge>{t.new}</Badge>
           </div>
         )}
         <p className="font-condensed uppercase tracking-widest text-sm text-rust-light">
@@ -157,7 +163,7 @@ export function ProductViewer({ product }: { product: Product }) {
             <StarRating rating={product.rating} reviewCount={product.reviewCount} />
             {product.purchases !== undefined && (
               <span className="font-condensed text-xs text-cream-dim">
-                {new Intl.NumberFormat("es-ES").format(product.purchases)} vendidas
+                {new Intl.NumberFormat(dict.product.numberLocale).format(product.purchases)} {t.soldSuffix}
               </span>
             )}
           </div>
@@ -171,20 +177,20 @@ export function ProductViewer({ product }: { product: Product }) {
           )}
         </p>
         <p className="mt-4 text-cream-dim leading-relaxed">
-          {product.description}
+          {description}
         </p>
 
         <div className="mt-8 flex flex-col gap-6">
           <div>
             <p className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-2">
-              Color — {color.name}
+              {t.colorLabel} — {dict.colorNames[color.hex] ?? color.name}
             </p>
             <div className="flex gap-2">
               {product.colors.map((c) => (
                 <button
                   key={c.name}
                   type="button"
-                  aria-label={c.name}
+                  aria-label={dict.colorNames[c.hex] ?? c.name}
                   onClick={() => setColor(c)}
                   className={`h-9 w-9 rounded-full border-2 transition-colors ${
                     c.name === color.name
@@ -200,7 +206,7 @@ export function ProductViewer({ product }: { product: Product }) {
           {product.sizes.length > 1 && (
             <div>
               <p className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-2">
-                Talla — {size}
+                {t.sizeLabel} — {size}
               </p>
               <div className="flex flex-wrap gap-2">
                 {product.sizes.map((s) => (
@@ -223,14 +229,14 @@ export function ProductViewer({ product }: { product: Product }) {
 
           <div>
             <p className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-2">
-              Cantidad
+              {t.quantityLabel}
             </p>
             <div className="inline-flex items-center border border-cream/30">
               <button
                 type="button"
                 onClick={() => setQuantity((q) => Math.max(1, q - 1))}
                 className="px-3 py-2 text-cream-dim hover:text-cream"
-                aria-label="Reducir cantidad"
+                aria-label={t.decreaseAria}
               >
                 −
               </button>
@@ -239,7 +245,7 @@ export function ProductViewer({ product }: { product: Product }) {
                 type="button"
                 onClick={() => setQuantity((q) => Math.min(10, q + 1))}
                 className="px-3 py-2 text-cream-dim hover:text-cream"
-                aria-label="Aumentar cantidad"
+                aria-label={t.increaseAria}
               >
                 +
               </button>
@@ -248,7 +254,7 @@ export function ProductViewer({ product }: { product: Product }) {
 
           <div className="hidden sm:block">
             <Button onClick={handleAddToCart}>
-              {justAdded ? "Añadido ✓" : "Añadir al carrito"}
+              {justAdded ? t.added : t.addToCart}
             </Button>
           </div>
         </div>
@@ -269,7 +275,7 @@ export function ProductViewer({ product }: { product: Product }) {
           {formatPrice(product.price)}
         </p>
         <Button onClick={handleAddToCart} className="flex-1">
-          {justAdded ? "Añadido ✓" : "Añadir al carrito"}
+          {justAdded ? t.added : t.addToCart}
         </Button>
       </div>
     </div>

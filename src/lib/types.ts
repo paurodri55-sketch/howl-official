@@ -39,6 +39,8 @@ export interface Product {
   tourYear: string;
   price: number;
   description: string;
+  /** Traducción al inglés de `description`. Si no existe, se usa la versión en español como fallback. */
+  descriptionEn?: string;
   details: string[];
   category: ProductCategory;
   sizes: Size[];

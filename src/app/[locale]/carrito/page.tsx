@@ -10,7 +10,8 @@ import { getDictionary } from "@/lib/i18n/dictionaries";
 
 export default function CarritoPage() {
   const locale = useLocale();
-  const t = getDictionary(locale).cart;
+  const dict = getDictionary(locale);
+  const t = dict.cart;
   const { items, subtotal, updateQuantity, removeItem } = useCart();
 
   if (items.length === 0) {
@@ -57,7 +58,7 @@ export default function CarritoPage() {
                       {item.name}
                     </Link>
                     <p className="text-xs text-cream-dim mt-0.5">
-                      {item.band} · {item.color.name} · {t.sizeLabel} {item.size}
+                      {item.band} · {dict.colorNames[item.color.hex] ?? item.color.name} · {t.sizeLabel} {item.size}
                     </p>
                   </div>
                   <p className="font-condensed text-cream whitespace-nowrap">
