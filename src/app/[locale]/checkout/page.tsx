@@ -5,11 +5,13 @@ import { useCart } from "@/components/cart/CartContext";
 import { LinkButton, Button } from "@/components/ui/Button";
 import { formatPrice } from "@/lib/format";
 import { useLocale, withLocale } from "@/lib/i18n/client";
+import { getDictionary } from "@/lib/i18n/dictionaries";
 
 const SHIPPING = 4.9;
 
 export default function CheckoutPage() {
   const locale = useLocale();
+  const t = getDictionary(locale).checkout;
   const { items, subtotal, clearCart } = useCart();
   const [status, setStatus] = useState<"form" | "loading" | "done">("form");
   const [orderId, setOrderId] = useState<string | null>(null);
@@ -34,7 +36,7 @@ export default function CheckoutPage() {
       const data = await res.json();
 
       if (!data.success) {
-        throw new Error(data.error ?? "No se pudo procesar el pedido");
+        throw new Error(data.error ?? t.errorGeneric);
       }
 
       if (data.redirectUrl) {
@@ -46,7 +48,7 @@ export default function CheckoutPage() {
       clearCart();
       setStatus("done");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Algo salió mal");
+      setError(err instanceof Error ? err.message : t.errorFallback);
       setStatus("form");
     }
   }
@@ -55,17 +57,13 @@ export default function CheckoutPage() {
     return (
       <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 text-center">
         <h1 className="font-display uppercase text-cream text-4xl mb-4">
-          Pedido simulado con éxito
+          {t.doneHeading}
         </h1>
         <p className="text-cream-dim mb-2">
-          Referencia: <span className="text-cream">{orderId}</span>
+          {t.doneReference} <span className="text-cream">{orderId}</span>
         </p>
-        <p className="text-cream-dim mb-8">
-          Este checkout es una simulación local. Cuando se conecte Stripe, este
-          paso redirigirá a un pago real y el pedido se enviará a Printful
-          para producción y envío.
-        </p>
-        <LinkButton href={withLocale("/catalogo", locale)}>Seguir comprando</LinkButton>
+        <p className="text-cream-dim mb-8">{t.doneBody}</p>
+        <LinkButton href={withLocale("/catalogo", locale)}>{t.doneCta}</LinkButton>
       </div>
     );
   }
@@ -74,10 +72,10 @@ export default function CheckoutPage() {
     return (
       <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 text-center">
         <h1 className="font-display uppercase text-cream text-4xl mb-4">
-          No hay nada que pagar
+          {t.emptyHeading}
         </h1>
-        <p className="text-cream-dim mb-8">Tu carrito está vacío.</p>
-        <LinkButton href={withLocale("/catalogo", locale)}>Ir al catálogo</LinkButton>
+        <p className="text-cream-dim mb-8">{t.emptyBody}</p>
+        <LinkButton href={withLocale("/catalogo", locale)}>{t.emptyCta}</LinkButton>
       </div>
     );
   }
@@ -85,37 +83,36 @@ export default function CheckoutPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
       <h1 className="font-display uppercase text-cream text-4xl sm:text-5xl mb-8">
-        Checkout
+        {t.pageHeading}
       </h1>
 
       <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
         <form onSubmit={handleSubmit} className="space-y-8">
           <fieldset>
             <legend className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-4">
-              Datos de envío
+              {t.shippingLegend}
             </legend>
             <div className="grid gap-4 sm:grid-cols-2">
-              <Field label="Nombre completo" name="name" required />
-              <Field label="Email" name="email" type="email" required />
+              <Field label={t.fieldFullName} name="name" required />
+              <Field label={t.fieldEmail} name="email" type="email" required />
               <Field
-                label="Dirección"
+                label={t.fieldAddress}
                 name="address"
                 required
                 className="sm:col-span-2"
               />
-              <Field label="Ciudad" name="city" required />
-              <Field label="Código postal" name="postalCode" required />
-              <Field label="País" name="country" required />
+              <Field label={t.fieldCity} name="city" required />
+              <Field label={t.fieldPostalCode} name="postalCode" required />
+              <Field label={t.fieldCountry} name="country" required />
             </div>
           </fieldset>
 
           <fieldset>
             <legend className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-4">
-              Pago
+              {t.paymentLegend}
             </legend>
             <div className="border border-ink-line bg-ink-soft p-4 text-sm text-cream-dim">
-              Pago seguro con Stripe — próximamente. Por ahora, al confirmar se
-              simula el pedido sin cobro real.
+              {t.paymentNotice}
             </div>
           </fieldset>
 
@@ -126,15 +123,13 @@ export default function CheckoutPage() {
             disabled={status === "loading"}
             className="w-full sm:w-auto"
           >
-            {status === "loading"
-              ? "Procesando…"
-              : `Pagar ${formatPrice(total)}`}
+            {status === "loading" ? t.processing : t.payButton(formatPrice(total))}
           </Button>
         </form>
 
         <div className="h-max border border-ink-line bg-ink-soft p-6">
           <p className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-4">
-            Resumen del pedido
+            {t.orderSummary}
           </p>
           <ul className="space-y-2 mb-4">
             {items.map((item) => (
@@ -152,15 +147,15 @@ export default function CheckoutPage() {
             ))}
           </ul>
           <div className="flex justify-between text-sm text-cream-dim mb-2 border-t border-ink-line pt-4">
-            <span>Subtotal</span>
+            <span>{t.subtotal}</span>
             <span>{formatPrice(subtotal)}</span>
           </div>
           <div className="flex justify-between text-sm text-cream-dim mb-4">
-            <span>Envío</span>
+            <span>{t.shipping}</span>
             <span>{formatPrice(SHIPPING)}</span>
           </div>
           <div className="flex justify-between font-condensed text-lg text-cream border-t border-ink-line pt-4">
-            <span>Total</span>
+            <span>{t.total}</span>
             <span>{formatPrice(total)}</span>
           </div>
         </div>
