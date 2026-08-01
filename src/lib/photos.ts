@@ -22,6 +22,14 @@ export function getProductPhoto(
 }
 
 /**
+ * True si el producto tiene una foto trasera REAL (no el fallback de camiseta
+ * lisa) — para decidir si tiene sentido mostrarla como hover en el catálogo.
+ */
+export function hasRealBackPhoto(product: Product): boolean {
+  return Boolean(product.backHeroPhoto || (product.backArtworkImage && product.backTextBaked));
+}
+
+/**
  * Foto real de la prenda por detrás (sin modelo). Si el producto tiene diseño
  * trasero propio (foto de estudio real), se usa esa. Si no, y el producto ya
  * tiene foto real delantera, se usa la camiseta lisa real como trasera (mejor

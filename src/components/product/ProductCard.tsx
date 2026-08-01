@@ -6,12 +6,15 @@ import { isDarkGarment, pickShowcaseColor } from "@/lib/color";
 import { TeeMockup } from "@/components/product/TeeMockup";
 import { Badge } from "@/components/ui/Badge";
 import { StarRating } from "@/components/ui/StarRating";
-import { getProductPhoto } from "@/lib/photos";
+import { getBackProductPhoto, getProductPhoto, hasRealBackPhoto } from "@/lib/photos";
 import { SHOW_SOCIAL_PROOF } from "@/lib/config";
 
 export function ProductCard({ product }: { product: Product }) {
   const showcaseColor = pickShowcaseColor(product);
   const photo = getProductPhoto(product, showcaseColor);
+  const backPhoto = hasRealBackPhoto(product)
+    ? getBackProductPhoto(product, showcaseColor)
+    : null;
 
   return (
     <Link
@@ -28,6 +31,15 @@ export function ProductCard({ product }: { product: Product }) {
               sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
               className="object-cover transition-transform duration-300 group-hover:scale-[1.05]"
             />
+            {backPhoto && (
+              <Image
+                src={backPhoto}
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                className="object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
+            )}
           </div>
         ) : (
           <TeeMockup
