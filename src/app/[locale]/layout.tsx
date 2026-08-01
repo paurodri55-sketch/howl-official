@@ -1,5 +1,6 @@
 import { Anton, Oswald, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 import { CartProvider } from "@/components/cart/CartContext";
 import { Header } from "@/components/layout/Header";
@@ -51,6 +52,7 @@ export default async function LocaleLayout({
           <Footer locale={locale} />
           <NewsletterModal locale={locale} />
         </CartProvider>
+        <Analytics />
       </body>
     </html>
   );

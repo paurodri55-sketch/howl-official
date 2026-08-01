@@ -100,12 +100,13 @@ export const legalContent = {
           body: [
             "Este sitio usa una cookie técnica llamada \"locale\" para recordar en qué idioma (español/inglés) quieres ver la web. Es estrictamente necesaria para el funcionamiento del selector de idioma y no requiere tu consentimiento previo según la normativa de cookies.",
             "También usamos almacenamiento local del navegador (localStorage, no es técnicamente una cookie pero se trata con el mismo criterio) para guardar el contenido de tu carrito de compra y para recordar si ya viste el aviso emergente de newsletter. Ambos son estrictamente funcionales.",
+            "Además, usamos Vercel Analytics para saber cuántas visitas recibe el sitio y qué páginas se ven más. No usa cookies ni identifica a personas concretas — los datos son agregados y anónimos, por lo que no requiere tu consentimiento previo.",
           ],
         },
         {
           heading: "2. Lo que NO usamos (todavía)",
           body: [
-            "Actualmente no utilizamos cookies de analítica (Google Analytics u otras), publicidad ni redes sociales. Si en el futuro se incorpora alguna herramienta de este tipo, se solicitará tu consentimiento explícito mediante un banner antes de activarlas, y esta política se actualizará en consecuencia.",
+            "Actualmente no utilizamos cookies de publicidad ni de redes sociales, ni herramientas de analítica que identifiquen a usuarios individuales (como Google Analytics con cookies). Si en el futuro se incorpora alguna herramienta de este tipo, se solicitará tu consentimiento explícito mediante un banner antes de activarlas, y esta política se actualizará en consecuencia.",
           ],
         },
         {
@@ -205,12 +206,13 @@ export const legalContent = {
           body: [
             "This site uses a technical cookie called \"locale\" to remember which language (Spanish/English) you want to view the site in. It's strictly necessary for the language switcher to work and doesn't require prior consent under cookie regulations.",
             "We also use browser local storage (localStorage — not technically a cookie, but treated the same way) to save your shopping cart contents and to remember whether you've already seen the newsletter popup. Both are strictly functional.",
+            "We also use Vercel Analytics to see how many visits the site gets and which pages are viewed most. It doesn't use cookies or identify specific individuals — the data is aggregated and anonymous, so it doesn't require your prior consent.",
           ],
         },
         {
           heading: "2. What we do NOT use (yet)",
           body: [
-            "We currently don't use analytics cookies (Google Analytics or similar), advertising, or social media cookies. If any such tool is added in the future, we will request your explicit consent via a banner before activating it, and this policy will be updated accordingly.",
+            "We currently don't use advertising or social media cookies, or analytics tools that identify individual users (like Google Analytics with cookies). If any such tool is added in the future, we will request your explicit consent via a banner before activating it, and this policy will be updated accordingly.",
           ],
         },
         {
