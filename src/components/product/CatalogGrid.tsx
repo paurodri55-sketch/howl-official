@@ -3,19 +3,24 @@
 import { useState } from "react";
 import type { Product, ProductCategory } from "@/lib/types";
 import { ProductCard } from "@/components/product/ProductCard";
+import type { Locale } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/dictionaries";
 
 export function CatalogGrid({
   products,
   categories,
   initialCategory,
+  locale,
 }: {
   products: Product[];
   categories: ProductCategory[];
   initialCategory?: ProductCategory;
+  locale: Locale;
 }) {
   const [active, setActive] = useState<ProductCategory | "Todos">(
     initialCategory ?? "Todos"
   );
+  const t = getDictionary(locale).catalog;
 
   const visible =
     active === "Todos" ? products : products.filter((p) => p.category === active);
@@ -34,13 +39,13 @@ export function CatalogGrid({
                 : "border-cream/30 text-cream-dim hover:border-cream"
             }`}
           >
-            {cat}
+            {cat === "Todos" ? t.all : t.categoryLabels[cat]}
           </button>
         ))}
       </div>
 
       {visible.length === 0 ? (
-        <p className="text-cream-dim">No hay productos en esta categoría.</p>
+        <p className="text-cream-dim">{t.empty}</p>
       ) : (
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
           {visible.map((product) => (

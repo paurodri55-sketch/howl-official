@@ -11,9 +11,11 @@ import { StarRating } from "@/components/ui/StarRating";
 import { getBackProductPhoto, getProductPhoto, hasRealBackPhoto } from "@/lib/photos";
 import { SHOW_SOCIAL_PROOF } from "@/lib/config";
 import { useLocale, withLocale } from "@/lib/i18n/client";
+import { getDictionary } from "@/lib/i18n/dictionaries";
 
 export function ProductCard({ product }: { product: Product }) {
   const locale = useLocale();
+  const t = getDictionary(locale).product;
   const showcaseColor = pickShowcaseColor(product);
   const photo = getProductPhoto(product, showcaseColor);
   const backPhoto = hasRealBackPhoto(product)
@@ -56,8 +58,8 @@ export function ProductCard({ product }: { product: Product }) {
         )}
         {(product.isNew || (SHOW_SOCIAL_PROOF && (product.purchases ?? 0) > 500)) && (
           <div className="absolute top-3 left-3 flex flex-col gap-2">
-            {SHOW_SOCIAL_PROOF && (product.purchases ?? 0) > 500 && <Badge>Más vendido</Badge>}
-            {product.isNew && <Badge>Nuevo</Badge>}
+            {SHOW_SOCIAL_PROOF && (product.purchases ?? 0) > 500 && <Badge>{t.bestSeller}</Badge>}
+            {product.isNew && <Badge>{t.new}</Badge>}
           </div>
         )}
       </div>
@@ -72,7 +74,7 @@ export function ProductCard({ product }: { product: Product }) {
               <StarRating rating={product.rating} reviewCount={product.reviewCount} />
               {(product.purchases ?? 0) > 500 && (
                 <span className="font-condensed text-[10px] text-rust-light">
-                  · {new Intl.NumberFormat("es-ES").format(product.purchases!)} vendidas
+                  · {new Intl.NumberFormat(t.numberLocale).format(product.purchases!)} {t.soldSuffix}
                 </span>
               )}
             </div>

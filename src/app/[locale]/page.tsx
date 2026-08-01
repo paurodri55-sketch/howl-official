@@ -38,7 +38,8 @@ export default async function Home({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
-  const t = getDictionary(locale).home;
+  const dict = getDictionary(locale);
+  const t = dict.home;
   const featured = getFeaturedProducts();
   const newArrivals = getNewProducts();
   const daysUntilLaunch = getDaysUntilLaunch();
@@ -129,7 +130,7 @@ export default async function Home({
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent opacity-80" />
                   <div className="absolute inset-x-0 bottom-0 p-5 flex items-center justify-between">
                     <p className="font-display uppercase text-cream text-xl">
-                      {category}
+                      {dict.catalog.categoryLabels[category]}
                     </p>
                     <span className="font-condensed text-cream-dim text-sm transition-transform duration-300 group-hover:translate-x-1">
                       {t.viewArrow}

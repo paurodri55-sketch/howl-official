@@ -100,6 +100,25 @@ export const dictionaries = {
       finalCtaBody: "Antes de que se agote la talla M, otra vez.",
       finalCtaButton: "Entrar a la tienda",
     },
+    catalog: {
+      pageTitle: "Catálogo",
+      metaTitle: "Catálogo — HOWL",
+      metaDescription: "Todas las camisetas, sudaderas y accesorios de HOWL.",
+      all: "Todos",
+      empty: "No hay productos en esta categoría.",
+      categoryLabels: {
+        Camisetas: "Camisetas",
+        Sudaderas: "Sudaderas",
+        Accesorios: "Accesorios",
+        Stickers: "Stickers",
+      } as Record<string, string>,
+    },
+    product: {
+      bestSeller: "Más vendido",
+      new: "Nuevo",
+      soldSuffix: "vendidas",
+      numberLocale: "es-ES",
+    },
   },
   en: {
     header: {
@@ -199,6 +218,25 @@ export const dictionaries = {
       finalCtaHeading: "New collection is out",
       finalCtaBody: "Before size M sells out again.",
       finalCtaButton: "Enter the shop",
+    },
+    catalog: {
+      pageTitle: "Catalog",
+      metaTitle: "Catalog — HOWL",
+      metaDescription: "All tees, hoodies and accessories from HOWL.",
+      all: "All",
+      empty: "No products in this category.",
+      categoryLabels: {
+        Camisetas: "Tees",
+        Sudaderas: "Hoodies",
+        Accesorios: "Accessories",
+        Stickers: "Stickers",
+      } as Record<string, string>,
+    },
+    product: {
+      bestSeller: "Best seller",
+      new: "New",
+      soldSuffix: "sold",
+      numberLocale: "en-US",
     },
   },
 } as const;
