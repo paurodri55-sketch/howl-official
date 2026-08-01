@@ -49,7 +49,7 @@ export default async function LocaleLayout({
           <Header />
           <main className="flex-1">{children}</main>
           <Footer locale={locale} />
-          <NewsletterModal />
+          <NewsletterModal locale={locale} />
         </CartProvider>
       </body>
     </html>

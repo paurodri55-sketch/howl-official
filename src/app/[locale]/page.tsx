@@ -263,7 +263,7 @@ export default async function Home({
         </div>
       </section>
 
-      <NewsletterSection />
+      <NewsletterSection locale={locale} />
 
       {/* Testimonios */}
       {SHOW_SOCIAL_PROOF && (

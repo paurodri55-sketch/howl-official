@@ -1,37 +1,37 @@
 import Link from "next/link";
 import { NewsletterForm } from "@/components/newsletter/NewsletterForm";
 import { withLocale, type Locale } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/dictionaries";
 
 export function Footer({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale).footer;
+
   return (
     <footer className="mt-24 border-t border-ink-line bg-ink-soft">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="font-display text-2xl text-cream">HOWL</p>
-            <p className="mt-2 text-sm text-cream-dim max-w-xs">
-              Ropa de diseño propio. Algodón pesado, estampados trabajados a
-              mano, tiradas limitadas.
-            </p>
+            <p className="mt-2 text-sm text-cream-dim max-w-xs">{t.tagline}</p>
             <p className="mt-5 font-condensed uppercase tracking-widest text-xs text-cream-dim/70 mb-2">
-              Acceso anticipado a nuevas tiradas
+              {t.earlyAccess}
             </p>
-            <NewsletterForm variant="footer" source="footer" />
+            <NewsletterForm variant="footer" source="footer" locale={locale} />
           </div>
 
           <div>
             <p className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-3">
-              Tienda
+              {t.shopHeading}
             </p>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href={withLocale("/catalogo", locale)} className="hover:text-rust-light">
-                  Catálogo
+                  {t.catalog}
                 </Link>
               </li>
               <li>
                 <Link href={withLocale("/carrito", locale)} className="hover:text-rust-light">
-                  Carrito
+                  {t.cart}
                 </Link>
               </li>
             </ul>
@@ -39,18 +39,18 @@ export function Footer({ locale }: { locale: Locale }) {
 
           <div>
             <p className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-3">
-              Envíos y devoluciones
+              {t.shippingHeading}
             </p>
             <ul className="space-y-2 text-sm text-cream-dim">
-              <li>Envío gratis a partir de 50 €</li>
-              <li>Entrega en 3–5 días laborables</li>
-              <li>Devoluciones gratuitas hasta 30 días</li>
+              <li>{t.shippingFree}</li>
+              <li>{t.shippingTime}</li>
+              <li>{t.shippingReturns}</li>
             </ul>
           </div>
 
           <div>
             <p className="font-condensed uppercase tracking-widest text-xs text-cream-dim mb-3">
-              Síguenos
+              {t.followHeading}
             </p>
             <ul className="space-y-2 text-sm">
               <li>
@@ -90,11 +90,8 @@ export function Footer({ locale }: { locale: Locale }) {
         </div>
 
         <div className="mt-10 border-t border-ink-line pt-6 flex flex-col gap-2 text-xs text-cream-dim/70">
-          <p>© {new Date().getFullYear()} HOWL. Todos los derechos reservados.</p>
-          <p>
-            Marcas, bandas y colecciones son ficticias. Proyecto de
-            demostración sin afiliación con marcas o artistas reales.
-          </p>
+          <p>{t.copyright(new Date().getFullYear())}</p>
+          <p>{t.disclaimer}</p>
         </div>
       </div>
     </footer>

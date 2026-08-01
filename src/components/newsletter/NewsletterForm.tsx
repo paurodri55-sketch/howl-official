@@ -1,22 +1,26 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import type { Locale } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/dictionaries";
 
 type Variant = "section" | "footer" | "modal";
-
-const ctaLabel: Record<Variant, string> = {
-  section: "Acceso anticipado",
-  footer: "Entrar",
-  modal: "Quiero acceso anticipado",
-};
 
 export function NewsletterForm({
   variant = "section",
   source,
+  locale,
 }: {
   variant?: Variant;
   source: string;
+  locale: Locale;
 }) {
+  const t = getDictionary(locale).newsletter;
+  const ctaLabel: Record<Variant, string> = {
+    section: t.ctaSection,
+    footer: t.ctaFooter,
+    modal: t.ctaModal,
+  };
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
@@ -48,7 +52,7 @@ export function NewsletterForm({
             : "font-condensed text-cream"
         }
       >
-        Dentro. Sabrás antes que nadie cuándo sale la tirada — y cuándo se agota.
+        {t.success}
       </p>
     );
   }
@@ -69,7 +73,7 @@ export function NewsletterForm({
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="tu@email.com"
+        placeholder={t.placeholder}
         className={`min-w-0 flex-1 bg-transparent border px-4 py-2.5 text-sm text-cream placeholder:text-cream-dim/50 focus:outline-none focus:border-rust ${
           isFooter ? "border-cream/20" : "border-cream/30"
         }`}
@@ -83,7 +87,7 @@ export function NewsletterForm({
       </button>
       {status === "error" && (
         <p className="text-xs text-rust-light w-full">
-          Algo falló, prueba otra vez.
+          {t.error}
         </p>
       )}
     </form>

@@ -6,16 +6,18 @@ import { useCart } from "@/components/cart/CartContext";
 import { Logo } from "@/components/ui/Logo";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { useLocale, withLocale } from "@/lib/i18n/client";
-
-const navLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/catalogo", label: "Catálogo" },
-];
+import { getDictionary } from "@/lib/i18n/dictionaries";
 
 export function Header() {
   const pathname = usePathname();
   const locale = useLocale();
   const { itemCount } = useCart();
+  const t = getDictionary(locale).header;
+
+  const navLinks = [
+    { href: "/", label: t.home },
+    { href: "/catalogo", label: t.catalog },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink-line bg-ink/95 backdrop-blur">
@@ -28,12 +30,12 @@ export function Header() {
           HOWL
         </Link>
 
-        <nav className="flex items-center gap-6 font-condensed uppercase tracking-widest text-sm">
+        <nav className="flex items-center gap-3 sm:gap-6 font-condensed uppercase tracking-widest text-sm">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={withLocale(link.href, locale)}
-              className={`transition-colors ${
+              className={`transition-colors ${link.href === "/" ? "hidden sm:inline" : ""} ${
                 pathname === withLocale(link.href, locale)
                   ? "text-rust-light"
                   : "text-cream-dim hover:text-cream"
@@ -46,7 +48,7 @@ export function Header() {
           <Link
             href={withLocale("/carrito", locale)}
             className="relative flex items-center text-cream-dim hover:text-cream transition-colors"
-            aria-label="Ver carrito"
+            aria-label={t.cartAria}
           >
             <svg
               viewBox="0 0 24 24"

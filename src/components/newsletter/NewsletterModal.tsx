@@ -3,13 +3,16 @@
 import { useEffect, useState } from "react";
 import { NewsletterForm } from "@/components/newsletter/NewsletterForm";
 import { getDaysUntilLaunch } from "@/lib/launch";
+import type { Locale } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/dictionaries";
 
 const SEEN_KEY = "howl_newsletter_modal_seen";
 const TIME_TRIGGER_MS = 20_000;
 const SCROLL_TRIGGER_RATIO = 0.6;
 
-export function NewsletterModal() {
+export function NewsletterModal({ locale }: { locale: Locale }) {
   const [open, setOpen] = useState(false);
+  const t = getDictionary(locale).newsletter;
 
   useEffect(() => {
     if (localStorage.getItem(SEEN_KEY)) return;
@@ -71,27 +74,25 @@ export function NewsletterModal() {
         <button
           type="button"
           onClick={() => setOpen(false)}
-          aria-label="Cerrar"
+          aria-label={t.modalClose}
           className="absolute right-3 top-3 text-cream-dim hover:text-cream text-lg leading-none"
         >
           ✕
         </button>
         <p className="font-condensed uppercase tracking-[0.4em] text-xs text-rust-light mb-3">
-          Lista de espera
+          {t.modalEyebrow}
         </p>
         <h3 className="font-display uppercase text-cream text-2xl sm:text-3xl">
-          Acceso anticipado
+          {t.modalHeading1}
           <br />
-          antes de que se agote
+          {t.modalHeading2}
         </h3>
-        <p className="mt-3 text-cream-dim text-sm">
-          Un aviso cuando sale la siguiente tirada. Nada más.
-        </p>
+        <p className="mt-3 text-cream-dim text-sm">{t.modalBody}</p>
         <p className="mt-2 font-condensed uppercase tracking-widest text-xs text-rust-light">
-          Faltan {getDaysUntilLaunch()} días — 21 de noviembre
+          {t.modalCountdown(getDaysUntilLaunch())}
         </p>
         <div className="mt-6 flex justify-center">
-          <NewsletterForm variant="modal" source="exit-intent-modal" />
+          <NewsletterForm variant="modal" source="exit-intent-modal" locale={locale} />
         </div>
       </div>
     </div>
