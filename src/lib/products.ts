@@ -176,7 +176,10 @@ export const products: Product[] = [
     colors: [inkBlack, agedCream],
     graphic: "flame",
     artworkImage: "/artwork/flame.png",
-    backHeroPhoto: "hoodie-back-black",
+    backHeroPhotoByColor: {
+      "#1c1712": "hoodie-back-black",
+      "#e7d9b8": "hoodie-back-cream",
+    },
     frontLogoOnly: true,
     logoStyle: { skew: -4, accentColor: "#e8452c" },
     tourDates: [
@@ -1352,7 +1355,10 @@ export const products: Product[] = [
     colors: [inkBlack, agedCream],
     graphic: "landscape",
     artworkImage: "/artwork/crewneck_chest.png",
-    backHeroPhoto: "crewneck_back-black",
+    backHeroPhotoByColor: {
+      "#1c1712": "crewneck_back-black",
+      "#e7d9b8": "crewneck_back-cream",
+    },
     frontLogoOnly: true,
     logoStyle: { accentColor: "#efe4c8" },
     tourDates: [],
@@ -1445,7 +1451,10 @@ export const products: Product[] = [
     colors: [inkBlack, agedCream],
     graphic: "landscape",
     artworkImage: "/artwork/hoodie_wolf_chest.png",
-    backHeroPhoto: "hoodie-back-black",
+    backHeroPhotoByColor: {
+      "#1c1712": "hoodie-back-black",
+      "#e7d9b8": "hoodie-back-cream",
+    },
     frontLogoOnly: true,
     logoStyle: { accentColor: "#9aa0a6" },
     tourDates: [],
