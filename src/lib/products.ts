@@ -100,7 +100,10 @@ export const products: Product[] = [
     graphic: "moon",
     artworkImage: "/artwork/moon.png",
     frontLogoOnly: true,
-    backHeroPhoto: "moon-back-black",
+    backHeroPhotoByColor: {
+      "#1c1712": "moon-back-black",
+      "#e7d9b8": "moon-back-cream",
+    },
     tagline: "STILL AWAKE. STILL NORMAL.",
     logoStyle: { accentColor: "#7ec8e3" },
     tourDates: [],

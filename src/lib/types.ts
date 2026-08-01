@@ -68,6 +68,8 @@ export interface Product {
    * independientemente del color seleccionado.
    */
   backHeroPhoto?: string;
+  /** Igual que backHeroPhoto, pero con una foto real distinta por color (clave = hex del color). Tiene prioridad sobre backHeroPhoto cuando existe entrada para el color seleccionado. */
+  backHeroPhotoByColor?: Partial<Record<string, string>>;
   /** Nombre base (sin extensión) de una foto real en /photos/ que se usa siempre como "Foto", sea cual sea la categoría o el color (para accesorios como stickers). */
   photoOverride?: string;
   /** Frase/cita corta estilo bootleg tee, en mayúsculas, bajo el nombre de banda. */

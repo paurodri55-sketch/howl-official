@@ -26,7 +26,11 @@ export function getProductPhoto(
  * lisa) — para decidir si tiene sentido mostrarla como hover en el catálogo.
  */
 export function hasRealBackPhoto(product: Product): boolean {
-  return Boolean(product.backHeroPhoto || (product.backArtworkImage && product.backTextBaked));
+  return Boolean(
+    product.backHeroPhoto ||
+      product.backHeroPhotoByColor ||
+      (product.backArtworkImage && product.backTextBaked)
+  );
 }
 
 /**
@@ -39,6 +43,10 @@ export function getBackProductPhoto(
   product: Product,
   color: ProductColor
 ): string | null {
+  const heroForColor = product.backHeroPhotoByColor?.[color.hex];
+  if (heroForColor) {
+    return `/photos/${heroForColor}.png`;
+  }
   if (product.backHeroPhoto) {
     return `/photos/${product.backHeroPhoto}.png`;
   }
