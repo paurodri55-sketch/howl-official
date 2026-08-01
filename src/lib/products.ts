@@ -886,6 +886,8 @@ export const products: Product[] = [
     reviewCount: 6,
     description:
       "Camiseta de la colección Horizonte. Muscle car de los 70 al atardecer, script retro.",
+      descriptionEn:
+      "Horizon collection tee. A 70s muscle car at sunset, retro script.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -910,6 +912,8 @@ export const products: Product[] = [
     reviewCount: 5,
     description:
       "Camiseta de la colección Horizonte. Cráneo de lobo en plano técnico, estilo patente antigua.",
+      descriptionEn:
+      "Horizon collection tee. Wolf skull in technical blueprint style, vintage patent look.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -934,6 +938,8 @@ export const products: Product[] = [
     reviewCount: 7,
     description:
       "Camiseta de la colección Horizonte. Logo pequeño NYC al pecho, la Estatua de la Libertad grabada a la espalda.",
+      descriptionEn:
+      "Horizon collection tee. Small NYC logo on the chest, the Statue of Liberty engraved on the back.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -959,6 +965,8 @@ export const products: Product[] = [
     reviewCount: 6,
     description:
       "Camiseta amarilla de la colección Horizonte. Cerezas vintage y wordmark universitario en el pecho.",
+      descriptionEn:
+      "Horizon collection yellow tee. Vintage cherries and a collegiate wordmark on the chest.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -984,6 +992,8 @@ export const products: Product[] = [
     reviewCount: 4,
     description:
       "Camiseta especial HOWL. Lobo en línea fina al pecho, la manada aullando junta en la espalda.",
+      descriptionEn:
+      "Special HOWL tee. Fine-line wolf on the chest, the whole pack howling together on the back.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -1009,6 +1019,8 @@ export const products: Product[] = [
     reviewCount: 3,
     description:
       "Camiseta de la colección Horizonte. Yin-yang pequeño al pecho, grande y con caligrafía china a la espalda.",
+      descriptionEn:
+      "Horizon collection tee. Small yin-yang on the chest, large with Chinese calligraphy on the back.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -1036,6 +1048,8 @@ export const products: Product[] = [
     reviewCount: 5,
     description:
       "Camiseta de la colección Horizonte. Luna pequeña al pecho, hotel lunar retro-futurista a la espalda.",
+      descriptionEn:
+      "Horizon collection tee. Small moon on the chest, a retro-futuristic lunar hotel on the back.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -1059,6 +1073,7 @@ export const products: Product[] = [
     rating: 4.9,
     reviewCount: 12,
     description: "Sticker vinilo troquelado. Resistente al agua y a los rayos UV. 8cm aprox.",
+    descriptionEn: "Die-cut vinyl sticker. Water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño ya presente en camiseta"],
     category: "Stickers",
     sizes: ["Única"],
@@ -1079,6 +1094,7 @@ export const products: Product[] = [
     rating: 4.8,
     reviewCount: 9,
     description: "Sticker vinilo troquelado. Resistente al agua y a los rayos UV. 8cm aprox.",
+    descriptionEn: "Die-cut vinyl sticker. Water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño ya presente en camiseta"],
     category: "Stickers",
     sizes: ["Única"],
@@ -1099,6 +1115,7 @@ export const products: Product[] = [
     rating: 4.7,
     reviewCount: 6,
     description: "Sticker vinilo troquelado. Resistente al agua y a los rayos UV. 8cm aprox.",
+    descriptionEn: "Die-cut vinyl sticker. Water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño ya presente en camiseta"],
     category: "Stickers",
     sizes: ["Única"],
@@ -1119,6 +1136,7 @@ export const products: Product[] = [
     rating: 4.8,
     reviewCount: 7,
     description: "Sticker vinilo troquelado. Resistente al agua y a los rayos UV. 8cm aprox.",
+    descriptionEn: "Die-cut vinyl sticker. Water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño ya presente en camiseta"],
     category: "Stickers",
     sizes: ["Única"],
@@ -1139,6 +1157,7 @@ export const products: Product[] = [
     rating: 4.9,
     reviewCount: 3,
     description: "Sticker exclusivo — este diseño no existe en ninguna camiseta. Vinilo troquelado, resistente al agua y a los rayos UV. 8cm aprox.",
+    descriptionEn: "Exclusive sticker — this design doesn't exist on any tee. Die-cut vinyl, water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño exclusivo, solo en sticker"],
     category: "Stickers",
     sizes: ["Única"],
@@ -1159,6 +1178,7 @@ export const products: Product[] = [
     rating: 4.9,
     reviewCount: 2,
     description: "Sticker exclusivo — este diseño no existe en ninguna camiseta. Vinilo troquelado, resistente al agua y a los rayos UV. 8cm aprox.",
+    descriptionEn: "Exclusive sticker — this design doesn't exist on any tee. Die-cut vinyl, water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño exclusivo, solo en sticker"],
     category: "Stickers",
     sizes: ["Única"],
@@ -1183,6 +1203,8 @@ export const products: Product[] = [
     reviewCount: 4,
     description:
       "Camiseta de la colección Horizonte. Logo pequeño de rueda alada al pecho, motorista en la carretera grabado a la espalda.",
+      descriptionEn:
+      "Horizon collection tee. Small winged-wheel logo on the chest, a biker on the road engraved on the back.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -1213,6 +1235,8 @@ export const products: Product[] = [
     reviewCount: 3,
     description:
       "Camiseta de la colección Horizonte. Logo pequeño de púa alada al pecho, guitarra Les Paul grabada a la espalda.",
+      descriptionEn:
+      "Horizon collection tee. Small winged-pick logo on the chest, a Les Paul guitar engraved on the back.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -1242,6 +1266,8 @@ export const products: Product[] = [
     reviewCount: 3,
     description:
       "Camiseta de la colección Horizonte. Logo pequeño de bisonte al pecho, manada corriendo al atardecer grabada a la espalda.",
+      descriptionEn:
+      "Horizon collection tee. Small bison logo on the chest, a herd running at sunset engraved on the back.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -1269,6 +1295,8 @@ export const products: Product[] = [
     reviewCount: 3,
     description:
       "Camiseta de la colección Italiana. Sello vintage de trattoria desgastado al pecho — 'Ristorante Pizzeria Da Enzo, dal 1974'. Aire de menú de barrio italiano de los 80.",
+      descriptionEn:
+      "Italian collection tee. A worn vintage trattoria seal on the chest — 'Ristorante Pizzeria Da Enzo, dal 1974.' The feel of an 80s neighborhood Italian menu.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -1293,6 +1321,8 @@ export const products: Product[] = [
     reviewCount: 2,
     description:
       "Sudadera crewneck de algodón grueso de alto gramaje, sin capucha, corte vintage. Wordmark HOWL pequeño al pecho — la básica de armario que no falla.",
+      descriptionEn:
+      "Heavyweight cotton crewneck, no hood, vintage cut. Small HOWL wordmark on the chest — the wardrobe basic that never fails.",
     details: [
       "Algodón grueso 320 g/m², cuello redondo acanalado",
       "Puños y bajo acanalados, corte vintage oversize",
@@ -1323,6 +1353,8 @@ export const products: Product[] = [
     reviewCount: 2,
     description:
       "Gorra dad hat de lona lavada, corte bajo sin estructurar, hebilla metálica trasera ajustable. Letra H bordada en relieve al frente.",
+      descriptionEn:
+      "Washed canvas dad hat, unstructured low crown, adjustable metal back buckle. Embroidered raised H on the front.",
     details: [
       "Lona de algodón 100% lavada, tacto suave desde el primer uso",
       "Corte bajo sin estructurar, visera curva",
@@ -1352,6 +1384,8 @@ export const products: Product[] = [
     reviewCount: 2,
     description:
       "Calcetines de caña alta, algodón grueso con canalé. Logotipo HOWL bordado en el lateral.",
+      descriptionEn:
+      "Crew-length socks, thick ribbed cotton. HOWL logo embroidered on the side.",
     details: [
       "Algodón grueso con canalé, caña alta",
       "Logotipo HOWL bordado en el lateral",
@@ -1380,6 +1414,8 @@ export const products: Product[] = [
     reviewCount: 2,
     description:
       "Sudadera con capucha, algodón grueso de alto gramaje. El lobo y la luna de nuestra pieza insignia, ahora en formato sudadera.",
+      descriptionEn:
+      "Hoodie, heavyweight cotton. The wolf and the moon from our flagship piece, now in hoodie form.",
     details: [
       "Algodón/poliéster 340 g/m², interior perchado",
       "Capucha forrada, bolsillo canguro",
@@ -1410,6 +1446,8 @@ export const products: Product[] = [
     reviewCount: 2,
     description:
       "Bolsa de algodón grueso resistente, wordmark HOWL minimalista al frente. Para el día a día — y para llegar al envío gratis.",
+      descriptionEn:
+      "Sturdy heavyweight cotton tote, minimalist HOWL wordmark on the front. For every day — and for hitting free shipping.",
     details: [
       "Algodón grueso 100%, asas planas reforzadas",
       "Wordmark HOWL serigrafiado al frente",
@@ -1435,6 +1473,7 @@ export const products: Product[] = [
     rating: 4.8,
     reviewCount: 3,
     description: "Sticker vinilo troquelado. Resistente al agua y a los rayos UV. 8cm aprox.",
+    descriptionEn: "Die-cut vinyl sticker. Water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño ya presente en camiseta"],
     category: "Stickers",
     sizes: ["Única"],
@@ -1456,6 +1495,7 @@ export const products: Product[] = [
     rating: 4.8,
     reviewCount: 2,
     description: "Sticker vinilo troquelado. Resistente al agua y a los rayos UV. 8cm aprox.",
+    descriptionEn: "Die-cut vinyl sticker. Water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño ya presente en camiseta"],
     category: "Stickers",
     sizes: ["Única"],
