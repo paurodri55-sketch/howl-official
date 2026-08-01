@@ -4,10 +4,12 @@ import { useState, type FormEvent } from "react";
 import { useCart } from "@/components/cart/CartContext";
 import { LinkButton, Button } from "@/components/ui/Button";
 import { formatPrice } from "@/lib/format";
+import { useLocale, withLocale } from "@/lib/i18n/client";
 
 const SHIPPING = 4.9;
 
 export default function CheckoutPage() {
+  const locale = useLocale();
   const { items, subtotal, clearCart } = useCart();
   const [status, setStatus] = useState<"form" | "loading" | "done">("form");
   const [orderId, setOrderId] = useState<string | null>(null);
@@ -63,7 +65,7 @@ export default function CheckoutPage() {
           paso redirigirá a un pago real y el pedido se enviará a Printful
           para producción y envío.
         </p>
-        <LinkButton href="/catalogo">Seguir comprando</LinkButton>
+        <LinkButton href={withLocale("/catalogo", locale)}>Seguir comprando</LinkButton>
       </div>
     );
   }
@@ -75,7 +77,7 @@ export default function CheckoutPage() {
           No hay nada que pagar
         </h1>
         <p className="text-cream-dim mb-8">Tu carrito está vacío.</p>
-        <LinkButton href="/catalogo">Ir al catálogo</LinkButton>
+        <LinkButton href={withLocale("/catalogo", locale)}>Ir al catálogo</LinkButton>
       </div>
     );
   }

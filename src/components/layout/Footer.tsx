@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { NewsletterForm } from "@/components/newsletter/NewsletterForm";
+import { withLocale, type Locale } from "@/lib/i18n/config";
 
-export function Footer() {
+export function Footer({ locale }: { locale: Locale }) {
   return (
     <footer className="mt-24 border-t border-ink-line bg-ink-soft">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
@@ -24,12 +25,12 @@ export function Footer() {
             </p>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/catalogo" className="hover:text-rust-light">
+                <Link href={withLocale("/catalogo", locale)} className="hover:text-rust-light">
                   Catálogo
                 </Link>
               </li>
               <li>
-                <Link href="/carrito" className="hover:text-rust-light">
+                <Link href={withLocale("/carrito", locale)} className="hover:text-rust-light">
                   Carrito
                 </Link>
               </li>

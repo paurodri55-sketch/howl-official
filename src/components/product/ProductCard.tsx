@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import type { Product } from "@/lib/types";
@@ -8,8 +10,10 @@ import { Badge } from "@/components/ui/Badge";
 import { StarRating } from "@/components/ui/StarRating";
 import { getBackProductPhoto, getProductPhoto, hasRealBackPhoto } from "@/lib/photos";
 import { SHOW_SOCIAL_PROOF } from "@/lib/config";
+import { useLocale, withLocale } from "@/lib/i18n/client";
 
 export function ProductCard({ product }: { product: Product }) {
+  const locale = useLocale();
   const showcaseColor = pickShowcaseColor(product);
   const photo = getProductPhoto(product, showcaseColor);
   const backPhoto = hasRealBackPhoto(product)
@@ -18,7 +22,7 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <Link
-      href={`/producto/${product.slug}`}
+      href={withLocale(`/producto/${product.slug}`, locale)}
       className="group flex flex-col"
     >
       <div className="relative">

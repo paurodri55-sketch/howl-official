@@ -8,6 +8,7 @@ import {
 } from "@/lib/products";
 import { ProductCard } from "@/components/product/ProductCard";
 import { ProductViewer } from "@/components/product/ProductViewer";
+import { withLocale, type Locale } from "@/lib/i18n/config";
 
 export function generateStaticParams() {
   return getAllProducts().map((product) => ({ slug: product.slug }));
@@ -30,9 +31,9 @@ export async function generateMetadata({
 export default async function ProductPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: Locale }>;
 }) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const product = getProductBySlug(slug);
   if (!product) notFound();
 
@@ -41,7 +42,7 @@ export default async function ProductPage({
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:py-12 sm:px-6">
       <nav className="text-xs text-cream-dim mb-8 font-condensed uppercase tracking-widest">
-        <Link href="/catalogo" className="hover:text-cream">
+        <Link href={withLocale("/catalogo", locale)} className="hover:text-cream">
           Catálogo
         </Link>{" "}
         / <span className="text-cream">{product.name}</span>

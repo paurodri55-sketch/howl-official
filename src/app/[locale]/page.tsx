@@ -17,6 +17,7 @@ import { SHOW_SOCIAL_PROOF } from "@/lib/config";
 import { getDaysUntilLaunch } from "@/lib/launch";
 import Link from "next/link";
 import Image from "next/image";
+import { withLocale, type Locale } from "@/lib/i18n/config";
 
 // Nombres del marquee derivados de los productos reales, para que nunca
 // quede desactualizado cuando se añaden o retiran diseños.
@@ -51,7 +52,12 @@ const testimonials = [
   },
 ];
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
   const featured = getFeaturedProducts();
   const newArrivals = getNewProducts();
   const daysUntilLaunch = getDaysUntilLaunch();
@@ -81,7 +87,7 @@ export default function Home() {
             trabajados a mano y tiradas que no vuelven.
           </p>
           <div className="mt-8 flex justify-center gap-4">
-            <LinkButton href="/catalogo">Ver catálogo</LinkButton>
+            <LinkButton href={withLocale("/catalogo", locale)}>Ver catálogo</LinkButton>
             <LinkButton href="#destacados" variant="outline">
               Destacados
             </LinkButton>
@@ -118,7 +124,7 @@ export default function Home() {
             return (
               <Reveal key={category} delay={i * 100}>
                 <Link
-                  href={`/catalogo?cat=${encodeURIComponent(category)}`}
+                  href={withLocale(`/catalogo?cat=${encodeURIComponent(category)}`, locale)}
                   className="group relative block overflow-hidden border border-ink-line"
                 >
                   {photo ? (
@@ -191,7 +197,7 @@ export default function Home() {
             <h2 className="font-display uppercase text-cream text-3xl sm:text-4xl">
               Novedades
             </h2>
-            <LinkButton href="/catalogo" variant="ghost" className="px-0">
+            <LinkButton href={withLocale("/catalogo", locale)} variant="ghost" className="px-0">
               Ver todo →
             </LinkButton>
           </div>
@@ -216,7 +222,7 @@ export default function Home() {
             <h2 className="font-display uppercase text-cream text-3xl sm:text-4xl">
               Destacados
             </h2>
-            <LinkButton href="/catalogo" variant="ghost" className="px-0">
+            <LinkButton href={withLocale("/catalogo", locale)} variant="ghost" className="px-0">
               Ver todo →
             </LinkButton>
           </div>
@@ -297,7 +303,7 @@ export default function Home() {
             Antes de que se agote la talla M, otra vez.
           </p>
           <div className="mt-8">
-            <LinkButton href="/catalogo">Entrar a la tienda</LinkButton>
+            <LinkButton href={withLocale("/catalogo", locale)}>Entrar a la tienda</LinkButton>
           </div>
         </Reveal>
       </section>

@@ -5,8 +5,10 @@ import { useCart } from "@/components/cart/CartContext";
 import { TeeMockup } from "@/components/product/TeeMockup";
 import { LinkButton } from "@/components/ui/Button";
 import { formatPrice } from "@/lib/format";
+import { useLocale, withLocale } from "@/lib/i18n/client";
 
 export default function CarritoPage() {
+  const locale = useLocale();
   const { items, subtotal, updateQuantity, removeItem } = useCart();
 
   if (items.length === 0) {
@@ -18,7 +20,7 @@ export default function CarritoPage() {
         <p className="text-cream-dim mb-8">
           Todavía no has metido nada en la furgoneta de gira.
         </p>
-        <LinkButton href="/catalogo">Ir al catálogo</LinkButton>
+        <LinkButton href={withLocale("/catalogo", locale)}>Ir al catálogo</LinkButton>
       </div>
     );
   }
@@ -34,7 +36,7 @@ export default function CarritoPage() {
           {items.map((item) => (
             <li key={item.id} className="flex gap-4 py-5">
               <Link
-                href={`/producto/${item.slug}`}
+                href={withLocale(`/producto/${item.slug}`, locale)}
                 className="shrink-0 w-20 h-20"
               >
                 <TeeMockup
@@ -49,7 +51,7 @@ export default function CarritoPage() {
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <Link
-                      href={`/producto/${item.slug}`}
+                      href={withLocale(`/producto/${item.slug}`, locale)}
                       className="font-condensed uppercase tracking-wide text-cream hover:text-rust-light"
                     >
                       {item.name}
@@ -118,12 +120,12 @@ export default function CarritoPage() {
             <span>Total</span>
             <span>{formatPrice(subtotal)}</span>
           </div>
-          <LinkButton href="/checkout" className="w-full">
+          <LinkButton href={withLocale("/checkout", locale)} className="w-full">
             Finalizar compra
           </LinkButton>
           <p className="mt-4 text-xs text-cream-dim text-center">
             🎁 Sticker HOWL de regalo en cada pedido.{" "}
-            <Link href="/catalogo?cat=Stickers" className="text-rust-light hover:underline">
+            <Link href={withLocale("/catalogo?cat=Stickers", locale)} className="text-rust-light hover:underline">
               Descubre la colección de stickers
             </Link>
             .

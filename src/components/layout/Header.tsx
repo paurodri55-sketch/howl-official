@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCart } from "@/components/cart/CartContext";
 import { Logo } from "@/components/ui/Logo";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { useLocale, withLocale } from "@/lib/i18n/client";
 
 const navLinks = [
   { href: "/", label: "Inicio" },
@@ -12,13 +14,14 @@ const navLinks = [
 
 export function Header() {
   const pathname = usePathname();
+  const locale = useLocale();
   const { itemCount } = useCart();
 
   return (
     <header className="sticky top-0 z-50 border-b border-ink-line bg-ink/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
         <Link
-          href="/"
+          href={withLocale("/", locale)}
           className="flex items-center gap-2 font-display text-2xl sm:text-3xl tracking-wide text-cream"
         >
           <Logo className="h-10 w-auto sm:h-12" />
@@ -29,9 +32,9 @@ export function Header() {
           {navLinks.map((link) => (
             <Link
               key={link.href}
-              href={link.href}
+              href={withLocale(link.href, locale)}
               className={`transition-colors ${
-                pathname === link.href
+                pathname === withLocale(link.href, locale)
                   ? "text-rust-light"
                   : "text-cream-dim hover:text-cream"
               }`}
@@ -39,8 +42,9 @@ export function Header() {
               {link.label}
             </Link>
           ))}
+          <LanguageSwitcher />
           <Link
-            href="/carrito"
+            href={withLocale("/carrito", locale)}
             className="relative flex items-center text-cream-dim hover:text-cream transition-colors"
             aria-label="Ver carrito"
           >
