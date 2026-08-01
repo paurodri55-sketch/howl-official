@@ -49,7 +49,11 @@ export const products: Product[] = [
     tagline: "WHERE THE BEASTS AND NATURE LIVE",
     logoStyle: { skew: -6, accentColor: "#8fd13b" },
     tourDates: [],
-    backHeroPhoto: "herotop-everglades-serpent",
+    backHeroPhotoByColor: {
+      "#1c1712": "everglades-back-black",
+      "#a8452a": "everglades-back-rust",
+      "#e7d9b8": "everglades-back-cream",
+    },
   },
   {
     id: "p4",
@@ -102,13 +106,12 @@ export const products: Product[] = [
     details: standardDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
-    colors: [inkBlack, agedCream],
+    colors: [inkBlack],
     graphic: "moon",
     artworkImage: "/artwork/moon.png",
     frontLogoOnly: true,
     backHeroPhotoByColor: {
       "#1c1712": "moon-back-black",
-      "#e7d9b8": "moon-back-cream",
     },
     tagline: "STILL AWAKE. STILL NORMAL.",
     logoStyle: { accentColor: "#7ec8e3" },
@@ -216,7 +219,11 @@ export const products: Product[] = [
       { city: "El Paso, TX", date: "20 Jul" },
     ],
     isNew: true,
-    backHeroPhoto: "herotop-rattlesnake-kings-scorched-earth",
+    backHeroPhotoByColor: {
+      "#a8452a": "rattlesnake-back-rust",
+      "#1c1712": "rattlesnake-back-black",
+      "#e7d9b8": "rattlesnake-back-cream",
+    },
   },
   {
     id: "p11",
@@ -300,7 +307,11 @@ export const products: Product[] = [
     logoStyle: { accentColor: "#e8752c" },
     tourDates: [],
     isNew: true,
-    backHeroPhoto: "herotop-chase-the-horizon-mountains",
+    backHeroPhotoByColor: {
+      "#a8452a": "chase-back-rust",
+      "#1c1712": "chase-back-black",
+      "#3c4a5c": "chase-back-denim",
+    },
   },
   {
     id: "p14",
@@ -527,7 +538,10 @@ export const products: Product[] = [
     logoStyle: { accentColor: "#c9463e" },
     tourDates: [],
     isNew: true,
-    backHeroPhoto: "herotop-tradition-innovation-crane",
+    backHeroPhotoByColor: {
+      "#e7d9b8": "tradition-back-cream",
+      "#1c1712": "tradition-back-black",
+    },
   },
   {
     id: "p22",
@@ -583,7 +597,11 @@ export const products: Product[] = [
     logoStyle: { accentColor: "#efe4c8" },
     tourDates: [],
     isNew: true,
-    backHeroPhoto: "howl-project-back",
+    backHeroPhotoByColor: {
+      "#1c1712": "howl-project-back-black",
+      "#e7d9b8": "howl-project-back-cream",
+      "#3c4a5c": "howl-project-back-denim",
+    },
   },
   {
     id: "p24",

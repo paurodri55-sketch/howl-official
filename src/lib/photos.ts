@@ -21,16 +21,12 @@ export function getProductPhoto(
   return `/photos/${designName}-${slug}.png`;
 }
 
-/**
- * True si el producto tiene una foto trasera REAL (no el fallback de camiseta
- * lisa) — para decidir si tiene sentido mostrarla como hover en el catálogo.
- */
-export function hasRealBackPhoto(product: Product): boolean {
-  return Boolean(
-    product.backHeroPhoto ||
-      product.backHeroPhotoByColor ||
-      (product.backArtworkImage && product.backTextBaked)
-  );
+/** Deduce el color "horneado" en un nombre de archivo de foto trasera fija (ej. "moon-back-black" -> "black"). */
+function inferBakedColorSlug(filename: string): string | null {
+  for (const slug of Object.values(COLOR_SLUGS)) {
+    if (filename.endsWith(`-${slug}`)) return slug;
+  }
+  return null;
 }
 
 /**
@@ -38,19 +34,35 @@ export function hasRealBackPhoto(product: Product): boolean {
  * trasero propio (foto de estudio real), se usa esa. Si no, y el producto ya
  * tiene foto real delantera, se usa la camiseta lisa real como trasera (mejor
  * que el mockup vectorial, que no combina con el resto de fotos reales).
+ *
+ * Cuando `backHeroPhoto` es una única foto fija (no una por color), se
+ * comprueba que su color coincida con el color pedido — si no coincide (ej.
+ * el producto tiene 3 colores pero la foto trasera está "horneada" en negro),
+ * se cae a la camiseta lisa trasera del color correcto en vez de mostrar un
+ * color equivocado.
  */
 export function getBackProductPhoto(
   product: Product,
   color: ProductColor
 ): string | null {
+  const slug = COLOR_SLUGS[color.hex];
+
   const heroForColor = product.backHeroPhotoByColor?.[color.hex];
   if (heroForColor) {
     return `/photos/${heroForColor}.png`;
   }
+
   if (product.backHeroPhoto) {
-    return `/photos/${product.backHeroPhoto}.png`;
+    const bakedSlug = inferBakedColorSlug(product.backHeroPhoto);
+    if (!bakedSlug || bakedSlug === slug) {
+      return `/photos/${product.backHeroPhoto}.png`;
+    }
+    if (slug && product.category === "Camisetas") {
+      return `/photos/blank-shirt-back-${slug}.png`;
+    }
+    return null;
   }
-  const slug = COLOR_SLUGS[color.hex];
+
   if (!slug) return null;
   if (product.backArtworkImage && product.backTextBaked) {
     const designName = product.backArtworkImage.split("/").pop()?.replace(/\.png$/, "");

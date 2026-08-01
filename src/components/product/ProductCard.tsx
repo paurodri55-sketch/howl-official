@@ -8,7 +8,7 @@ import { isDarkGarment, pickShowcaseColor } from "@/lib/color";
 import { TeeMockup } from "@/components/product/TeeMockup";
 import { Badge } from "@/components/ui/Badge";
 import { StarRating } from "@/components/ui/StarRating";
-import { getBackProductPhoto, getProductPhoto, hasRealBackPhoto } from "@/lib/photos";
+import { getBackProductPhoto, getProductPhoto } from "@/lib/photos";
 import { SHOW_SOCIAL_PROOF } from "@/lib/config";
 import { useLocale, withLocale } from "@/lib/i18n/client";
 import { getDictionary } from "@/lib/i18n/dictionaries";
@@ -18,9 +18,7 @@ export function ProductCard({ product }: { product: Product }) {
   const t = getDictionary(locale).product;
   const showcaseColor = pickShowcaseColor(product);
   const photo = getProductPhoto(product, showcaseColor);
-  const backPhoto = hasRealBackPhoto(product)
-    ? getBackProductPhoto(product, showcaseColor)
-    : null;
+  const backPhoto = getBackProductPhoto(product, showcaseColor);
 
   return (
     <Link
