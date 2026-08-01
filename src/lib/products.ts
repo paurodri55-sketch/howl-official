@@ -92,7 +92,7 @@ export const products: Product[] = [
     reviewCount: 23,
     purchases: 245,
     description:
-      "Camiseta de la colección Horizonte. La luna duerme con gorro y manta al pecho — para quien también se queda despierto pensando en nada a las tres de la mañana.",
+      "Camiseta de la colección Horizonte. Wordmark discreto al pecho; la luna duerme con gorro y manta a la espalda — para quien también se queda despierto pensando en nada a las tres de la mañana.",
     details: standardDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
