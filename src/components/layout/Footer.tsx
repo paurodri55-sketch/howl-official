@@ -89,7 +89,18 @@ export function Footer({ locale }: { locale: Locale }) {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-ink-line pt-6 flex flex-col gap-2 text-xs text-cream-dim/70">
+        <div className="mt-10 border-t border-ink-line pt-6 flex flex-col gap-3 text-xs text-cream-dim/70">
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            <Link href={withLocale("/legal/aviso-legal", locale)} className="hover:text-cream-dim">
+              {t.legalNotice}
+            </Link>
+            <Link href={withLocale("/legal/privacidad", locale)} className="hover:text-cream-dim">
+              {t.privacy}
+            </Link>
+            <Link href={withLocale("/legal/cookies", locale)} className="hover:text-cream-dim">
+              {t.cookies}
+            </Link>
+          </div>
           <p>{t.copyright(new Date().getFullYear())}</p>
           <p>{t.disclaimer}</p>
         </div>

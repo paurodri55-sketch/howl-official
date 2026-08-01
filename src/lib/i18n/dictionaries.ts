@@ -22,6 +22,10 @@ export const dictionaries = {
       copyright: (year: number) => `© ${year} HOWL. Todos los derechos reservados.`,
       disclaimer:
         "Marcas, bandas y colecciones son ficticias. Proyecto de demostración sin afiliación con marcas o artistas reales.",
+      legalHeading: "Legal",
+      legalNotice: "Aviso Legal",
+      privacy: "Privacidad",
+      cookies: "Cookies",
     },
     newsletter: {
       ctaSection: "Acceso anticipado",
@@ -211,6 +215,10 @@ export const dictionaries = {
       copyright: (year: number) => `© ${year} HOWL. All rights reserved.`,
       disclaimer:
         "Brands, bands and collections are fictional. Demo project, not affiliated with any real brand or artist.",
+      legalHeading: "Legal",
+      legalNotice: "Legal Notice",
+      privacy: "Privacy",
+      cookies: "Cookies",
     },
     newsletter: {
       ctaSection: "Get early access",
