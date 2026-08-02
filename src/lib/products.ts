@@ -10,16 +10,18 @@ const offWhite: ProductColor = { name: "Blanco", hex: "#f6f3ee" };
 const tourTeeSizes: Product["sizes"] = ["S", "M", "L", "XL", "XXL"];
 
 const standardDetails = [
-  "Algodón pesado 240 g/m², percha ancha",
+  "Algodón peinado e hilado en anillos 237 g/m², corte boxy oversized",
   "Serigrafía envejecida con lavado ácido",
   "Corte unisex clásico de los 80/90",
+  "Corte oversized — pide una talla menos si lo prefieres ajustado",
   "Tirada limitada — no se reimprime",
 ];
 
 const lifestyleDetails = [
-  "Algodón peinado 220 g/m², tacto suave",
+  "Algodón peinado e hilado en anillos 237 g/m², corte boxy oversized",
   "Estampado digital de alta resolución",
   "Corte unisex regular",
+  "Corte oversized — pide una talla menos si lo prefieres ajustado",
   "Edición limitada numerada",
 ];
 

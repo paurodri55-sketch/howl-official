@@ -17,7 +17,7 @@ export const dictionaries = {
       aboutUs: "Sobre nosotros",
       shippingHeading: "Envíos y devoluciones",
       shippingFree: "Envío gratis a partir de 50 €",
-      shippingTime: "Entrega en 3–5 días laborables",
+      shippingTime: "Entrega en 8–9 días laborables — hecha bajo pedido",
       shippingReturns: "Devoluciones gratuitas hasta 30 días",
       followHeading: "Síguenos",
       copyright: (year: number) => `© ${year} HOWL. Todos los derechos reservados.`,
@@ -68,8 +68,8 @@ export const dictionaries = {
       featuredHeading: "Destacados",
       whyHowl: [
         {
-          title: "Algodón 240–320 g/m²",
-          text: "Percha ancha, corte clásico. Nada de camisetas de papel.",
+          title: "Algodón 237 g/m², corte boxy",
+          text: "Peinado e hilado en anillos, corte oversized real. Nada de camisetas de papel.",
         },
         {
           title: "Serigrafía envejecida",
@@ -212,7 +212,7 @@ export const dictionaries = {
       aboutUs: "About us",
       shippingHeading: "Shipping & returns",
       shippingFree: "Free shipping over €50",
-      shippingTime: "Delivery in 3–5 business days",
+      shippingTime: "Delivery in 8–9 business days — made to order",
       shippingReturns: "Free returns within 30 days",
       followHeading: "Follow us",
       copyright: (year: number) => `© ${year} HOWL. All rights reserved.`,
@@ -263,8 +263,8 @@ export const dictionaries = {
       featuredHeading: "Featured",
       whyHowl: [
         {
-          title: "240–320 g/m² cotton",
-          text: "Wide hanger, classic cut. None of that paper-thin tee stuff.",
+          title: "237 g/m² boxy cotton",
+          text: "Combed, ring-spun, genuinely oversized cut. None of that paper-thin tee stuff.",
         },
         {
           title: "Aged screen print",
