@@ -34,6 +34,11 @@ export function Footer({ locale }: { locale: Locale }) {
                   {t.cart}
                 </Link>
               </li>
+              <li>
+                <Link href={withLocale("/sobre-nosotros", locale)} className="hover:text-rust-light">
+                  {t.aboutUs}
+                </Link>
+              </li>
             </ul>
           </div>
 
