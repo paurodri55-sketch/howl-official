@@ -146,6 +146,7 @@ export const dictionaries = {
       "#a8452a": "Óxido",
       "#3c4a5c": "Azul lavado",
       "#e0b23c": "Amarillo cereza",
+      "#f6f3ee": "Blanco",
     } as Record<string, string>,
     cart: {
       heading: "Carrito",
@@ -340,6 +341,7 @@ export const dictionaries = {
       "#a8452a": "Rust",
       "#3c4a5c": "Washed blue",
       "#e0b23c": "Cherry yellow",
+      "#f6f3ee": "White",
     } as Record<string, string>,
     cart: {
       heading: "Cart",

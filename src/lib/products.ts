@@ -5,6 +5,7 @@ const agedCream: ProductColor = { name: "Crema envejecida", hex: "#e7d9b8" };
 const oxideRust: ProductColor = { name: "Óxido", hex: "#a8452a" };
 const washedDenim: ProductColor = { name: "Azul lavado", hex: "#3c4a5c" };
 const sunYellow: ProductColor = { name: "Amarillo cereza", hex: "#e0b23c" };
+const offWhite: ProductColor = { name: "Blanco", hex: "#f6f3ee" };
 
 const tourTeeSizes: Product["sizes"] = ["S", "M", "L", "XL", "XXL"];
 
@@ -592,7 +593,7 @@ export const products: Product[] = [
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
-    colors: [inkBlack, agedCream, washedDenim],
+    colors: [inkBlack, agedCream, washedDenim, offWhite],
     graphic: "landscape",
     artworkImage: "/artwork/howl-wordmark.png",
     frontLogoOnly: true,
