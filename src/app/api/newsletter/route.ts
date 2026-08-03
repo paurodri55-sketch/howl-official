@@ -1,12 +1,21 @@
 import { NextResponse } from "next/server";
 import { subscribeToNewsletter } from "@/lib/mailchimp";
-import { saveSignup } from "@/lib/newsletter-store";
+import { saveSignup, checkRateLimit } from "@/lib/newsletter-store";
 
 function isValidEmail(email: unknown): email is string {
   return typeof email === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 export async function POST(request: Request) {
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  const { allowed } = await checkRateLimit(ip);
+  if (!allowed) {
+    return NextResponse.json(
+      { success: false, error: "Demasiados intentos, prueba más tarde" },
+      { status: 429 }
+    );
+  }
+
   const body = (await request.json()) as { email?: string; source?: string };
 
   if (!isValidEmail(body.email)) {
