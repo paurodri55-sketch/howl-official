@@ -101,8 +101,8 @@ export const dictionaries = {
           rating: 4,
         },
       ],
-      finalCtaHeading: "Nueva colección en la calle",
-      finalCtaBody: "Antes de que se agote la talla M, otra vez.",
+      finalCtaHeading: "Entra a HOWL",
+      finalCtaBody: "Descubre la colección.",
       finalCtaButton: "Entrar a la tienda",
     },
     catalog: {
@@ -296,8 +296,8 @@ export const dictionaries = {
           rating: 4,
         },
       ],
-      finalCtaHeading: "New collection is out",
-      finalCtaBody: "Before size M sells out again.",
+      finalCtaHeading: "Step into HOWL",
+      finalCtaBody: "Discover the collection.",
       finalCtaButton: "Enter the shop",
     },
     catalog: {

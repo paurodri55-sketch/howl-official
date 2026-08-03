@@ -6,6 +6,7 @@ import { CartProvider } from "@/components/cart/CartContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { NewsletterModal } from "@/components/newsletter/NewsletterModal";
+import { TikTokPixel } from "@/components/analytics/TikTokPixel";
 import { locales, isLocale } from "@/lib/i18n/config";
 
 const anton = Anton({
@@ -53,6 +54,7 @@ export default async function LocaleLayout({
           <NewsletterModal locale={locale} />
         </CartProvider>
         <Analytics />
+        <TikTokPixel />
       </body>
     </html>
   );
