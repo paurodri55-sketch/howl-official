@@ -29,7 +29,7 @@ export function PrintArt({
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={product.backArtworkImage ?? product.artworkImage}
-            alt=""
+            alt={`${product.name} — diseño trasero`}
             className="w-full max-w-xs h-auto object-contain"
           />
         ) : (
