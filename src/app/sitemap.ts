@@ -1,10 +1,10 @@
 import type { MetadataRoute } from "next";
-import { products } from "@/lib/products";
+import { getVisibleProducts } from "@/lib/products";
 
 const SITE_URL = "https://howlofficial.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const productRoutes: MetadataRoute.Sitemap = products.map((product) => ({
+  const productRoutes: MetadataRoute.Sitemap = getVisibleProducts().map((product) => ({
     url: `${SITE_URL}/producto/${product.slug}`,
     changeFrequency: "weekly",
     priority: 0.8,

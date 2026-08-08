@@ -105,6 +105,9 @@ export function Footer({ locale }: { locale: Locale }) {
             <Link href={withLocale("/legal/cookies", locale)} className="hover:text-cream-dim">
               {t.cookies}
             </Link>
+            <Link href={withLocale("/legal/devoluciones", locale)} className="hover:text-cream-dim">
+              {t.returns}
+            </Link>
           </div>
           <p>{t.copyright(new Date().getFullYear())}</p>
           <p>{t.disclaimer}</p>

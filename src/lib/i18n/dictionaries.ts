@@ -27,6 +27,7 @@ export const dictionaries = {
       legalNotice: "Aviso Legal",
       privacy: "Privacidad",
       cookies: "Cookies",
+      returns: "Devoluciones",
     },
     newsletter: {
       ctaSection: "Acceso anticipado",
@@ -146,7 +147,7 @@ export const dictionaries = {
       "#a8452a": "Óxido",
       "#3c4a5c": "Azul lavado",
       "#e0b23c": "Amarillo cereza",
-      "#f6f3ee": "Blanco",
+      "#dba876": "Albaricoque",
     } as Record<string, string>,
     cart: {
       heading: "Carrito",
@@ -222,6 +223,7 @@ export const dictionaries = {
       legalNotice: "Legal Notice",
       privacy: "Privacy",
       cookies: "Cookies",
+      returns: "Returns",
     },
     newsletter: {
       ctaSection: "Get early access",
@@ -341,7 +343,7 @@ export const dictionaries = {
       "#a8452a": "Rust",
       "#3c4a5c": "Washed blue",
       "#e0b23c": "Cherry yellow",
-      "#f6f3ee": "White",
+      "#dba876": "Apricot",
     } as Record<string, string>,
     cart: {
       heading: "Cart",

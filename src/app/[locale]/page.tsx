@@ -5,7 +5,7 @@ import { StarRating } from "@/components/ui/StarRating";
 import { Reveal } from "@/components/ui/Reveal";
 import { isDarkGarment } from "@/lib/color";
 import {
-  getAllProducts,
+  getVisibleProducts,
   getFeaturedProducts,
   getNewProducts,
   getProductBySlug,
@@ -23,13 +23,13 @@ import { getDictionary } from "@/lib/i18n/dictionaries";
 // Nombres del marquee derivados de los productos reales, para que nunca
 // quede desactualizado cuando se añaden o retiran diseños.
 const marqueeBands = Array.from(
-  new Set(getAllProducts().map((p) => p.band.toUpperCase()))
+  new Set(getVisibleProducts().map((p) => p.band.toUpperCase()))
 );
 
 const categoryTiles = [
   { category: "Camisetas" as const, slug: "answer-the-call-wolf" },
-  { category: "Sudaderas" as const, slug: "midnight-combine-harvest-of-noise" },
-  { category: "Stickers" as const, slug: "sticker-wolf-badge" },
+  { category: "Sudaderas" as const, slug: "howl-hoodie-logo" },
+  { category: "Stickers" as const, slug: "sticker-wolfmoon" },
 ];
 
 export default async function Home({

@@ -11,6 +11,11 @@ const TAX_ID_PLACEHOLDER_EN = "[TAX ID]";
 const ADDRESS_PLACEHOLDER_EN = "[REGISTERED ADDRESS]";
 const EMAIL_PLACEHOLDER_EN = "[CONTACT EMAIL]";
 
+const RETURN_SHIPPING_TEXT =
+  "El envío de vuelta corre a cargo de HOWL: te facilitamos una etiqueta de devolución prepagada sin coste adicional para ti.";
+const RETURN_SHIPPING_TEXT_EN =
+  "Return shipping is on us: we provide a prepaid return label at no extra cost to you.";
+
 export const legalContent = {
   es: {
     aviso: {
@@ -117,6 +122,52 @@ export const legalContent = {
         },
       ],
     },
+    devoluciones: {
+      title: "Política de Devoluciones",
+      updated: "Última actualización: agosto de 2026",
+      sections: [
+        {
+          heading: "1. Plazo para devolver",
+          body: [
+            "Dispones de 30 días naturales desde la recepción de tu pedido para solicitar una devolución o cambio de talla, sin necesidad de justificar el motivo.",
+          ],
+        },
+        {
+          heading: "2. Estado en el que debe llegar la prenda",
+          body: [
+            "La prenda debe devolverse sin usar, sin lavar, con las etiquetas originales puestas y, siempre que sea posible, en su embalaje original. Si la prenda muestra señales de uso, nos reservamos el derecho a rechazar la devolución o aplicar una deducción proporcional al valor perdido.",
+          ],
+        },
+        {
+          heading: "3. Cómo iniciar una devolución",
+          body: [
+            `Escríbenos a ${EMAIL_PLACEHOLDER} indicando tu número de pedido y si quieres reembolso o cambio de talla. Te confirmamos los siguientes pasos en un plazo máximo de 48 horas laborables.`,
+          ],
+        },
+        {
+          heading: "4. Gastos de envío de la devolución",
+          body: [RETURN_SHIPPING_TEXT],
+        },
+        {
+          heading: "5. Plazo de reembolso",
+          body: [
+            "Una vez recibida y verificada la prenda devuelta, procesamos el reembolso en un plazo de 5-7 días laborables, usando el mismo método de pago que utilizaste en la compra.",
+          ],
+        },
+        {
+          heading: "6. Cambios de talla",
+          body: [
+            "Si quieres cambiar de talla en lugar de un reembolso, indícalo al escribirnos — te enviamos la nueva talla en cuanto recibamos la prenda original, sujeto a disponibilidad de stock.",
+          ],
+        },
+        {
+          heading: "7. Productos no incluidos",
+          body: [
+            "Los stickers y artículos de regalo incluidos con el pedido no son objeto de devolución independiente. El resto del catálogo (camisetas, sudaderas, accesorios) sigue la política general descrita arriba.",
+          ],
+        },
+      ],
+    },
   },
   en: {
     aviso: {
@@ -219,6 +270,52 @@ export const legalContent = {
           heading: "3. Managing cookies",
           body: [
             "You can delete or block cookies at any time from your browser settings. Note that blocking the locale cookie may cause the site to revert to the default language on each visit.",
+          ],
+        },
+      ],
+    },
+    devoluciones: {
+      title: "Returns Policy",
+      updated: "Last updated: August 2026",
+      sections: [
+        {
+          heading: "1. Return window",
+          body: [
+            "You have 30 calendar days from receiving your order to request a return or size exchange, no reason required.",
+          ],
+        },
+        {
+          heading: "2. Condition required",
+          body: [
+            "The item must be returned unworn, unwashed, with original tags attached and, whenever possible, in its original packaging. If the item shows signs of use, we reserve the right to reject the return or apply a deduction proportional to the loss of value.",
+          ],
+        },
+        {
+          heading: "3. How to start a return",
+          body: [
+            `Email us at ${EMAIL_PLACEHOLDER_EN} with your order number and whether you want a refund or a size exchange. We'll confirm next steps within 48 business hours.`,
+          ],
+        },
+        {
+          heading: "4. Return shipping costs",
+          body: [RETURN_SHIPPING_TEXT_EN],
+        },
+        {
+          heading: "5. Refund timeline",
+          body: [
+            "Once we receive and verify the returned item, we process the refund within 5-7 business days, using the same payment method you used for the purchase.",
+          ],
+        },
+        {
+          heading: "6. Size exchanges",
+          body: [
+            "If you'd like a size exchange instead of a refund, let us know when you contact us — we'll send the new size as soon as we receive the original item, subject to stock availability.",
+          ],
+        },
+        {
+          heading: "7. Excluded items",
+          body: [
+            "Stickers and gift items included with your order are not eligible for independent return. The rest of the catalog (t-shirts, hoodies, accessories) follows the general policy above.",
           ],
         },
       ],

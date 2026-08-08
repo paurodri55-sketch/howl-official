@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, Suspense, type FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
 import { useCart } from "@/components/cart/CartContext";
 import { LinkButton, Button } from "@/components/ui/Button";
 import { formatPrice } from "@/lib/format";
@@ -10,12 +11,30 @@ import { getDictionary } from "@/lib/i18n/dictionaries";
 const SHIPPING = 4.9;
 
 export default function CheckoutPage() {
+  return (
+    <Suspense fallback={null}>
+      <CheckoutPageInner />
+    </Suspense>
+  );
+}
+
+function CheckoutPageInner() {
   const locale = useLocale();
   const t = getDictionary(locale).checkout;
+  const searchParams = useSearchParams();
   const { items, subtotal, clearCart } = useCart();
   const [status, setStatus] = useState<"form" | "loading" | "done">("form");
   const [orderId, setOrderId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (searchParams.get("success") === "1") {
+      setOrderId(searchParams.get("session_id"));
+      clearCart();
+      setStatus("done");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   const total = items.length > 0 ? subtotal + SHIPPING : 0;
 
