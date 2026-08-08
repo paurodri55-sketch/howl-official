@@ -50,6 +50,9 @@ export const dictionaries = {
       modalClose: "Cerrar",
     },
     home: {
+      metaTitle: "HOWL Official — Ropa de diseño propio, tiradas limitadas",
+      metaDescription:
+        "Camisetas y sudaderas de diseño propio. Algodón pesado, estampados trabajados a mano y tiradas que no vuelven.",
       heroEyebrow: "Diseños propios · Edición limitada",
       heroHeading1: "Ropa con",
       heroHeading2: "sello propio",
@@ -246,6 +249,9 @@ export const dictionaries = {
       modalClose: "Close",
     },
     home: {
+      metaTitle: "HOWL Official — Original streetwear, limited drops",
+      metaDescription:
+        "Original tees and hoodies. Heavyweight cotton, hand-worked prints and drops that never come back.",
       heroEyebrow: "Original designs · Limited edition",
       heroHeading1: "Clothes with",
       heroHeading2: "your own mark",

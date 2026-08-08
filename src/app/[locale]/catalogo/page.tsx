@@ -4,6 +4,7 @@ import { getCategories, getVisibleProducts } from "@/lib/products";
 import type { ProductCategory } from "@/lib/types";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
+import { OG_LOCALE, buildAlternates } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -12,7 +13,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = getDictionary(locale).catalog;
-  return { title: t.metaTitle, description: t.metaDescription };
+  return {
+    title: t.metaTitle,
+    description: t.metaDescription,
+    alternates: buildAlternates("/catalogo", locale),
+    openGraph: {
+      type: "website",
+      locale: OG_LOCALE[locale],
+      title: t.metaTitle,
+      description: t.metaDescription,
+    },
+  };
 }
 
 export default async function CatalogoPage({

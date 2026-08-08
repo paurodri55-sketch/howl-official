@@ -19,6 +19,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { withLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
+import { OG_LOCALE, buildAlternates } from "@/lib/seo";
+import type { Metadata } from "next";
 
 // Nombres del marquee derivados de los productos reales, para que nunca
 // quede desactualizado cuando se añaden o retiran diseños.
@@ -31,6 +33,26 @@ const categoryTiles = [
   { category: "Sudaderas" as const, slug: "howl-hoodie-logo" },
   { category: "Stickers" as const, slug: "sticker-wolfmoon" },
 ];
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = getDictionary(locale).home;
+  return {
+    title: t.metaTitle,
+    description: t.metaDescription,
+    alternates: buildAlternates("", locale),
+    openGraph: {
+      type: "website",
+      locale: OG_LOCALE[locale],
+      title: t.metaTitle,
+      description: t.metaDescription,
+    },
+  };
+}
 
 export default async function Home({
   params,
