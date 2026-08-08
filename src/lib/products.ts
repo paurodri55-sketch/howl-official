@@ -1685,6 +1685,36 @@ export const products: Product[] = [
     isNew: true,
     visible: false,
   },
+  {
+    id: "p67",
+    slug: "howl-trucker-cap",
+    visible: false,
+    name: "Gorra Trucker HOWL",
+    band: "HOWL",
+    tourYear: "",
+    editionLabel: "Colección",
+    price: 24.95,
+    rating: 5,
+    reviewCount: 0,
+    purchases: 0,
+    description:
+      "Gorra trucker de espuma y malla trasera, visera curva. Parche bordado del lobo aullando a la luna al frente, con textura de hilo real — no es un estampado plano.",
+    descriptionEn:
+      "Foam-front trucker cap with mesh back, curved bill. Embroidered howling-wolf-and-moon patch on the front, with real thread texture — not a flat print.",
+    details: [
+      "Panel frontal de espuma, trasera de malla transpirable",
+      "Visera curva, cierre de broches ajustable, talla única",
+      "Parche bordado, no impreso — textura de hilo real",
+    ],
+    category: "Accesorios",
+    sizes: ["Única"],
+    colors: [inkBlack],
+    graphic: "landscape",
+    photoOverride: "howl-trucker-cap",
+    logoStyle: { accentColor: "#a8452a" },
+    tourDates: [],
+    isNew: true,
+  },
 ];
 
 export function getAllProducts(): Product[] {
