@@ -1715,6 +1715,38 @@ export const products: Product[] = [
     tourDates: [],
     isNew: true,
   },
+  {
+    id: "p68",
+    slug: "howl-brasil",
+    visible: false,
+    name: "HOWL Brasil",
+    band: "HOWL",
+    tourYear: "",
+    editionLabel: "Edición Limitada",
+    price: 44.95,
+    rating: 5,
+    reviewCount: 0,
+    purchases: 0,
+    description:
+      "Homenaje a las camisetas de fútbol sudamericanas de los años 70. Amarelo ouro envejecido, cuello y puños de canalé, escudo bordado del lobo y wordmark HOWL serigrafiado con tratamiento craquelado. Construcción real de jersey, no camiseta básica.",
+    descriptionEn:
+      "A tribute to 1970s South American football shirts. Aged amarelo ouro, ribbed collar and cuffs, embroidered wolf crest and a cracked-ink screen-printed HOWL wordmark. Real jersey construction, not a basic tee.",
+    details: [
+      "Cuello y puños de canalé grueso, tres franjas verde/azul/amarillo",
+      "Escudo bordado del lobo aullando, no estampado plano",
+      "Wordmark HOWL serigrafiado con tratamiento craquelado envejecido",
+      "Etiqueta tejida cosida en el bajo",
+    ],
+    category: "Camisetas",
+    sizes: tourTeeSizes,
+    colors: [{ name: "Amarelo Ouro", hex: "#e9b239" }],
+    graphic: "landscape",
+    photoOverride: "howl-brasil-front",
+    backHeroPhoto: "howl-brasil-back",
+    logoStyle: { accentColor: "#2f6b45" },
+    tourDates: [],
+    isNew: true,
+  },
 ];
 
 export function getAllProducts(): Product[] {
