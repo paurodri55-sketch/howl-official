@@ -171,6 +171,10 @@ export const dictionaries = {
       giftLink: "Descubre la colección de stickers",
     },
     checkout: {
+      preLaunchHeading: "Todavía no hemos abierto la venta",
+      preLaunchBody:
+        "HOWL abre oficialmente el 21 de noviembre de 2026. Nada se cobra antes de esa fecha — apúntate para no perderte el lanzamiento.",
+      preLaunchCta: "Volver al catálogo",
       errorGeneric: "No se pudo procesar el pedido",
       errorFallback: "Algo salió mal",
       doneHeading: "Pedido simulado con éxito",
@@ -370,6 +374,10 @@ export const dictionaries = {
       giftLink: "Check out the sticker collection",
     },
     checkout: {
+      preLaunchHeading: "We haven't opened sales yet",
+      preLaunchBody:
+        "HOWL officially opens on November 21, 2026. Nothing is charged before then — sign up so you don't miss the launch.",
+      preLaunchCta: "Back to catalog",
       errorGeneric: "Couldn't process the order",
       errorFallback: "Something went wrong",
       doneHeading: "Order simulated successfully",

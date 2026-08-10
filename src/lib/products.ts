@@ -1361,7 +1361,6 @@ export const products: Product[] = [
     tourYear: "",
     editionLabel: "Colección",
     price: 22.0,
-    compareAtPrice: 27.0,
     rating: 4.6,
     reviewCount: 2,
     description:
@@ -1393,7 +1392,6 @@ export const products: Product[] = [
     tourYear: "",
     editionLabel: "Colección",
     price: 12.0,
-    compareAtPrice: 15.0,
     rating: 4.7,
     reviewCount: 2,
     description:
@@ -1494,7 +1492,6 @@ export const products: Product[] = [
     tourYear: "",
     editionLabel: "Colección",
     price: 23.0,
-    compareAtPrice: 28.0,
     rating: 4.8,
     reviewCount: 2,
     description:

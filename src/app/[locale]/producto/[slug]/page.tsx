@@ -11,6 +11,7 @@ import { ProductCard } from "@/components/product/ProductCard";
 import { ProductViewer } from "@/components/product/ProductViewer";
 import { withLocale, type Locale } from "@/lib/i18n/config";
 import { SITE_URL, OG_LOCALE, buildAlternates } from "@/lib/seo";
+import { SHOW_SOCIAL_PROOF } from "@/lib/config";
 
 export function generateStaticParams() {
   return getAllProducts().map((product) => ({ slug: product.slug }));
@@ -82,7 +83,7 @@ export default async function ProductPage({
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
     },
-    ...(product.rating && product.reviewCount
+    ...(SHOW_SOCIAL_PROOF && product.rating && product.reviewCount
       ? {
           aggregateRating: {
             "@type": "AggregateRating",

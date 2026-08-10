@@ -4,9 +4,11 @@ import { useState, useEffect, Suspense, type FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { useCart } from "@/components/cart/CartContext";
 import { LinkButton, Button } from "@/components/ui/Button";
+import { NewsletterForm } from "@/components/newsletter/NewsletterForm";
 import { formatPrice } from "@/lib/format";
 import { useLocale, withLocale } from "@/lib/i18n/client";
 import { getDictionary } from "@/lib/i18n/dictionaries";
+import { isPreLaunch } from "@/lib/launch";
 
 const SHIPPING = 4.9;
 
@@ -70,6 +72,21 @@ function CheckoutPageInner() {
       setError(err instanceof Error ? err.message : t.errorFallback);
       setStatus("form");
     }
+  }
+
+  if (isPreLaunch()) {
+    return (
+      <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 text-center">
+        <h1 className="font-display uppercase text-cream text-4xl mb-4">
+          {t.preLaunchHeading}
+        </h1>
+        <p className="text-cream-dim mb-8">{t.preLaunchBody}</p>
+        <div className="flex justify-center mb-8">
+          <NewsletterForm variant="section" source="checkout-pre-launch" locale={locale} />
+        </div>
+        <LinkButton href={withLocale("/catalogo", locale)}>{t.preLaunchCta}</LinkButton>
+      </div>
+    );
   }
 
   if (status === "done") {
