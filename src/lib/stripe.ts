@@ -52,6 +52,11 @@ export async function createCheckoutSession(
         unit_amount: Math.round(product.price * 100),
         product_data: {
           name: `${product.name} — ${item.size} / ${item.color.name}`,
+          // El slug/talla/color viajan aquí (no hay forma nativa de adjuntar
+          // metadata estructurada al pedido cuando se usan precios dinámicos
+          // price_data) — el webhook los lee vía listLineItems para saber
+          // qué productos concretos se compraron de verdad.
+          metadata: { slug: item.slug, size: item.size },
         },
       },
     };
