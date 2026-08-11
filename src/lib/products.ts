@@ -34,9 +34,6 @@ export const products: Product[] = [
     tourYear: "N.10",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.8,
-    reviewCount: 74,
-    purchases: 760,
     description:
       "Una serpiente enroscada al pecho, para quien prefiere el pantano a la ciudad — donde mandan las bestias y no el asfalto.",
       descriptionEn:
@@ -64,9 +61,6 @@ export const products: Product[] = [
     band: "STATIC",
     tourYear: "",
     price: 29.95,
-    rating: 4.5,
-    reviewCount: 16,
-    purchases: 180,
     description:
       "Un rayo estampado a mano, colorido apagado por el sol — como si llevara años colgado en el mismo armario.",
       descriptionEn:
@@ -91,9 +85,6 @@ export const products: Product[] = [
     tourYear: "",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.6,
-    reviewCount: 23,
-    purchases: 245,
     description:
       "Wordmark discreto al pecho; la luna duerme con gorro y manta a la espalda — para quien también se queda despierto pensando en nada a las tres de la mañana.",
       descriptionEn:
@@ -120,9 +111,6 @@ export const products: Product[] = [
     band: "SOUTHBOUND",
     tourYear: "",
     price: 29.95,
-    rating: 4.6,
-    reviewCount: 26,
-    purchases: 280,
     description:
       "Alas oxidadas y letras resquebrajadas, con el aire de un clásico de mercadillo de discos que nadie recuerda de dónde salió.",
       descriptionEn:
@@ -146,9 +134,6 @@ export const products: Product[] = [
     band: "HARVEST OF NOISE",
     tourYear: "",
     price: 60,
-    rating: 4.5,
-    reviewCount: 13,
-    purchases: 150,
     description:
       "Sudadera con capucha de algodón pesado. Llama pequeña al pecho con el HOWL escondido dentro — interior perchado, sin nada a la espalda.",
       descriptionEn:
@@ -179,9 +164,6 @@ export const products: Product[] = [
     band: "SCORCHED EARTH",
     tourYear: "",
     price: 29.95,
-    rating: 4.8,
-    reviewCount: 66,
-    purchases: 690,
     description:
       "Un escorpión al acecho, estampado en tinta única — para las noches más calurosas del desierto.",
       descriptionEn:
@@ -211,9 +193,6 @@ export const products: Product[] = [
     tourYear: "N.01",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.7,
-    reviewCount: 48,
-    purchases: 505,
     description:
       "Un cielo real, colinas verdes y una frase que dice todo lo que hace falta decir. Icono plano, una sola tinta, pensado para leerse limpio a cualquier tamaño.",
       descriptionEn:
@@ -238,9 +217,6 @@ export const products: Product[] = [
     tourYear: "N.02",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.7,
-    reviewCount: 53,
-    purchases: 560,
     description:
       "Una casita de campo inglesa, jardín florido y ganas de quedarse en casa un domingo entero. Para los días en que ningún sitio le gana al sofá.",
       descriptionEn:
@@ -266,9 +242,6 @@ export const products: Product[] = [
     tourYear: "N.03",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.8,
-    reviewCount: 92,
-    purchases: 940,
     description:
       "Una cordillera al atardecer para quien nunca deja de mirar más allá de donde está. Algodón grueso, lavado suave, colores que ya vienen desgastados de fábrica.",
       descriptionEn:
@@ -297,9 +270,6 @@ export const products: Product[] = [
     tourYear: "N.04",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.7,
-    reviewCount: 39,
-    purchases: 410,
     description:
       "Palmeras, atardecer y el recordatorio de que no pasa nada por ir más despacio de vez en cuando. Corte oversized, la paleta lavada de siempre.",
       descriptionEn:
@@ -324,9 +294,6 @@ export const products: Product[] = [
     tourYear: "N.05",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.6,
-    reviewCount: 43,
-    purchases: 455,
     description:
       "Rascacielos, reflejos en el agua y esa energía que solo tiene la ciudad de noche. Para cuando el día se acaba y el plan recién empieza.",
       descriptionEn:
@@ -351,9 +318,6 @@ export const products: Product[] = [
     tourYear: "N.06",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.6,
-    reviewCount: 34,
-    purchases: 365,
     description:
       "Una furgoneta, una carretera del desierto y ninguna prisa por llegar a ningún sitio. El camino largo, a propósito.",
       descriptionEn:
@@ -378,9 +342,6 @@ export const products: Product[] = [
     tourYear: "N.07",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 5.0,
-    reviewCount: 156,
-    purchases: 1420,
     description:
       "La escena que le da nombre a HOWL: un lobo aullando a la luna, montañas detrás. Icono pequeño al pecho, ilustración completa a la espalda — el formato que repetimos en buena parte del catálogo. Algodón grueso 237 g/m², serigrafía con lavado ácido, como si llevara diez años en el armario de alguien. Cuando se agote, no vuelve.",
       descriptionEn:
@@ -406,9 +367,6 @@ export const products: Product[] = [
     band: "SWAMP",
     tourYear: "",
     price: 29.95,
-    rating: 4.9,
-    reviewCount: 121,
-    purchases: 1180,
     description:
       "Un cocodrilo asomando junto al muelle, un pescador que no se entera de nada — la escena completa a la espalda, solo el cocodrilo al pecho. La paciencia siempre gana.",
       descriptionEn:
@@ -435,9 +393,6 @@ export const products: Product[] = [
     tourYear: "N.09",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.9,
-    reviewCount: 103,
-    purchases: 1050,
     description:
       "Un jinete pequeño al pecho. A la espalda, la escena completa: \"Hard Times Build Hard Men\". Es la pieza más pesada del catálogo — estampado delante y detrás, 237 g/m² de algodón boxy oversized. Para quien prefiere el polvo del camino a la acera.",
       descriptionEn:
@@ -469,9 +424,6 @@ export const products: Product[] = [
     band: "UFO OBSESSION",
     tourYear: "",
     price: 29.95,
-    rating: 4.7,
-    reviewCount: 58,
-    purchases: 615,
     description:
       "Un platillo discreto al pecho, la abducción de una vaca de campo grabada a la espalda — para quien cree que no estamos solos.",
       descriptionEn:
@@ -498,9 +450,6 @@ export const products: Product[] = [
     band: "伝統と革新",
     tourYear: "",
     price: 29.95,
-    rating: 4.9,
-    reviewCount: 79,
-    purchases: 810,
     description:
       "Sol naciente, montañas y una gran ola en tinta tradicional japonesa sobre algodón grueso. Lo antiguo y lo nuevo en la misma tela.",
       descriptionEn:
@@ -528,8 +477,6 @@ export const products: Product[] = [
     tourYear: "N.11",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.6,
-    reviewCount: 10,
     description:
       "Un camello ornamentado, quieto frente a la puesta de sol del desierto. No tiene prisa y no la va a tener.",
       descriptionEn:
@@ -556,8 +503,6 @@ export const products: Product[] = [
     tourYear: "N.12",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.5,
-    reviewCount: 7,
     description:
       "Solo tipografía, sin ilustración — para los días de \"menos es más\". La básica de armario que no falla, en cuatro colores.",
       descriptionEn:
@@ -587,8 +532,6 @@ export const products: Product[] = [
     tourYear: "N.13",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.5,
-    reviewCount: 6,
     description:
       "Una llama, un icono, y la calma de saber que todo va bien aunque no lo parezca. Diseño mínimo, una sola tinta.",
       descriptionEn:
@@ -613,9 +556,6 @@ export const products: Product[] = [
     tourYear: "2024",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.7,
-    reviewCount: 9,
-    purchases: 140,
     description:
       "Dragón pequeño al pecho, ilustración grande a la espalda — año del dragón, si te va la numerología. Si no, es solo un dragón que impone.",
       descriptionEn:
@@ -644,9 +584,6 @@ export const products: Product[] = [
     tourYear: "2024",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.8,
-    reviewCount: 5,
-    purchases: 60,
     description:
       "Logo pequeño al pecho, una gasolinera de Route 66 ilustrada a toda espalda — llenar el depósito para la semana, en sentido literal y figurado.",
       descriptionEn:
@@ -672,8 +609,6 @@ export const products: Product[] = [
     band: "NIGHTFALL DIVE",
     tourYear: "",
     price: 29.95,
-    rating: 4.6,
-    reviewCount: 3,
     description:
       "Un halcón en picado, línea fina, una sola tinta. Sin ruido de más — el diseño hace todo el trabajo.",
       descriptionEn:
@@ -696,8 +631,6 @@ export const products: Product[] = [
     band: "MOTH & FLAME",
     tourYear: "",
     price: 29.95,
-    rating: 4.7,
-    reviewCount: 4,
     description:
       "Una polilla nocturna descendiendo hacia la llama. Línea fina, una tinta, la clase de diseño que se lee mejor cuanto más pequeño es.",
       descriptionEn:
@@ -720,8 +653,6 @@ export const products: Product[] = [
     band: "LOST BEARING",
     tourYear: "",
     price: 29.95,
-    rating: 4.5,
-    reviewCount: 2,
     description:
       "Una brújula vieja, mellada, aguja torcida — no siempre hace falta saber a dónde vas. Línea fina, una tinta.",
       descriptionEn:
@@ -744,8 +675,6 @@ export const products: Product[] = [
     band: "CUT LOOSE",
     tourYear: "",
     price: 29.95,
-    rating: 4.8,
-    reviewCount: 5,
     description:
       "Un ancla y una cuerda deshilachada — desanclarse, cortar por lo sano. Línea fina, una tinta.",
       descriptionEn:
@@ -768,8 +697,6 @@ export const products: Product[] = [
     band: "OLD IRON",
     tourYear: "",
     price: 29.95,
-    rating: 4.9,
-    reviewCount: 6,
     description:
       "Casco motero vintage con gafas de aviador, línea fina, una tinta. El tipo de diseño que parece llevar más años en la carretera que tú.",
       descriptionEn:
@@ -792,8 +719,6 @@ export const products: Product[] = [
     band: "UNBROKEN",
     tourYear: "",
     price: 29.95,
-    rating: 4.6,
-    reviewCount: 3,
     description:
       "Nudo marinero en figura de ocho — vínculo, lealtad, lo que no se suelta. Línea fina, una tinta.",
       descriptionEn:
@@ -816,9 +741,6 @@ export const products: Product[] = [
     band: "HOWL",
     tourYear: "",
     price: 29.95,
-    rating: 4.9,
-    reviewCount: 11,
-    purchases: 210,
     description:
       "El lobo de siempre, pero en grabado vintage y tipografía stencil — como si el diseño llevara ahí desde antes de que existiera la marca.",
       descriptionEn:
@@ -841,8 +763,6 @@ export const products: Product[] = [
     band: "STAY FERAL",
     tourYear: "",
     price: 29.95,
-    rating: 4.5,
-    reviewCount: 4,
     description:
       "Tipografía brutalista, collage punk/fanzine — fotocopiada, recortada, pegada a mano. Nada demasiado limpio a propósito.",
       descriptionEn:
@@ -866,8 +786,6 @@ export const products: Product[] = [
     band: "LOVE IS A LONG ROAD",
     tourYear: "",
     price: 29.95,
-    rating: 4.7,
-    reviewCount: 6,
     description:
       "Un muscle car de los 70 al atardecer, script retro dibujado a mano. El amor como carretera larga, no como atajo.",
       descriptionEn:
@@ -891,8 +809,6 @@ export const products: Product[] = [
     tourYear: "N.01",
     editionLabel: "Especimen",
     price: 29.95,
-    rating: 4.8,
-    reviewCount: 5,
     description:
       "Cráneo de lobo despiezado en plano técnico, con el aire de una patente antigua — como si HOWL tuviera manual de instrucciones.",
       descriptionEn:
@@ -917,8 +833,6 @@ export const products: Product[] = [
     backBand: "FREEDOM",
     tourYear: "",
     price: 29.95,
-    rating: 4.9,
-    reviewCount: 7,
     description:
       "Logo pequeño NYC al pecho, la Estatua de la Libertad grabada en toda la espalda — el recuerdo de ciudad que nunca compraste en una tienda de souvenirs.",
       descriptionEn:
@@ -943,8 +857,6 @@ export const products: Product[] = [
     band: "HOWL SUPPLY CO.",
     tourYear: "MMXXIV",
     price: 29.95,
-    rating: 4.8,
-    reviewCount: 6,
     description:
       "Camiseta amarilla, cerezas vintage y wordmark universitario en el pecho — la pieza más dulce del catálogo, sin pedir perdón por serlo.",
       descriptionEn:
@@ -970,8 +882,6 @@ export const products: Product[] = [
     tourYear: "2026",
     editionLabel: "Especial",
     price: 29.95,
-    rating: 4.8,
-    reviewCount: 4,
     description:
       "Camiseta especial HOWL. Lobo en línea fina al pecho, la manada aullando junta en la espalda.",
       descriptionEn:
@@ -996,8 +906,6 @@ export const products: Product[] = [
     backBand: "永恆",
     tourYear: "",
     price: 29.95,
-    rating: 4.7,
-    reviewCount: 3,
     description:
       "Yin-yang pequeño al pecho; a la espalda, grande y acompañado de caligrafía china — el equilibrio como diseño, no solo como frase.",
       descriptionEn:
@@ -1025,8 +933,6 @@ export const products: Product[] = [
     backBand: "LUNAR HOTEL",
     tourYear: "2047",
     price: 29.95,
-    rating: 4.9,
-    reviewCount: 5,
     description:
       "Luna pequeña al pecho, un hotel lunar retro-futurista grabado a la espalda — ciencia ficción de portada de libro de bolsillo de los 70.",
       descriptionEn:
@@ -1052,8 +958,6 @@ export const products: Product[] = [
     band: "UFO OBSESSION",
     tourYear: "",
     price: 5,
-    rating: 4.9,
-    reviewCount: 12,
     description: "Sticker vinilo troquelado. Resistente al agua y a los rayos UV. 8cm aprox.",
     descriptionEn: "Die-cut vinyl sticker. Water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño ya presente en camiseta"],
@@ -1074,8 +978,6 @@ export const products: Product[] = [
     band: "SWAMP",
     tourYear: "",
     price: 5,
-    rating: 4.8,
-    reviewCount: 9,
     description: "Sticker vinilo troquelado. Resistente al agua y a los rayos UV. 8cm aprox.",
     descriptionEn: "Die-cut vinyl sticker. Water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño ya presente en camiseta"],
@@ -1096,8 +998,6 @@ export const products: Product[] = [
     band: "HOWL",
     tourYear: "",
     price: 5,
-    rating: 4.7,
-    reviewCount: 6,
     description: "Sticker vinilo troquelado. Resistente al agua y a los rayos UV. 8cm aprox.",
     descriptionEn: "Die-cut vinyl sticker. Water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño ya presente en camiseta"],
@@ -1118,8 +1018,6 @@ export const products: Product[] = [
     band: "永恆",
     tourYear: "",
     price: 5,
-    rating: 4.8,
-    reviewCount: 7,
     description: "Sticker vinilo troquelado. Resistente al agua y a los rayos UV. 8cm aprox.",
     descriptionEn: "Die-cut vinyl sticker. Water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño ya presente en camiseta"],
@@ -1140,8 +1038,6 @@ export const products: Product[] = [
     band: "HOWL",
     tourYear: "",
     price: 5,
-    rating: 4.9,
-    reviewCount: 3,
     description: "Sticker exclusivo — este diseño no existe en ninguna camiseta. Vinilo troquelado, resistente al agua y a los rayos UV. 8cm aprox.",
     descriptionEn: "Exclusive sticker — this design doesn't exist on any tee. Die-cut vinyl, water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño exclusivo, solo en sticker"],
@@ -1162,8 +1058,6 @@ export const products: Product[] = [
     band: "HOWL",
     tourYear: "",
     price: 5,
-    rating: 4.9,
-    reviewCount: 2,
     description: "Sticker exclusivo — este diseño no existe en ninguna camiseta. Vinilo troquelado, resistente al agua y a los rayos UV. 8cm aprox.",
     descriptionEn: "Exclusive sticker — this design doesn't exist on any tee. Die-cut vinyl, water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño exclusivo, solo en sticker"],
@@ -1185,8 +1079,6 @@ export const products: Product[] = [
     tourYear: "",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.8,
-    reviewCount: 4,
     description:
       "Logo pequeño de rueda alada al pecho, un motorista en la carretera grabado a toda espalda — sin destino fijo, con el depósito lleno.",
       descriptionEn:
@@ -1217,8 +1109,6 @@ export const products: Product[] = [
     tourYear: "",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.9,
-    reviewCount: 3,
     description:
       "Logo pequeño de púa alada al pecho, una Les Paul grabada a toda espalda — para quien piensa que si no suena fuerte, no cuenta.",
       descriptionEn:
@@ -1247,8 +1137,6 @@ export const products: Product[] = [
     tourYear: "",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.8,
-    reviewCount: 3,
     description:
       "Un bisonte pequeño al pecho. Detrás, la manada entera corriendo hacia el atardecer, grabada en toda la espalda. Algodón grueso 237 g/m², serigrafía envejecida — el peso y el lavado que buscamos en cada pieza del catálogo. Corre con los que no se paran.",
       descriptionEn:
@@ -1276,8 +1164,6 @@ export const products: Product[] = [
     tourYear: "1974",
     editionLabel: "Colección",
     price: 29.95,
-    rating: 4.7,
-    reviewCount: 3,
     description:
       "Sello vintage de trattoria desgastado al pecho — 'Ristorante Pizzeria Da Enzo, dal 1974'. Aire de menú de barrio italiano de los 80, del tipo que no cambia nunca.",
       descriptionEn:
@@ -1302,8 +1188,6 @@ export const products: Product[] = [
     tourYear: "",
     editionLabel: "Colección",
     price: 60,
-    rating: 4.7,
-    reviewCount: 2,
     description:
       "Sudadera crewneck de algodón grueso de alto gramaje, sin capucha, corte vintage. Wordmark HOWL pequeño al pecho — la básica de armario que no falla.",
       descriptionEn:
@@ -1337,8 +1221,6 @@ export const products: Product[] = [
     tourYear: "",
     editionLabel: "Colección",
     price: 22.0,
-    rating: 4.6,
-    reviewCount: 2,
     description:
       "Gorra dad hat de lona lavada, corte bajo sin estructurar, hebilla metálica trasera ajustable. Letra H bordada en relieve al frente.",
       descriptionEn:
@@ -1368,8 +1250,6 @@ export const products: Product[] = [
     tourYear: "",
     editionLabel: "Colección",
     price: 12.0,
-    rating: 4.7,
-    reviewCount: 2,
     description:
       "Calcetines de caña alta, algodón grueso con canalé. Logotipo HOWL bordado en el lateral.",
       descriptionEn:
@@ -1397,8 +1277,6 @@ export const products: Product[] = [
     tourYear: "N.07",
     editionLabel: "Colección",
     price: 60,
-    rating: 4.8,
-    reviewCount: 2,
     description:
       "El lobo y la luna de nuestra pieza insignia, ahora en sudadera. Algodón/poliéster de 340 g/m², interior perchado, capucha forrada y bolsillo canguro — para cuando el frío no perdona. Wolf serigrafiado al pecho, corte oversize sin complicarse la vida.",
       descriptionEn:
@@ -1431,9 +1309,6 @@ export const products: Product[] = [
     tourYear: "N.13",
     editionLabel: "Colección",
     price: 60,
-    rating: 4.7,
-    reviewCount: 0,
-    purchases: 0,
     description:
       "Solo el wordmark HOWL al pecho — para los días de 'menos es más'. Mismo algodón/poliéster de 340 g/m² y capucha forrada que el resto de sudaderas, sin ningún dibujo que explicar.",
     descriptionEn:
@@ -1468,8 +1343,6 @@ export const products: Product[] = [
     tourYear: "",
     editionLabel: "Colección",
     price: 23.0,
-    rating: 4.8,
-    reviewCount: 2,
     description:
       "Bolsa de algodón grueso resistente, wordmark HOWL minimalista al frente. Para el día a día — y para llegar al envío gratis.",
       descriptionEn:
@@ -1497,8 +1370,6 @@ export const products: Product[] = [
     band: "UFO OBSESSION",
     tourYear: "",
     price: 5,
-    rating: 4.8,
-    reviewCount: 3,
     description: "Sticker vinilo troquelado. Resistente al agua y a los rayos UV. 8cm aprox.",
     descriptionEn: "Die-cut vinyl sticker. Water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño ya presente en camiseta"],
@@ -1520,8 +1391,6 @@ export const products: Product[] = [
     band: "UFO OBSESSION",
     tourYear: "",
     price: 5,
-    rating: 4.8,
-    reviewCount: 2,
     description: "Sticker vinilo troquelado. Resistente al agua y a los rayos UV. 8cm aprox.",
     descriptionEn: "Die-cut vinyl sticker. Water and UV resistant. ~8cm.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "8cm aprox.", "Diseño ya presente en camiseta"],
@@ -1542,9 +1411,6 @@ export const products: Product[] = [
     band: "HOWL",
     tourYear: "",
     price: 2.5,
-    rating: 5,
-    reviewCount: 0,
-    purchases: 0,
     description: "El wordmark HOWL tal cual, sin icono ni escena — troquelado en vinilo de 5cm, aguanta agua y sol sin decolorarse.",
     descriptionEn: "The HOWL wordmark on its own, no icon or scene — 5cm die-cut vinyl, holds up to water and sun without fading.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "5cm", "Incluido gratis con cada pedido"],
@@ -1565,9 +1431,6 @@ export const products: Product[] = [
     band: "WILD WEST",
     tourYear: "",
     price: 2.5,
-    rating: 5,
-    reviewCount: 0,
-    purchases: 0,
     description: "El jinete de \"Hard Times Build Hard Men\" en miniatura — vinilo troquelado de 5cm, resiste agua y sol sin despegarse.",
     descriptionEn: "The \"Hard Times Build Hard Men\" rider in miniature — 5cm die-cut vinyl, weatherproof and won't peel.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "5cm", "Incluido gratis con cada pedido"],
@@ -1588,9 +1451,6 @@ export const products: Product[] = [
     band: "STAMPEDE",
     tourYear: "",
     price: 2.5,
-    rating: 5,
-    reviewCount: 0,
-    purchases: 0,
     description: "La manada corriendo al atardecer, la escena de la espalda de Stampede en formato sticker de 5cm — vinilo resistente al agua y al sol.",
     descriptionEn: "The herd running at sunset, Stampede's back-print scene as a 5cm sticker — water and UV resistant vinyl.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "5cm", "Incluido gratis con cada pedido"],
@@ -1611,9 +1471,6 @@ export const products: Product[] = [
     band: "HOWL",
     tourYear: "",
     price: 2.5,
-    rating: 5,
-    reviewCount: 0,
-    purchases: 0,
     description: "El lobo aullando a la luna que da nombre a la marca, en vinilo troquelado de 5cm — aguanta agua y sol sin decolorarse.",
     descriptionEn: "The howling wolf that gives the brand its name, as a 5cm die-cut vinyl sticker — holds up to water and sun without fading.",
     details: ["Vinilo troquelado resistente al agua", "Laminado anti-UV", "5cm", "Incluido gratis con cada pedido"],
@@ -1636,9 +1493,6 @@ export const products: Product[] = [
     tourYear: "",
     editionLabel: "Edición Limitada",
     price: 40,
-    rating: 5,
-    reviewCount: 0,
-    purchases: 0,
     description:
       "Pieza de gama alta de tirada corta y numerada. Logo pequeño de garra al pecho, ilustración protagonista a la espalda con tratamiento serigrafía de gira envejecida (medio tono, tinta craquelada) en algodón pesado.",
     descriptionEn:
@@ -1667,9 +1521,6 @@ export const products: Product[] = [
     tourYear: "",
     editionLabel: "Colección",
     price: 24.95,
-    rating: 5,
-    reviewCount: 0,
-    purchases: 0,
     description:
       "Gorra trucker de espuma y malla trasera, visera curva. Parche bordado del lobo aullando a la luna al frente, con textura de hilo real — no es un estampado plano.",
     descriptionEn:
@@ -1697,9 +1548,6 @@ export const products: Product[] = [
     tourYear: "",
     editionLabel: "Edición Limitada",
     price: 44.95,
-    rating: 5,
-    reviewCount: 0,
-    purchases: 0,
     description:
       "Homenaje a las camisetas de fútbol sudamericanas de los años 70. Amarelo ouro envejecido, cuello y puños de canalé, escudo bordado del lobo y wordmark HOWL serigrafiado con tratamiento craquelado. Construcción real de jersey, no camiseta básica.",
     descriptionEn:
