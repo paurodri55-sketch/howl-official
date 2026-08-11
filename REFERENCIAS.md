@@ -29,3 +29,11 @@ opción por defecto en diseños nuevos de camiseta salvo indicación contraria.
   → Estándar de mercado gama media: paletas lavadas, negro/crema
 - https://www.pinterest.com/ideas/oversized-tshirt-streetwear/902187444112/
   → Moodboard: back prints, distressed, halftone, bootleg
+
+## Fuentes de grabado antiguo de dominio público (usar como referencia de estilo real, no generar desde cero) — 2026-08-11
+Metodología: antes de pedir "genera un grabado antiguo de X", localizar primero un grabado real de dominio público de estas fuentes como referencia de estilo/trazo, y generar partiendo de esa referencia — sale con textura y precisión anatómica reales, no la aproximación que hace la IA al inventar un grabado desde cero.
+
+- **Fauna salvaje (Grizzly River y similares)**: "Brehms Tierleben" (Brehm's Life of Animals), enciclopedia alemana de dominio público del s.XIX con cientos de grabados de lobos, osos, bisontes — prácticamente el estilo ya usado en el oso de Grizzly River. Buscar en Internet Archive o Wikimedia Commons como "Brehms Tierleben engraving [animal]". También sueltas: "wolf engraving 19th century", "bison woodcut antique".
+- **Mitología clásica (HOWL Mediterranean)**: "Capitoline Wolf" / "Lupa Capitolina" en Wikimedia Commons (grabados y fotos antiguas reales de la escultura, la misma ya usada de referencia). También "Roman mythology engraving", "laurel wreath engraving", "Greek key pattern public domain" para elementos decorativos.
+- **Náutico (HOWL Atlantic)**: "19th century ship engraving", "lighthouse engraving public domain" (Met Museum Open Access y NYPL Digital Collections tienen mucho material de la era de vapor). "Antique nautical chart", "compass rose engraving" para detalles pequeños. "Sea monster woodcut" si en el futuro se quiere un ángulo más "leyenda marina".
+- **Ideas para más adelante**: "antique moon phase engraving" / "celestial atlas public domain" (encaja con el motivo de la luna de la marca), "heraldic woodcut" / "coat of arms public domain" (para dar origen real al estilo escudo de HOWL FC/Athletic).

@@ -38,9 +38,9 @@ export const products: Product[] = [
     reviewCount: 74,
     purchases: 760,
     description:
-      "Camiseta de la colección Horizonte. Una serpiente enroscada para quien prefiere el pantano a la ciudad.",
+      "Una serpiente enroscada al pecho, para quien prefiere el pantano a la ciudad — donde mandan las bestias y no el asfalto.",
       descriptionEn:
-      "Horizon collection tee. A coiled serpent for anyone who prefers the swamp to the city.",
+      "A coiled serpent on the chest, for anyone who prefers the swamp to the city — where the beasts and nature live, not the pavement.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -61,16 +61,16 @@ export const products: Product[] = [
     id: "p4",
     slug: "coyote-wire-static",
     name: "Static",
-    band: "Coyote Wire",
-    tourYear: "1995",
+    band: "STATIC",
+    tourYear: "",
     price: 29.95,
     rating: 4.5,
     reviewCount: 16,
     purchases: 180,
     description:
-      "Diseño inspirado en la portada de 'Static' de Coyote Wire. Rayo estampado a mano, colorido apagado por el sol.",
+      "Un rayo estampado a mano, colorido apagado por el sol — como si llevara años colgado en el mismo armario.",
       descriptionEn:
-      "Design inspired by Coyote Wire's 'Static' cover art. Hand-printed lightning bolt, colors faded by the sun.",
+      "A hand-printed lightning bolt, colors faded by the sun — like it's hung in the same closet for years.",
     details: standardDetails,
     category: "Camisetas",
     visible: false,
@@ -80,13 +80,7 @@ export const products: Product[] = [
     artworkImage: "/artwork/bolt.png",
     tagline: "STRUCK NOT STIRRED",
     logoStyle: { skew: 8, accentColor: "#33c6f4" },
-    tourDates: [
-      { city: "Portland, OR", date: "03 Oct" },
-      { city: "Seattle, WA", date: "06 Oct" },
-      { city: "Boise, ID", date: "10 Oct" },
-      { city: "Salt Lake City, UT", date: "14 Oct" },
-      { city: "Denver, CO", date: "19 Oct" },
-    ],
+    tourDates: [],
   },
   {
     id: "p5",
@@ -101,9 +95,9 @@ export const products: Product[] = [
     reviewCount: 23,
     purchases: 245,
     description:
-      "Camiseta de la colección Horizonte. Wordmark discreto al pecho; la luna duerme con gorro y manta a la espalda — para quien también se queda despierto pensando en nada a las tres de la mañana.",
+      "Wordmark discreto al pecho; la luna duerme con gorro y manta a la espalda — para quien también se queda despierto pensando en nada a las tres de la mañana.",
       descriptionEn:
-      "Horizon collection tee. Discreet wordmark on the chest; the moon sleeps with a nightcap and blanket on the back — for anyone else who lies awake thinking about nothing at 3am.",
+      "Discreet wordmark on the chest; the moon sleeps with a nightcap and blanket on the back — for anyone else who lies awake thinking about nothing at 3am.",
     details: standardDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -123,16 +117,16 @@ export const products: Product[] = [
     id: "p6",
     slug: "iron-magnolia-southbound",
     name: "Southbound",
-    band: "Iron Magnolia",
-    tourYear: "1989",
+    band: "SOUTHBOUND",
+    tourYear: "",
     price: 29.95,
     rating: 4.6,
     reviewCount: 26,
     purchases: 280,
     description:
-      "Alas oxidadas y letras resquebrajadas para la gira 'Southbound' de Iron Magnolia. Un clásico de mercadillo de discos.",
+      "Alas oxidadas y letras resquebrajadas, con el aire de un clásico de mercadillo de discos que nadie recuerda de dónde salió.",
       descriptionEn:
-      "Rusted wings and cracked lettering for Iron Magnolia's 'Southbound' tour. A record-crate classic.",
+      "Rusted wings and cracked lettering, with the feel of a record-crate classic nobody remembers where it came from.",
     details: standardDetails,
     category: "Camisetas",
     visible: false,
@@ -142,21 +136,15 @@ export const products: Product[] = [
     artworkImage: "/artwork/wings.png",
     tagline: "RUST NEVER DIES",
     logoStyle: { skew: -3, accentColor: "#d9662b" },
-    tourDates: [
-      { city: "Nashville, TN", date: "02 Abr" },
-      { city: "Birmingham, AL", date: "06 Abr" },
-      { city: "Jackson, MS", date: "10 Abr" },
-      { city: "Baton Rouge, LA", date: "14 Abr" },
-      { city: "Mobile, AL", date: "18 Abr" },
-    ],
+    tourDates: [],
   },
   {
     id: "p7",
     slug: "midnight-combine-harvest-of-noise",
     visible: false,
     name: "Harvest Of Noise",
-    band: "Midnight Combine",
-    tourYear: "1997",
+    band: "HARVEST OF NOISE",
+    tourYear: "",
     price: 60,
     rating: 4.5,
     reviewCount: 13,
@@ -182,28 +170,22 @@ export const products: Product[] = [
     },
     frontLogoOnly: true,
     logoStyle: { skew: -4, accentColor: "#e8452c" },
-    tourDates: [
-      { city: "Des Moines, IA", date: "02 Ago" },
-      { city: "Omaha, NE", date: "06 Ago" },
-      { city: "Kansas City, MO", date: "10 Ago" },
-      { city: "St. Louis, MO", date: "15 Ago" },
-      { city: "Louisville, KY", date: "20 Ago" },
-    ],
+    tourDates: [],
   },
   {
     id: "p10",
     slug: "rattlesnake-kings-scorched-earth",
     name: "Scorched Earth",
-    band: "Rattlesnake Kings",
-    tourYear: "1988",
+    band: "SCORCHED EARTH",
+    tourYear: "",
     price: 29.95,
     rating: 4.8,
     reviewCount: 66,
     purchases: 690,
     description:
-      "Camiseta de la gira 'Scorched Earth' de Rattlesnake Kings. Escorpión al acecho estampado en tinta única, para las noches más calurosas del desierto.",
+      "Un escorpión al acecho, estampado en tinta única — para las noches más calurosas del desierto.",
       descriptionEn:
-      "Tee from Rattlesnake Kings' 'Scorched Earth' tour. A lurking scorpion printed in a single ink, for the hottest desert nights.",
+      "A lurking scorpion, printed in a single ink — for the hottest desert nights.",
     details: standardDetails,
     category: "Camisetas",
     visible: false,
@@ -213,13 +195,7 @@ export const products: Product[] = [
     artworkImage: "/artwork/scorpion.png",
     tagline: "STING FIRST, ASK LATER",
     logoStyle: { skew: 4, accentColor: "#c9d92b" },
-    tourDates: [
-      { city: "Tucson, AZ", date: "02 Jul" },
-      { city: "Yuma, AZ", date: "06 Jul" },
-      { city: "Palm Springs, CA", date: "10 Jul" },
-      { city: "Las Cruces, NM", date: "15 Jul" },
-      { city: "El Paso, TX", date: "20 Jul" },
-    ],
+    tourDates: [],
     isNew: true,
     backHeroPhotoByColor: {
       "#a8452a": "rattlesnake-back-rust",
@@ -239,9 +215,9 @@ export const products: Product[] = [
     reviewCount: 48,
     purchases: 505,
     description:
-      "Camiseta de la colección Horizonte. Un cielo real, colinas verdes y una frase que dice todo lo que hace falta.",
+      "Un cielo real, colinas verdes y una frase que dice todo lo que hace falta decir. Icono plano, una sola tinta, pensado para leerse limpio a cualquier tamaño.",
       descriptionEn:
-      "Horizon collection tee. A real sky, green hills, and a line that says all it needs to.",
+      "A real sky, green hills, and a line that says all it needs to. Flat icon, single ink, built to read clean at any size.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -266,9 +242,9 @@ export const products: Product[] = [
     reviewCount: 53,
     purchases: 560,
     description:
-      "Camiseta de la colección Horizonte. Una casita de campo inglesa, jardín florido y ganas de quedarse en casa.",
+      "Una casita de campo inglesa, jardín florido y ganas de quedarse en casa un domingo entero. Para los días en que ningún sitio le gana al sofá.",
       descriptionEn:
-      "Horizon collection tee. An English cottage, a garden in bloom, and the urge to just stay home.",
+      "An English cottage, a garden in bloom, and the urge to just stay home all Sunday. For the days nowhere beats the couch.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -294,9 +270,9 @@ export const products: Product[] = [
     reviewCount: 92,
     purchases: 940,
     description:
-      "Camiseta de la colección Horizonte. Una cordillera al atardecer para quien nunca deja de mirar más allá.",
+      "Una cordillera al atardecer para quien nunca deja de mirar más allá de donde está. Algodón grueso, lavado suave, colores que ya vienen desgastados de fábrica.",
       descriptionEn:
-      "Horizon collection tee. A mountain range at sunset for anyone who never stops looking further.",
+      "A mountain range at sunset for anyone who never stops looking past where they are. Heavyweight cotton, soft wash, colors that come pre-worn from the start.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -325,9 +301,9 @@ export const products: Product[] = [
     reviewCount: 39,
     purchases: 410,
     description:
-      "Camiseta de la colección Horizonte. Palmeras, atardecer y el recordatorio de que no pasa nada por ir más despacio.",
+      "Palmeras, atardecer y el recordatorio de que no pasa nada por ir más despacio de vez en cuando. Corte oversized, la paleta lavada de siempre.",
       descriptionEn:
-      "Horizon collection tee. Palm trees, sunset, and the reminder that it's fine to slow down.",
+      "Palm trees, sunset, and the reminder that it's fine to slow down every now and then. Oversized cut, our usual washed-out palette.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -352,9 +328,9 @@ export const products: Product[] = [
     reviewCount: 43,
     purchases: 455,
     description:
-      "Camiseta de la colección Horizonte. Rascacielos, reflejos en el agua y esa energía que solo tiene la ciudad de noche.",
+      "Rascacielos, reflejos en el agua y esa energía que solo tiene la ciudad de noche. Para cuando el día se acaba y el plan recién empieza.",
       descriptionEn:
-      "Horizon collection tee. Skyscrapers, reflections on the water, and that energy only a city at night has.",
+      "Skyscrapers, reflections on the water, and that energy only a city at night has. For when the day ends and the plan is just getting started.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -379,9 +355,9 @@ export const products: Product[] = [
     reviewCount: 34,
     purchases: 365,
     description:
-      "Camiseta de la colección Horizonte. Una furgoneta, una carretera del desierto y ninguna prisa por llegar.",
+      "Una furgoneta, una carretera del desierto y ninguna prisa por llegar a ningún sitio. El camino largo, a propósito.",
       descriptionEn:
-      "Horizon collection tee. A van, a desert road, and no rush to get there.",
+      "A van, a desert road, and no rush to get anywhere. The long way, on purpose.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -406,9 +382,9 @@ export const products: Product[] = [
     reviewCount: 156,
     purchases: 1420,
     description:
-      "Camiseta insignia de la colección Horizonte. Un lobo, la luna y las montañas — la escena que le da nombre a todo esto.",
+      "La escena que le da nombre a HOWL: un lobo aullando a la luna, montañas detrás. Icono pequeño al pecho, ilustración completa a la espalda — el formato que repetimos en buena parte del catálogo. Algodón grueso 237 g/m², serigrafía con lavado ácido, como si llevara diez años en el armario de alguien. Cuando se agote, no vuelve.",
       descriptionEn:
-      "Flagship tee of the Horizon collection. A wolf, the moon and the mountains — the scene that gives this whole thing its name.",
+      "The scene that gives HOWL its name: a wolf howling at the moon, mountains behind it. Small icon on the chest, full illustration on the back — the format we repeat across much of the catalog. Heavyweight 237 g/m² cotton, acid-washed print, like it's already spent ten years in someone's closet. Once it's gone, it's gone.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -434,9 +410,9 @@ export const products: Product[] = [
     reviewCount: 121,
     purchases: 1180,
     description:
-      "Camiseta de la colección Horizonte. Un cocodrilo asomando junto al muelle, un pescador que no se entera de nada — al pecho, solo el cocodrilo.",
+      "Un cocodrilo asomando junto al muelle, un pescador que no se entera de nada — la escena completa a la espalda, solo el cocodrilo al pecho. La paciencia siempre gana.",
       descriptionEn:
-      "Horizon collection tee. A crocodile surfacing by the dock, a fisherman who has no idea — just the crocodile on the chest.",
+      "A crocodile surfacing by the dock, a fisherman who has no idea — the full scene on the back, just the crocodile on the chest. Patience always wins.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -463,9 +439,9 @@ export const products: Product[] = [
     reviewCount: 103,
     purchases: 1050,
     description:
-      "Un jinete pequeño al pecho, la estampa completa de \"Hard Times Build Hard Men\" a la espalda. La más pesada de la colección Horizonte — 237 g/m², estampado delante y detrás.",
+      "Un jinete pequeño al pecho. A la espalda, la escena completa: \"Hard Times Build Hard Men\". Es la pieza más pesada del catálogo — estampado delante y detrás, 237 g/m² de algodón boxy oversized. Para quien prefiere el polvo del camino a la acera.",
       descriptionEn:
-      "A small rider on the chest, the full \"Hard Times Build Hard Men\" scene on the back. The heaviest tee in the Horizon collection — 237 g/m², printed front and back.",
+      "A small rider on the chest. On the back, the full scene: \"Hard Times Build Hard Men.\" The heaviest piece in the catalog — printed front and back, 237 g/m² boxy oversized cotton. For anyone who'd rather have dust on their boots than pavement.",
     details: [
       "Algodón peinado e hilado en anillos 237 g/m², corte boxy oversized",
       "Estampado delante y detrás — la pieza más pesada de la colección",
@@ -497,9 +473,9 @@ export const products: Product[] = [
     reviewCount: 58,
     purchases: 615,
     description:
-      "Camiseta de la colección Horizonte. Un platillo discreto al pecho, la abducción de una vaca de campo detrás — para quien cree que no estamos solos.",
+      "Un platillo discreto al pecho, la abducción de una vaca de campo grabada a la espalda — para quien cree que no estamos solos.",
       descriptionEn:
-      "Horizon collection tee. A discreet saucer on the chest, a cow's abduction from a field on the back — for anyone who believes we're not alone.",
+      "A discreet saucer on the chest, a cow's abduction from a field engraved on the back — for anyone who believes we're not alone.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -526,9 +502,9 @@ export const products: Product[] = [
     reviewCount: 79,
     purchases: 810,
     description:
-      "Camiseta de la colección Horizonte. Sol naciente, montañas y una gran ola, tinta tradicional japonesa sobre algodón.",
+      "Sol naciente, montañas y una gran ola en tinta tradicional japonesa sobre algodón grueso. Lo antiguo y lo nuevo en la misma tela.",
       descriptionEn:
-      "Horizon collection tee. Rising sun, mountains and a great wave, traditional Japanese ink on cotton.",
+      "Rising sun, mountains and a great wave in traditional Japanese ink on heavyweight cotton. The old and the new on the same cloth.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -555,9 +531,9 @@ export const products: Product[] = [
     rating: 4.6,
     reviewCount: 10,
     description:
-      "Camiseta de la colección Horizonte. Un camello ornamentado frente a la puesta de sol del desierto.",
+      "Un camello ornamentado, quieto frente a la puesta de sol del desierto. No tiene prisa y no la va a tener.",
       descriptionEn:
-      "Horizon collection tee. An ornamented camel facing the desert sunset.",
+      "An ornamented camel, still against the desert sunset. It's not in a hurry and never will be.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -583,9 +559,9 @@ export const products: Product[] = [
     rating: 4.5,
     reviewCount: 7,
     description:
-      "Básica de la colección Horizonte. Solo tipografía, sin ilustración — para los días de \"menos es más\".",
+      "Solo tipografía, sin ilustración — para los días de \"menos es más\". La básica de armario que no falla, en cuatro colores.",
       descriptionEn:
-      "Horizon collection basic. Typography only, no illustration — for the \"less is more\" days.",
+      "Typography only, no illustration — for the \"less is more\" days. The wardrobe basic that never fails, in four colors.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -614,9 +590,9 @@ export const products: Product[] = [
     rating: 4.5,
     reviewCount: 6,
     description:
-      "Camiseta de la colección Horizonte. Una llama, un icono, y la calma de saber que todo va bien.",
+      "Una llama, un icono, y la calma de saber que todo va bien aunque no lo parezca. Diseño mínimo, una sola tinta.",
       descriptionEn:
-      "Horizon collection tee. A flame, an icon, and the calm of knowing everything's fine.",
+      "A flame, an icon, and the calm of knowing everything's fine even when it doesn't look like it. Minimal design, single ink.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -641,9 +617,9 @@ export const products: Product[] = [
     reviewCount: 9,
     purchases: 140,
     description:
-      "Camiseta de la colección Horizonte. Dragón pequeño al pecho, ilustración grande a la espalda.",
+      "Dragón pequeño al pecho, ilustración grande a la espalda — año del dragón, si te va la numerología. Si no, es solo un dragón que impone.",
       descriptionEn:
-      "Horizon collection tee. Small dragon on the chest, big illustration on the back.",
+      "Small dragon on the chest, big illustration on the back — year of the dragon, if you're into that. If not, it's just a dragon that commands the room.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -672,9 +648,9 @@ export const products: Product[] = [
     reviewCount: 5,
     purchases: 60,
     description:
-      "Camiseta de la colección Horizonte. Logo pequeño al pecho, gasolinera de Route 66 ilustrada a la espalda.",
+      "Logo pequeño al pecho, una gasolinera de Route 66 ilustrada a toda espalda — llenar el depósito para la semana, en sentido literal y figurado.",
       descriptionEn:
-      "Horizon collection tee. Small logo on the chest, an illustrated Route 66 gas station on the back.",
+      "Small logo on the chest, an illustrated Route 66 gas station across the whole back — filling the tank for the week, literally and otherwise.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -699,9 +675,9 @@ export const products: Product[] = [
     rating: 4.6,
     reviewCount: 3,
     description:
-      "Camiseta minimalista de la colección Horizonte. Un halcón en picado, línea fina, una tinta.",
+      "Un halcón en picado, línea fina, una sola tinta. Sin ruido de más — el diseño hace todo el trabajo.",
       descriptionEn:
-      "Minimalist Horizon collection tee. A diving hawk, fine line, one ink.",
+      "A diving hawk, fine line, one ink. No extra noise — the design does all the work.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -723,9 +699,9 @@ export const products: Product[] = [
     rating: 4.7,
     reviewCount: 4,
     description:
-      "Camiseta minimalista de la colección Horizonte. Una polilla nocturna descendiendo hacia la llama.",
+      "Una polilla nocturna descendiendo hacia la llama. Línea fina, una tinta, la clase de diseño que se lee mejor cuanto más pequeño es.",
       descriptionEn:
-      "Minimalist Horizon collection tee. A night moth descending toward the flame.",
+      "A night moth descending toward the flame. Fine line, single ink, the kind of design that reads better the smaller it gets.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -747,9 +723,9 @@ export const products: Product[] = [
     rating: 4.5,
     reviewCount: 2,
     description:
-      "Camiseta minimalista de la colección Horizonte. Una brújula vieja, mellada, aguja torcida.",
+      "Una brújula vieja, mellada, aguja torcida — no siempre hace falta saber a dónde vas. Línea fina, una tinta.",
       descriptionEn:
-      "Minimalist Horizon collection tee. An old, nicked compass with a crooked needle.",
+      "An old, nicked compass with a crooked needle — you don't always need to know where you're going. Fine line, single ink.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -771,9 +747,9 @@ export const products: Product[] = [
     rating: 4.8,
     reviewCount: 5,
     description:
-      "Camiseta minimalista de la colección Horizonte. Un ancla y una cuerda deshilachada — desanclarse.",
+      "Un ancla y una cuerda deshilachada — desanclarse, cortar por lo sano. Línea fina, una tinta.",
       descriptionEn:
-      "Minimalist Horizon collection tee. An anchor and a frayed rope — cutting loose.",
+      "An anchor and a frayed rope — cutting loose, clean and simple. Fine line, single ink.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -795,9 +771,9 @@ export const products: Product[] = [
     rating: 4.9,
     reviewCount: 6,
     description:
-      "Camiseta minimalista de la colección Horizonte. Casco motero vintage con gafas de aviador.",
+      "Casco motero vintage con gafas de aviador, línea fina, una tinta. El tipo de diseño que parece llevar más años en la carretera que tú.",
       descriptionEn:
-      "Minimalist Horizon collection tee. Vintage biker helmet with aviator goggles.",
+      "Vintage biker helmet with aviator goggles, fine line, single ink. The kind of design that looks like it's spent more years on the road than you have.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -819,9 +795,9 @@ export const products: Product[] = [
     rating: 4.6,
     reviewCount: 3,
     description:
-      "Camiseta minimalista de la colección Horizonte. Nudo marinero en figura de ocho — vínculo, lealtad.",
+      "Nudo marinero en figura de ocho — vínculo, lealtad, lo que no se suelta. Línea fina, una tinta.",
       descriptionEn:
-      "Minimalist Horizon collection tee. A figure-eight sailor's knot — bond, loyalty.",
+      "A figure-eight sailor's knot — bond, loyalty, the kind that doesn't come undone. Fine line, single ink.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -844,9 +820,9 @@ export const products: Product[] = [
     reviewCount: 11,
     purchases: 210,
     description:
-      "Camiseta de la colección Horizonte. Lobo aullando sobre roca, grabado vintage, tipografía stencil.",
+      "El lobo de siempre, pero en grabado vintage y tipografía stencil — como si el diseño llevara ahí desde antes de que existiera la marca.",
       descriptionEn:
-      "Horizon collection tee. A wolf howling on a rock, vintage engraving, stencil type.",
+      "Our usual wolf, but in vintage engraving and stencil type — like the design was already there before the brand existed.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -868,9 +844,9 @@ export const products: Product[] = [
     rating: 4.5,
     reviewCount: 4,
     description:
-      "Camiseta de la colección Horizonte. Tipografía brutalista, collage punk/fanzine.",
+      "Tipografía brutalista, collage punk/fanzine — fotocopiada, recortada, pegada a mano. Nada demasiado limpio a propósito.",
       descriptionEn:
-      "Horizon collection tee. Brutalist type, punk/fanzine collage.",
+      "Brutalist type, punk/fanzine collage — photocopied, cut up, pasted by hand. Nothing too clean on purpose.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -893,9 +869,9 @@ export const products: Product[] = [
     rating: 4.7,
     reviewCount: 6,
     description:
-      "Camiseta de la colección Horizonte. Muscle car de los 70 al atardecer, script retro.",
+      "Un muscle car de los 70 al atardecer, script retro dibujado a mano. El amor como carretera larga, no como atajo.",
       descriptionEn:
-      "Horizon collection tee. A 70s muscle car at sunset, retro script.",
+      "A 70s muscle car at sunset, hand-drawn retro script. Love as the long road, not the shortcut.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -918,9 +894,9 @@ export const products: Product[] = [
     rating: 4.8,
     reviewCount: 5,
     description:
-      "Camiseta de la colección Horizonte. Cráneo de lobo en plano técnico, estilo patente antigua.",
+      "Cráneo de lobo despiezado en plano técnico, con el aire de una patente antigua — como si HOWL tuviera manual de instrucciones.",
       descriptionEn:
-      "Horizon collection tee. Wolf skull in technical blueprint style, vintage patent look.",
+      "A wolf skull broken down like a technical blueprint, with the look of an old patent drawing — as if HOWL came with an instruction manual.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -944,9 +920,9 @@ export const products: Product[] = [
     rating: 4.9,
     reviewCount: 7,
     description:
-      "Camiseta de la colección Horizonte. Logo pequeño NYC al pecho, la Estatua de la Libertad grabada a la espalda.",
+      "Logo pequeño NYC al pecho, la Estatua de la Libertad grabada en toda la espalda — el recuerdo de ciudad que nunca compraste en una tienda de souvenirs.",
       descriptionEn:
-      "Horizon collection tee. Small NYC logo on the chest, the Statue of Liberty engraved on the back.",
+      "Small NYC logo on the chest, the Statue of Liberty engraved across the back — the city souvenir you never actually bought in a gift shop.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -970,9 +946,9 @@ export const products: Product[] = [
     rating: 4.8,
     reviewCount: 6,
     description:
-      "Camiseta amarilla de la colección Horizonte. Cerezas vintage y wordmark universitario en el pecho.",
+      "Camiseta amarilla, cerezas vintage y wordmark universitario en el pecho — la pieza más dulce del catálogo, sin pedir perdón por serlo.",
       descriptionEn:
-      "Horizon collection yellow tee. Vintage cherries and a collegiate wordmark on the chest.",
+      "Yellow tee, vintage cherries and a collegiate wordmark on the chest — the sweetest piece in the catalog, no apologies.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -1023,9 +999,9 @@ export const products: Product[] = [
     rating: 4.7,
     reviewCount: 3,
     description:
-      "Camiseta de la colección Horizonte. Yin-yang pequeño al pecho, grande y con caligrafía china a la espalda.",
+      "Yin-yang pequeño al pecho; a la espalda, grande y acompañado de caligrafía china — el equilibrio como diseño, no solo como frase.",
       descriptionEn:
-      "Horizon collection tee. Small yin-yang on the chest, large with Chinese calligraphy on the back.",
+      "Small yin-yang on the chest; on the back, large and paired with Chinese calligraphy — balance as a design, not just a saying.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -1052,9 +1028,9 @@ export const products: Product[] = [
     rating: 4.9,
     reviewCount: 5,
     description:
-      "Camiseta de la colección Horizonte. Luna pequeña al pecho, hotel lunar retro-futurista a la espalda.",
+      "Luna pequeña al pecho, un hotel lunar retro-futurista grabado a la espalda — ciencia ficción de portada de libro de bolsillo de los 70.",
       descriptionEn:
-      "Horizon collection tee. Small moon on the chest, a retro-futuristic lunar hotel on the back.",
+      "Small moon on the chest, a retro-futuristic lunar hotel engraved on the back — 70s pulp-paperback science fiction energy.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -1212,9 +1188,9 @@ export const products: Product[] = [
     rating: 4.8,
     reviewCount: 4,
     description:
-      "Camiseta de la colección Horizonte. Logo pequeño de rueda alada al pecho, motorista en la carretera grabado a la espalda.",
+      "Logo pequeño de rueda alada al pecho, un motorista en la carretera grabado a toda espalda — sin destino fijo, con el depósito lleno.",
       descriptionEn:
-      "Horizon collection tee. Small winged-wheel logo on the chest, a biker on the road engraved on the back.",
+      "Small winged-wheel logo on the chest, a biker on the road engraved across the back — no fixed destination, full tank.",
     details: lifestyleDetails,
     category: "Camisetas",
     visible: false,
@@ -1244,9 +1220,9 @@ export const products: Product[] = [
     rating: 4.9,
     reviewCount: 3,
     description:
-      "Camiseta de la colección Horizonte. Logo pequeño de púa alada al pecho, guitarra Les Paul grabada a la espalda.",
+      "Logo pequeño de púa alada al pecho, una Les Paul grabada a toda espalda — para quien piensa que si no suena fuerte, no cuenta.",
       descriptionEn:
-      "Horizon collection tee. Small winged-pick logo on the chest, a Les Paul guitar engraved on the back.",
+      "Small winged-pick logo on the chest, a Les Paul engraved across the back — for anyone who thinks if it's not loud, it doesn't count.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -1274,9 +1250,9 @@ export const products: Product[] = [
     rating: 4.8,
     reviewCount: 3,
     description:
-      "Logo pequeño de bisonte al pecho, manada corriendo al atardecer grabada a la espalda — de la colección Horizonte.",
+      "Un bisonte pequeño al pecho. Detrás, la manada entera corriendo hacia el atardecer, grabada en toda la espalda. Algodón grueso 237 g/m², serigrafía envejecida — el peso y el lavado que buscamos en cada pieza del catálogo. Corre con los que no se paran.",
       descriptionEn:
-      "Small bison logo on the chest, a herd running at sunset engraved on the back — from the Horizon collection.",
+      "A small bison on the chest. On the back, the whole herd running toward sunset, engraved across the full back panel. Heavyweight 237 g/m² cotton, aged screen print — the weight and wash we chase in every piece we make. Run with the ones who don't stop.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -1303,9 +1279,9 @@ export const products: Product[] = [
     rating: 4.7,
     reviewCount: 3,
     description:
-      "Camiseta de la colección Italiana. Sello vintage de trattoria desgastado al pecho — 'Ristorante Pizzeria Da Enzo, dal 1974'. Aire de menú de barrio italiano de los 80.",
+      "Sello vintage de trattoria desgastado al pecho — 'Ristorante Pizzeria Da Enzo, dal 1974'. Aire de menú de barrio italiano de los 80, del tipo que no cambia nunca.",
       descriptionEn:
-      "Italian collection tee. A worn vintage trattoria seal on the chest — 'Ristorante Pizzeria Da Enzo, dal 1974.' The feel of an 80s neighborhood Italian menu.",
+      "A worn vintage trattoria seal on the chest — 'Ristorante Pizzeria Da Enzo, dal 1974.' The feel of an 80s neighborhood Italian menu, the kind that never changes.",
     details: lifestyleDetails,
     category: "Camisetas",
     sizes: tourTeeSizes,
@@ -1424,9 +1400,9 @@ export const products: Product[] = [
     rating: 4.8,
     reviewCount: 2,
     description:
-      "Sudadera con capucha, algodón grueso de alto gramaje. El lobo y la luna de nuestra pieza insignia, ahora en formato sudadera.",
+      "El lobo y la luna de nuestra pieza insignia, ahora en sudadera. Algodón/poliéster de 340 g/m², interior perchado, capucha forrada y bolsillo canguro — para cuando el frío no perdona. Wolf serigrafiado al pecho, corte oversize sin complicarse la vida.",
       descriptionEn:
-      "Hoodie, heavyweight cotton. The wolf and the moon from our flagship piece, now in hoodie form.",
+      "The wolf and the moon from our flagship tee, now in hoodie form. 340 g/m² cotton/poly, brushed interior, lined hood and kangaroo pocket — for when the cold doesn't care. Wolf screen-printed on the chest, oversize cut, nothing complicated about it.",
     details: [
       "Algodón/poliéster 340 g/m², interior perchado",
       "Capucha forrada, bolsillo canguro",
@@ -1459,9 +1435,9 @@ export const products: Product[] = [
     reviewCount: 0,
     purchases: 0,
     description:
-      "Sudadera con capucha, algodón grueso de alto gramaje. Solo el wordmark HOWL al pecho — para los días de 'menos es más'.",
+      "Solo el wordmark HOWL al pecho — para los días de 'menos es más'. Mismo algodón/poliéster de 340 g/m² y capucha forrada que el resto de sudaderas, sin ningún dibujo que explicar.",
     descriptionEn:
-      "Hoodie, heavyweight cotton. Just the HOWL wordmark on the chest — for the 'less is more' days.",
+      "Just the HOWL wordmark on the chest — for the 'less is more' days. Same 340 g/m² cotton/poly and lined hood as the rest of the hoodie line, no illustration to explain.",
     details: [
       "Algodón/poliéster 340 g/m², interior perchado",
       "Capucha forrada, bolsillo canguro",

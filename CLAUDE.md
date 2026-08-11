@@ -22,6 +22,7 @@ Antes de cualquier decisión de diseño, estética, mockup o presentación de pr
 ## Design / print-ready artwork
 - Render on-brand wordmark text with the real Anton font (Google Fonts), not an approximation.
 - Key transparency via corner-pixel background sampling, never mode/most-frequent-color sampling (inverts the mask when the foreground is larger than the background).
+- Corner-sampling parameters that hold up in practice: flat white mockup background → `thresh=25, slope=14` with a 3px pre-blur (higher thresholds like 60-90 eat into light/cream fill areas). Textured/fabric background (grey with visible weave) → use a stronger pre-blur before measuring color distance, or the texture itself creates false-positive edges. Always verify the keyed result by compositing on a flat green (or other neutral) background before calling it done — Claude's own viewer doesn't always render real PNG transparency accurately, so a visual check in-chat isn't sufficient proof.
 - Upscale RGBA art with premultiplied-alpha resize, never a naive resize (causes edge color fringing).
 - For designs on a black garment, prefer keeping the shirt's real black background + luminance-based keying over an artificial chroma-key color — avoids color spill entirely.
 

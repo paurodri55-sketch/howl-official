@@ -1,5 +1,14 @@
 #!/usr/bin/env node
-// CLI para el "diseñador gráfico" HOWL conectado a Gemini (Google AI Studio).
+// CLI para el "diseñador gráfico" HOWL conectado a Gemini.
+// Método principal: Vertex AI (usa el crédito gratuito de Google Cloud),
+// vía Application Default Credentials — requiere VERTEX_PROJECT_ID
+// explícito (env o .env.local), sin project ID por defecto quemado en el
+// código.
+//   Setup: gcloud auth application-default login
+//          gcloud auth application-default set-quota-project <PROJECT_ID>
+//          export VERTEX_PROJECT_ID=<PROJECT_ID> (o añadir a .env.local)
+// Fallback automático: si no hay VERTEX_PROJECT_ID configurado, usa la API
+// key de Google AI Studio (GEMINI_API_KEY) en su lugar.
 // Uso:
 //   node scripts/gemini-designer.mjs review <imagen.png> ["pregunta opcional"]
 //   node scripts/gemini-designer.mjs generate "<prompt>" <salida.png>
@@ -7,24 +16,44 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { execSync } from "node:child_process";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 
-function loadApiKey() {
-  if (process.env.GEMINI_API_KEY) return process.env.GEMINI_API_KEY;
+function readEnvLocal(key) {
   const envPath = join(ROOT, ".env.local");
-  if (existsSync(envPath)) {
-    const line = readFileSync(envPath, "utf8")
-      .split("\n")
-      .find((l) => l.startsWith("GEMINI_API_KEY="));
-    if (line) return line.slice("GEMINI_API_KEY=".length).trim();
-  }
-  throw new Error("No se encontró GEMINI_API_KEY (ni en env ni en .env.local)");
+  if (!existsSync(envPath)) return undefined;
+  const line = readFileSync(envPath, "utf8")
+    .split("\n")
+    .find((l) => l.startsWith(`${key}=`));
+  return line ? line.slice(key.length + 1).trim() : undefined;
 }
 
-const API_KEY = loadApiKey();
-const TEXT_MODEL = "gemini-flash-latest";
+const API_KEY = process.env.GEMINI_API_KEY || readEnvLocal("GEMINI_API_KEY");
+const VERTEX_PROJECT_ID = process.env.VERTEX_PROJECT_ID || readEnvLocal("VERTEX_PROJECT_ID");
+const USE_VERTEX = Boolean(VERTEX_PROJECT_ID);
+
+if (!API_KEY && !VERTEX_PROJECT_ID) {
+  throw new Error(
+    "No se encontró GEMINI_API_KEY ni VERTEX_PROJECT_ID (env o .env.local). Configura al menos uno."
+  );
+}
+
+function getVertexAccessToken() {
+  try {
+    return execSync("gcloud auth application-default print-access-token", {
+      encoding: "utf8",
+    }).trim();
+  } catch {
+    throw new Error(
+      "No hay credenciales de Application Default Credentials. Corre: gcloud auth application-default login"
+    );
+  }
+}
+
+const LOCATION = process.env.VERTEX_LOCATION || "us-central1";
+const TEXT_MODEL = "gemini-2.5-flash";
 const IMAGE_MODEL = "gemini-2.5-flash-image";
 
 const DESIGNER_PERSONA = `Eres el Director de Arte y Diseñador Jefe autónomo de la marca de ropa urbana HOWL.
@@ -48,15 +77,19 @@ o recuadros de fondo mal recortados. Sé directo, técnico y crítico como un di
 — nada de cumplidos vacíos. Responde siempre en español.`;
 
 async function callGemini(model, parts) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`;
+  const url = USE_VERTEX
+    ? `https://${LOCATION}-aiplatform.googleapis.com/v1/projects/${VERTEX_PROJECT_ID}/locations/${LOCATION}/publishers/google/models/${model}:generateContent`
+    : `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${API_KEY}`;
+  const headers = { "Content-Type": "application/json" };
+  if (USE_VERTEX) headers.Authorization = `Bearer ${getVertexAccessToken()}`;
   const res = await fetch(url, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ contents: [{ parts }] }),
+    headers,
+    body: JSON.stringify({ contents: [{ role: "user", parts }] }),
   });
   const data = await res.json();
   if (!res.ok) {
-    throw new Error(`Gemini API error ${res.status}: ${JSON.stringify(data.error ?? data)}`);
+    throw new Error(`Vertex AI error ${res.status}: ${JSON.stringify(data.error ?? data)}`);
   }
   return data;
 }
@@ -113,6 +146,29 @@ async function edit(imagePath, instruction, outputPath) {
   console.log("Guardado en", outputPath);
 }
 
+async function compose(prompt, outputPath, refPaths) {
+  const parts = [
+    {
+      text: `${DESIGNER_PERSONA}\n\nTe adjunto ${refPaths.length} imagen(es) de referencia. Úsalas EXACTAMENTE como se indique en las instrucciones (p.ej. reproducir un crest/artwork tal cual sin rediseñarlo, o mantener una forma/silueta/paleta exacta de una referencia), combinándolas en una imagen final nueva. Instrucciones: ${prompt}`,
+    },
+  ];
+  for (const refPath of refPaths) {
+    const buf = readFileSync(refPath);
+    const mimeType = refPath.endsWith(".jpg") || refPath.endsWith(".jpeg") ? "image/jpeg" : "image/png";
+    parts.push({ inline_data: { mime_type: mimeType, data: buf.toString("base64") } });
+  }
+  const data = await callGemini(IMAGE_MODEL, parts);
+  const imgPart = data.candidates?.[0]?.content?.parts?.find((p) => p.inline_data || p.inlineData);
+  const inline = imgPart?.inline_data ?? imgPart?.inlineData;
+  if (!inline) {
+    console.error("No se recibió imagen. Respuesta completa:");
+    console.error(JSON.stringify(data, null, 2));
+    process.exit(1);
+  }
+  writeFileSync(outputPath, Buffer.from(inline.data, "base64"));
+  console.log("Guardado en", outputPath);
+}
+
 const [, , cmd, ...args] = process.argv;
 
 try {
@@ -128,8 +184,15 @@ try {
     const [imagePath, instruction, outputPath] = args;
     if (!imagePath || !instruction || !outputPath) throw new Error('Uso: edit <entrada.png> "<instrucción>" <salida.png>');
     await edit(imagePath, instruction, outputPath);
+  } else if (cmd === "compose") {
+    // compose "<prompt>" <salida.png> <ref1.png> [ref2.png ...]
+    const [prompt, outputPath, ...refPaths] = args;
+    if (!prompt || !outputPath || refPaths.length === 0) {
+      throw new Error('Uso: compose "<prompt>" <salida.png> <ref1.png> [ref2.png ...]');
+    }
+    await compose(prompt, outputPath, refPaths);
   } else {
-    console.error('Uso:\n  gemini-designer.mjs review <imagen.png> ["pregunta"]\n  gemini-designer.mjs generate "<prompt>" <salida.png>');
+    console.error('Uso:\n  gemini-designer.mjs review <imagen.png> ["pregunta"]\n  gemini-designer.mjs generate "<prompt>" <salida.png>\n  gemini-designer.mjs edit <entrada.png> "<instrucción>" <salida.png>\n  gemini-designer.mjs compose "<prompt>" <salida.png> <ref1.png> [ref2.png ...]');
     process.exit(1);
   }
 } catch (err) {
