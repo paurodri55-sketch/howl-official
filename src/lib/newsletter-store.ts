@@ -51,15 +51,20 @@ export async function countSignups(): Promise<number> {
   return redis.scard(SET_KEY);
 }
 
-/** Límite simple anti-spam: máx. `limit` altas por `windowSeconds` desde la misma IP. */
+/**
+ * Límite simple anti-spam: máx. `limit` peticiones por `windowSeconds` desde
+ * la misma IP. `namespace` separa los contadores entre endpoints (ej.
+ * "newsletter" vs "checkout") para que no compartan el mismo cupo.
+ */
 export async function checkRateLimit(
   ip: string,
   limit = 5,
-  windowSeconds = 3600
+  windowSeconds = 3600,
+  namespace = "newsletter"
 ): Promise<{ allowed: boolean }> {
   if (!redis) return { allowed: true };
 
-  const key = `newsletter:ratelimit:${ip}`;
+  const key = `${namespace}:ratelimit:${ip}`;
   const count = await redis.incr(key);
   if (count === 1) {
     await redis.expire(key, windowSeconds);

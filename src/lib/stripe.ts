@@ -40,6 +40,11 @@ export async function createCheckoutSession(
   const lineItems = input.items.map((item) => {
     const product = getProductBySlug(item.slug);
     if (!product) throw new Error(`Producto no encontrado: ${item.slug}`);
+    // No permitir pagar productos aún no publicados (visible: false) aunque
+    // se conozca el slug — evita comprar diseños sin proveedor/precio cerrado.
+    if (product.visible === false) {
+      throw new Error(`Producto no disponible todavía: ${item.slug}`);
+    }
     return {
       quantity: item.quantity,
       price_data: {

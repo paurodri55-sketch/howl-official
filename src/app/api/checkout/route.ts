@@ -2,6 +2,9 @@ import { NextResponse } from "next/server";
 import type { CartItem } from "@/lib/types";
 import { createCheckoutSession } from "@/lib/stripe";
 import { isPreLaunch } from "@/lib/launch";
+import { checkRateLimit } from "@/lib/newsletter-store";
+
+const MAX_QUANTITY_PER_ITEM = 10;
 
 /**
  * Seam de checkout, conectado a Stripe real (ver lib/stripe.ts) cuando
@@ -24,6 +27,15 @@ export async function POST(request: Request) {
     );
   }
 
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  const { allowed } = await checkRateLimit(ip, 10, 3600, "checkout");
+  if (!allowed) {
+    return NextResponse.json(
+      { success: false, error: "Demasiados intentos, prueba más tarde" },
+      { status: 429 }
+    );
+  }
+
   const body = (await request.json()) as {
     items: CartItem[];
     customerEmail?: string;
@@ -36,15 +48,35 @@ export async function POST(request: Request) {
     );
   }
 
-  const session = await createCheckoutSession({
-    items: body.items,
-    customerEmail: body.customerEmail,
-  });
+  const hasInvalidQuantity = body.items.some(
+    (item) => !Number.isInteger(item.quantity) || item.quantity < 1 || item.quantity > MAX_QUANTITY_PER_ITEM
+  );
+  if (hasInvalidQuantity) {
+    return NextResponse.json(
+      { success: false, error: `La cantidad debe ser entre 1 y ${MAX_QUANTITY_PER_ITEM} por artículo` },
+      { status: 400 }
+    );
+  }
 
-  return NextResponse.json({
-    success: true,
-    mode: session.configured ? "stripe" : "mock",
-    sessionId: session.sessionId,
-    redirectUrl: session.url,
-  });
+  try {
+    const session = await createCheckoutSession({
+      items: body.items,
+      customerEmail: body.customerEmail,
+    });
+
+    return NextResponse.json({
+      success: true,
+      mode: session.configured ? "stripe" : "mock",
+      sessionId: session.sessionId,
+      redirectUrl: session.url,
+    });
+  } catch (error) {
+    return NextResponse.json(
+      {
+        success: false,
+        error: error instanceof Error ? error.message : "No se pudo procesar el pedido",
+      },
+      { status: 400 }
+    );
+  }
 }
