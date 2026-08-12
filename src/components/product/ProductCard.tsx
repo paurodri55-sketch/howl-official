@@ -12,8 +12,16 @@ import { getBackProductPhoto, getProductPhoto } from "@/lib/photos";
 import { SHOW_SOCIAL_PROOF } from "@/lib/config";
 import { useLocale, withLocale } from "@/lib/i18n/client";
 import { getDictionary } from "@/lib/i18n/dictionaries";
+import type { RatingSummary } from "@/lib/reviews";
 
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({
+  product,
+  ratingSummary,
+}: {
+  product: Product;
+  /** Rating real calculado a partir de reseñas verificadas — null/undefined si el producto no tiene ninguna todavía. */
+  ratingSummary?: RatingSummary | null;
+}) {
   const locale = useLocale();
   const t = getDictionary(locale).product;
   const showcaseColor = pickShowcaseColor(product);
@@ -54,10 +62,9 @@ export function ProductCard({ product }: { product: Product }) {
             lift={isDarkGarment(showcaseColor.hex)}
           />
         )}
-        {(product.isNew || (SHOW_SOCIAL_PROOF && (product.purchases ?? 0) > 500)) && (
+        {product.isNew && (
           <div className="absolute top-3 left-3 flex flex-col gap-2">
-            {SHOW_SOCIAL_PROOF && (product.purchases ?? 0) > 500 && <Badge>{t.bestSeller}</Badge>}
-            {product.isNew && <Badge>{t.new}</Badge>}
+            <Badge>{t.new}</Badge>
           </div>
         )}
       </div>
@@ -67,14 +74,9 @@ export function ProductCard({ product }: { product: Product }) {
             {product.name}
           </p>
           <p className="text-cream-dim text-xs truncate">{product.band}</p>
-          {SHOW_SOCIAL_PROOF && product.rating !== undefined && (
+          {SHOW_SOCIAL_PROOF && ratingSummary && (
             <div className="mt-1 flex items-center gap-1.5 flex-wrap">
-              <StarRating rating={product.rating} reviewCount={product.reviewCount} />
-              {(product.purchases ?? 0) > 500 && (
-                <span className="font-condensed text-[10px] text-rust-light">
-                  · {new Intl.NumberFormat(t.numberLocale).format(product.purchases!)} {t.soldSuffix}
-                </span>
-              )}
+              <StarRating rating={ratingSummary.rating} reviewCount={ratingSummary.reviewCount} />
             </div>
           )}
         </div>

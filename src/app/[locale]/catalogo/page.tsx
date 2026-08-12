@@ -5,6 +5,7 @@ import type { ProductCategory } from "@/lib/types";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { OG_LOCALE, buildAlternates } from "@/lib/seo";
+import { getRatingSummaries } from "@/lib/reviews";
 
 export async function generateMetadata({
   params,
@@ -38,6 +39,7 @@ export default async function CatalogoPage({
   const t = getDictionary(locale).catalog;
   const products = getVisibleProducts();
   const categories = getCategories();
+  const ratingSummaries = await getRatingSummaries(products.map((p) => p.slug));
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
@@ -49,6 +51,7 @@ export default async function CatalogoPage({
         categories={categories}
         initialCategory={cat as ProductCategory | undefined}
         locale={locale}
+        ratingSummaries={ratingSummaries}
       />
     </div>
   );

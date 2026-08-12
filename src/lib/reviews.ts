@@ -129,14 +129,31 @@ export async function getPublishedReviews(slug: string): Promise<Review[]> {
   return reviews.filter((r): r is Review => r !== null && r.published);
 }
 
+export interface RatingSummary {
+  rating: number;
+  reviewCount: number;
+}
+
 /** Rating/reviewCount reales, calculados sobre la marcha — nunca hardcodeados. */
-export async function getRatingSummary(
-  slug: string
-): Promise<{ rating: number; reviewCount: number } | null> {
+export async function getRatingSummary(slug: string): Promise<RatingSummary | null> {
   const reviews = await getPublishedReviews(slug);
   if (reviews.length === 0) return null;
   const avg = reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
   return { rating: Math.round(avg * 10) / 10, reviewCount: reviews.length };
+}
+
+/** Igual que getRatingSummary pero para varios productos a la vez (listados/grids). */
+export async function getRatingSummaries(
+  slugs: string[]
+): Promise<Record<string, RatingSummary>> {
+  const entries = await Promise.all(
+    slugs.map(async (slug) => [slug, await getRatingSummary(slug)] as const)
+  );
+  const result: Record<string, RatingSummary> = {};
+  for (const [slug, summary] of entries) {
+    if (summary) result[slug] = summary;
+  }
+  return result;
 }
 
 /** Cola de moderación (panel de admin) — pendientes de aprobar/rechazar. */

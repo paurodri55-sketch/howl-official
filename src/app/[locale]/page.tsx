@@ -15,6 +15,7 @@ import { Logo } from "@/components/ui/Logo";
 import { NewsletterSection } from "@/components/newsletter/NewsletterSection";
 import { SHOW_SOCIAL_PROOF } from "@/lib/config";
 import { getDaysUntilLaunch } from "@/lib/launch";
+import { getRatingSummaries } from "@/lib/reviews";
 import Link from "next/link";
 import Image from "next/image";
 import { withLocale, type Locale } from "@/lib/i18n/config";
@@ -65,6 +66,9 @@ export default async function Home({
   const featured = getFeaturedProducts();
   const newArrivals = getNewProducts();
   const daysUntilLaunch = getDaysUntilLaunch();
+  const ratingSummaries = await getRatingSummaries(
+    Array.from(new Set([...featured, ...newArrivals].map((p) => p.slug)))
+  );
 
   return (
     <div>
@@ -212,7 +216,7 @@ export default async function Home({
               delay={(i % 4) * 80}
               className="w-40 shrink-0 sm:w-auto"
             >
-              <ProductCard product={product} />
+              <ProductCard product={product} ratingSummary={ratingSummaries[product.slug]} />
             </Reveal>
           ))}
         </div>
@@ -233,7 +237,7 @@ export default async function Home({
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
           {featured.map((product, i) => (
             <Reveal key={product.id} delay={(i % 4) * 80}>
-              <ProductCard product={product} />
+              <ProductCard product={product} ratingSummary={ratingSummaries[product.slug]} />
             </Reveal>
           ))}
         </div>

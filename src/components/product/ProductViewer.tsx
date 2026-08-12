@@ -14,6 +14,7 @@ import { getBackProductPhoto, getProductPhoto } from "@/lib/photos";
 import { SHOW_SOCIAL_PROOF } from "@/lib/config";
 import { useLocale } from "@/lib/i18n/client";
 import { getDictionary } from "@/lib/i18n/dictionaries";
+import type { RatingSummary } from "@/lib/reviews";
 
 type View = "foto" | "front" | "back" | "diseno";
 
@@ -21,7 +22,13 @@ type View = "foto" | "front" | "back" | "diseno";
 // como referencia de estilo, independientemente del color seleccionado.
 const MODEL_COLOR_NOTE = "Negro desteñido";
 
-export function ProductViewer({ product }: { product: Product }) {
+export function ProductViewer({
+  product,
+  ratingSummary,
+}: {
+  product: Product;
+  ratingSummary?: RatingSummary | null;
+}) {
   const locale = useLocale();
   const dict = getDictionary(locale);
   const t = dict.viewer;
@@ -158,14 +165,9 @@ export function ProductViewer({ product }: { product: Product }) {
         <h1 className="font-display uppercase text-cream text-4xl sm:text-5xl mt-1">
           {product.name}
         </h1>
-        {SHOW_SOCIAL_PROOF && product.rating !== undefined && (
+        {SHOW_SOCIAL_PROOF && ratingSummary && (
           <div className="mt-2 flex items-center gap-3">
-            <StarRating rating={product.rating} reviewCount={product.reviewCount} />
-            {product.purchases !== undefined && (
-              <span className="font-condensed text-xs text-cream-dim">
-                {new Intl.NumberFormat(dict.product.numberLocale).format(product.purchases)} {t.soldSuffix}
-              </span>
-            )}
+            <StarRating rating={ratingSummary.rating} reviewCount={ratingSummary.reviewCount} />
           </div>
         )}
         <p className="flex items-baseline gap-3 font-condensed text-2xl text-cream mt-4">

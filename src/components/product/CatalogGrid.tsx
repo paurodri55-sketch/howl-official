@@ -5,17 +5,20 @@ import type { Product, ProductCategory } from "@/lib/types";
 import { ProductCard } from "@/components/product/ProductCard";
 import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
+import type { RatingSummary } from "@/lib/reviews";
 
 export function CatalogGrid({
   products,
   categories,
   initialCategory,
   locale,
+  ratingSummaries,
 }: {
   products: Product[];
   categories: ProductCategory[];
   initialCategory?: ProductCategory;
   locale: Locale;
+  ratingSummaries?: Record<string, RatingSummary>;
 }) {
   const [active, setActive] = useState<ProductCategory | "Todos">(
     initialCategory ?? "Todos"
@@ -49,7 +52,11 @@ export function CatalogGrid({
       ) : (
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
           {visible.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              ratingSummary={ratingSummaries?.[product.slug]}
+            />
           ))}
         </div>
       )}

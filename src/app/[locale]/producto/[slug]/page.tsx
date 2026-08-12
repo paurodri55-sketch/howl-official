@@ -12,6 +12,7 @@ import { ProductViewer } from "@/components/product/ProductViewer";
 import { withLocale, type Locale } from "@/lib/i18n/config";
 import { SITE_URL, OG_LOCALE, buildAlternates } from "@/lib/seo";
 import { SHOW_SOCIAL_PROOF } from "@/lib/config";
+import { getRatingSummary, getRatingSummaries } from "@/lib/reviews";
 
 export function generateStaticParams() {
   return getAllProducts().map((product) => ({ slug: product.slug }));
@@ -65,6 +66,8 @@ export default async function ProductPage({
   const related = getRelatedProducts(product);
   const image = getProductPhoto(product, product.colors[0]);
   const productUrl = `${SITE_URL}/${locale}/producto/${slug}`;
+  const ratingSummary = await getRatingSummary(slug);
+  const relatedRatingSummaries = await getRatingSummaries(related.map((p) => p.slug));
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -83,12 +86,12 @@ export default async function ProductPage({
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
     },
-    ...(SHOW_SOCIAL_PROOF && product.rating && product.reviewCount
+    ...(SHOW_SOCIAL_PROOF && ratingSummary
       ? {
           aggregateRating: {
             "@type": "AggregateRating",
-            ratingValue: product.rating,
-            reviewCount: product.reviewCount,
+            ratingValue: ratingSummary.rating,
+            reviewCount: ratingSummary.reviewCount,
           },
         }
       : {}),
@@ -108,7 +111,7 @@ export default async function ProductPage({
         / <span className="text-cream">{product.name}</span>
       </nav>
 
-      <ProductViewer product={product} />
+      <ProductViewer product={product} ratingSummary={ratingSummary} />
 
       {related.length > 0 && (
         <section className="mt-20">
@@ -117,7 +120,11 @@ export default async function ProductPage({
           </h2>
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
             {related.map((p) => (
-              <ProductCard key={p.id} product={p} />
+              <ProductCard
+                key={p.id}
+                product={p}
+                ratingSummary={relatedRatingSummaries[p.slug]}
+              />
             ))}
           </div>
         </section>
