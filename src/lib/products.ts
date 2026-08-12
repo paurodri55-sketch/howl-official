@@ -33,7 +33,7 @@ export const products: Product[] = [
     band: "EVERGLADES",
     tourYear: "N.10",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Una serpiente enroscada al pecho, para quien prefiere el pantano a la ciudad — donde mandan las bestias y no el asfalto.",
       descriptionEn:
@@ -60,7 +60,7 @@ export const products: Product[] = [
     name: "Static",
     band: "STATIC",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Un rayo estampado a mano, colorido apagado por el sol — como si llevara años colgado en el mismo armario.",
       descriptionEn:
@@ -84,7 +84,7 @@ export const products: Product[] = [
     band: "HOWL",
     tourYear: "",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Wordmark discreto al pecho; la luna duerme con gorro y manta a la espalda — para quien también se queda despierto pensando en nada a las tres de la mañana.",
       descriptionEn:
@@ -110,7 +110,7 @@ export const products: Product[] = [
     name: "Southbound",
     band: "SOUTHBOUND",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Alas oxidadas y letras resquebrajadas, con el aire de un clásico de mercadillo de discos que nadie recuerda de dónde salió.",
       descriptionEn:
@@ -163,7 +163,7 @@ export const products: Product[] = [
     name: "Scorched Earth",
     band: "SCORCHED EARTH",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Un escorpión al acecho, estampado en tinta única — para las noches más calurosas del desierto.",
       descriptionEn:
@@ -192,7 +192,7 @@ export const products: Product[] = [
     band: "IMAGINE THE WORLD",
     tourYear: "N.01",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Un cielo real, colinas verdes y una frase que dice todo lo que hace falta decir. Icono plano, una sola tinta, pensado para leerse limpio a cualquier tamaño.",
       descriptionEn:
@@ -216,7 +216,7 @@ export const products: Product[] = [
     band: "NOTHING LIKE HOME",
     tourYear: "N.02",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Una casita de campo inglesa, jardín florido y ganas de quedarse en casa un domingo entero. Para los días en que ningún sitio le gana al sofá.",
       descriptionEn:
@@ -241,7 +241,7 @@ export const products: Product[] = [
     band: "CHASE THE HORIZON",
     tourYear: "N.03",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Una cordillera al atardecer para quien nunca deja de mirar más allá de donde está. Algodón grueso, lavado suave, colores que ya vienen desgastados de fábrica.",
       descriptionEn:
@@ -269,7 +269,7 @@ export const products: Product[] = [
     band: "SLOW DOWN, BREATHE",
     tourYear: "N.04",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Palmeras, atardecer y el recordatorio de que no pasa nada por ir más despacio de vez en cuando. Corte oversized, la paleta lavada de siempre.",
       descriptionEn:
@@ -293,7 +293,7 @@ export const products: Product[] = [
     band: "MADE FOR THE NIGHT",
     tourYear: "N.05",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Rascacielos, reflejos en el agua y esa energía que solo tiene la ciudad de noche. Para cuando el día se acaba y el plan recién empieza.",
       descriptionEn:
@@ -317,7 +317,7 @@ export const products: Product[] = [
     band: "TAKE THE LONG WAY",
     tourYear: "N.06",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Una furgoneta, una carretera del desierto y ninguna prisa por llegar a ningún sitio. El camino largo, a propósito.",
       descriptionEn:
@@ -341,7 +341,7 @@ export const products: Product[] = [
     band: "HOWL",
     tourYear: "N.07",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "La escena que le da nombre a HOWL: un lobo aullando a la luna, montañas detrás. Icono pequeño al pecho, ilustración completa a la espalda — el formato que repetimos en buena parte del catálogo. Algodón grueso 237 g/m², serigrafía con lavado ácido, como si llevara diez años en el armario de alguien. Cuando se agote, no vuelve.",
       descriptionEn:
@@ -366,7 +366,7 @@ export const products: Product[] = [
     name: "Swamp",
     band: "SWAMP",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Un cocodrilo asomando junto al muelle, un pescador que no se entera de nada — la escena completa a la espalda, solo el cocodrilo al pecho. La paciencia siempre gana.",
       descriptionEn:
@@ -392,7 +392,7 @@ export const products: Product[] = [
     band: "WILD WEST",
     tourYear: "N.09",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Un jinete pequeño al pecho. A la espalda, la escena completa: \"Hard Times Build Hard Men\". Es la pieza más pesada del catálogo — estampado delante y detrás, 237 g/m² de algodón boxy oversized. Para quien prefiere el polvo del camino a la acera.",
       descriptionEn:
@@ -423,7 +423,7 @@ export const products: Product[] = [
     name: "UFO Obsession",
     band: "UFO OBSESSION",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Un platillo discreto al pecho, la abducción de una vaca de campo grabada a la espalda — para quien cree que no estamos solos.",
       descriptionEn:
@@ -449,7 +449,7 @@ export const products: Product[] = [
     name: "Tradition & Innovation",
     band: "伝統と革新",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Sol naciente, montañas y una gran ola en tinta tradicional japonesa sobre algodón grueso. Lo antiguo y lo nuevo en la misma tela.",
       descriptionEn:
@@ -476,7 +476,7 @@ export const products: Product[] = [
     band: "CAMEL",
     tourYear: "N.11",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Un camello ornamentado, quieto frente a la puesta de sol del desierto. No tiene prisa y no la va a tener.",
       descriptionEn:
@@ -502,7 +502,7 @@ export const products: Product[] = [
     backBand: "HOWL PROJECT",
     tourYear: "N.12",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Solo tipografía, sin ilustración — para los días de \"menos es más\". La básica de armario que no falla, en cuatro colores.",
       descriptionEn:
@@ -531,7 +531,7 @@ export const products: Product[] = [
     band: "EVERYTHING IS FINE",
     tourYear: "N.13",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Una llama, un icono, y la calma de saber que todo va bien aunque no lo parezca. Diseño mínimo, una sola tinta.",
       descriptionEn:
@@ -555,7 +555,7 @@ export const products: Product[] = [
     band: "RAISED BY DRAGONS",
     tourYear: "2024",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Dragón pequeño al pecho, ilustración grande a la espalda — año del dragón, si te va la numerología. Si no, es solo un dragón que impone.",
       descriptionEn:
@@ -583,7 +583,7 @@ export const products: Product[] = [
     backBand: "SUNDAY AFTERNOON",
     tourYear: "2024",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Logo pequeño al pecho, una gasolinera de Route 66 ilustrada a toda espalda — llenar el depósito para la semana, en sentido literal y figurado.",
       descriptionEn:
@@ -608,7 +608,7 @@ export const products: Product[] = [
     name: "Nightfall Dive",
     band: "NIGHTFALL DIVE",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Un halcón en picado, línea fina, una sola tinta. Sin ruido de más — el diseño hace todo el trabajo.",
       descriptionEn:
@@ -630,7 +630,7 @@ export const products: Product[] = [
     name: "Moth & Flame",
     band: "MOTH & FLAME",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Una polilla nocturna descendiendo hacia la llama. Línea fina, una tinta, la clase de diseño que se lee mejor cuanto más pequeño es.",
       descriptionEn:
@@ -652,7 +652,7 @@ export const products: Product[] = [
     name: "Lost Bearing",
     band: "LOST BEARING",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Una brújula vieja, mellada, aguja torcida — no siempre hace falta saber a dónde vas. Línea fina, una tinta.",
       descriptionEn:
@@ -674,7 +674,7 @@ export const products: Product[] = [
     name: "Cut Loose",
     band: "CUT LOOSE",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Un ancla y una cuerda deshilachada — desanclarse, cortar por lo sano. Línea fina, una tinta.",
       descriptionEn:
@@ -696,7 +696,7 @@ export const products: Product[] = [
     name: "Old Iron",
     band: "OLD IRON",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Casco motero vintage con gafas de aviador, línea fina, una tinta. El tipo de diseño que parece llevar más años en la carretera que tú.",
       descriptionEn:
@@ -718,7 +718,7 @@ export const products: Product[] = [
     name: "Unbroken",
     band: "UNBROKEN",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Nudo marinero en figura de ocho — vínculo, lealtad, lo que no se suelta. Línea fina, una tinta.",
       descriptionEn:
@@ -740,7 +740,7 @@ export const products: Product[] = [
     name: "Vintage Howl",
     band: "HOWL",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "El lobo de siempre, pero en grabado vintage y tipografía stencil — como si el diseño llevara ahí desde antes de que existiera la marca.",
       descriptionEn:
@@ -762,7 +762,7 @@ export const products: Product[] = [
     name: "Stay Feral",
     band: "STAY FERAL",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Tipografía brutalista, collage punk/fanzine — fotocopiada, recortada, pegada a mano. Nada demasiado limpio a propósito.",
       descriptionEn:
@@ -785,7 +785,7 @@ export const products: Product[] = [
     name: "Love Is A Long Road",
     band: "LOVE IS A LONG ROAD",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Un muscle car de los 70 al atardecer, script retro dibujado a mano. El amor como carretera larga, no como atajo.",
       descriptionEn:
@@ -808,7 +808,7 @@ export const products: Product[] = [
     band: "HOWL",
     tourYear: "N.01",
     editionLabel: "Especimen",
-    price: 29.95,
+    price: 39.95,
     description:
       "Cráneo de lobo despiezado en plano técnico, con el aire de una patente antigua — como si HOWL tuviera manual de instrucciones.",
       descriptionEn:
@@ -832,7 +832,7 @@ export const products: Product[] = [
     band: "NYC",
     backBand: "FREEDOM",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Logo pequeño NYC al pecho, la Estatua de la Libertad grabada en toda la espalda — el recuerdo de ciudad que nunca compraste en una tienda de souvenirs.",
       descriptionEn:
@@ -856,7 +856,7 @@ export const products: Product[] = [
     name: "Cherry Supply Co.",
     band: "HOWL SUPPLY CO.",
     tourYear: "MMXXIV",
-    price: 29.95,
+    price: 39.95,
     description:
       "Camiseta amarilla, cerezas vintage y wordmark universitario en el pecho — la pieza más dulce del catálogo, sin pedir perdón por serlo.",
       descriptionEn:
@@ -881,7 +881,7 @@ export const products: Product[] = [
     backBand: "HOWLERS",
     tourYear: "2026",
     editionLabel: "Especial",
-    price: 29.95,
+    price: 39.95,
     description:
       "Camiseta especial HOWL. Lobo en línea fina al pecho, la manada aullando junta en la espalda.",
       descriptionEn:
@@ -905,7 +905,7 @@ export const products: Product[] = [
     band: "永恆",
     backBand: "永恆",
     tourYear: "",
-    price: 29.95,
+    price: 39.95,
     description:
       "Yin-yang pequeño al pecho; a la espalda, grande y acompañado de caligrafía china — el equilibrio como diseño, no solo como frase.",
       descriptionEn:
@@ -932,7 +932,7 @@ export const products: Product[] = [
     band: "HOWL",
     backBand: "LUNAR HOTEL",
     tourYear: "2047",
-    price: 29.95,
+    price: 39.95,
     description:
       "Luna pequeña al pecho, un hotel lunar retro-futurista grabado a la espalda — ciencia ficción de portada de libro de bolsillo de los 70.",
       descriptionEn:
@@ -1078,7 +1078,7 @@ export const products: Product[] = [
     backBand: "NO DESTINATION",
     tourYear: "",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Logo pequeño de rueda alada al pecho, un motorista en la carretera grabado a toda espalda — sin destino fijo, con el depósito lleno.",
       descriptionEn:
@@ -1108,7 +1108,7 @@ export const products: Product[] = [
     backBand: "LOUD OR NOTHING",
     tourYear: "",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Logo pequeño de púa alada al pecho, una Les Paul grabada a toda espalda — para quien piensa que si no suena fuerte, no cuenta.",
       descriptionEn:
@@ -1136,7 +1136,7 @@ export const products: Product[] = [
     backBand: "STAMPEDE",
     tourYear: "",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Un bisonte pequeño al pecho. Detrás, la manada entera corriendo hacia el atardecer, grabada en toda la espalda. Algodón grueso 237 g/m², serigrafía envejecida — el peso y el lavado que buscamos en cada pieza del catálogo. Corre con los que no se paran.",
       descriptionEn:
@@ -1163,7 +1163,7 @@ export const products: Product[] = [
     band: "DA ENZO",
     tourYear: "1974",
     editionLabel: "Colección",
-    price: 29.95,
+    price: 39.95,
     description:
       "Sello vintage de trattoria desgastado al pecho — 'Ristorante Pizzeria Da Enzo, dal 1974'. Aire de menú de barrio italiano de los 80, del tipo que no cambia nunca.",
       descriptionEn:
