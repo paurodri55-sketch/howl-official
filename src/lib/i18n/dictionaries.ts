@@ -43,11 +43,21 @@ export const dictionaries = {
       sectionBody:
         "Cada tirada es única y no vuelve. Quien está dentro, sabe antes que nadie cuándo sale la siguiente.",
       modalEyebrow: "Lista de espera",
-      modalHeading1: "Acceso anticipado",
-      modalHeading2: "antes de que se agote",
-      modalBody: "Un aviso cuando sale la siguiente tirada. Nada más.",
+      modalHeading1: "Compra 24h antes",
+      modalHeading2: "de que se agote",
+      modalBody: "Acceso real: entra a comprar 24 horas antes que el resto, antes del lanzamiento oficial.",
       modalCountdown: (days: number) => `Faltan ${days} días — 21 de noviembre`,
       modalClose: "Cerrar",
+    },
+    faqBot: {
+      title: "Dudas rápidas",
+      greeting: "Hola, soy el bot de HOWL. Pregunta lo que quieras o elige una de abajo.",
+      placeholder: "Escribe tu duda…",
+      send: "Enviar",
+      open: "Abrir dudas rápidas",
+      close: "Cerrar",
+      fallback:
+        "No tengo esa respuesta a mano. Escríbenos por Instagram (@howlofficial_) o TikTok (@howlofficial) y te contestamos directamente.",
     },
     home: {
       metaTitle: "HOWL Official — Ropa de diseño propio, tiradas limitadas",
@@ -82,27 +92,6 @@ export const dictionaries = {
         {
           title: "Tiradas limitadas",
           text: "Cada diseño se imprime una vez. Cuando se agota, no vuelve.",
-        },
-      ],
-      testimonialsHeading: "Lo que dice quien ya pidió",
-      testimonials: [
-        {
-          name: "Marcos R.",
-          quote:
-            "La tela es densa de verdad, no como esas camisetas finas de otras tiendas. El estampado del escorpión parece serigrafiado a mano.",
-          rating: 5,
-        },
-        {
-          name: "Elena V.",
-          quote:
-            "Pedí la de Hollow Saints y llegó en 3 días. La luna gótica se ve brutal en persona, mejor que en las fotos.",
-          rating: 5,
-        },
-        {
-          name: "Diego T.",
-          quote:
-            "Tirada limitada de verdad — quise repetir color y ya no estaba. Al menos el envío fue rápido.",
-          rating: 4,
         },
       ],
       finalCtaHeading: "Entra a HOWL",
@@ -203,6 +192,13 @@ export const dictionaries = {
       shipping: "Envío",
       total: "Total",
     },
+    cookieBanner: {
+      message:
+        "Usamos cookies técnicas necesarias para el funcionamiento de la web. Con tu consentimiento, también activamos píxeles de Meta y TikTok para medir el rendimiento de nuestros anuncios.",
+      accept: "Aceptar",
+      reject: "Rechazar",
+      learnMore: "Más información",
+    },
   },
   en: {
     header: {
@@ -246,11 +242,21 @@ export const dictionaries = {
       sectionBody:
         "Every drop is one-of-a-kind and never comes back. Those on the list know first when the next one lands.",
       modalEyebrow: "Waitlist",
-      modalHeading1: "Early access",
+      modalHeading1: "Buy 24h early",
       modalHeading2: "before it sells out",
-      modalBody: "A heads-up when the next drop launches. Nothing else.",
+      modalBody: "Real early access: shop 24 hours before everyone else, ahead of the official launch.",
       modalCountdown: (days: number) => `${days} days left — November 21`,
       modalClose: "Close",
+    },
+    faqBot: {
+      title: "Quick questions",
+      greeting: "Hi, I'm the HOWL bot. Ask anything or pick one below.",
+      placeholder: "Type your question…",
+      send: "Send",
+      open: "Open quick questions",
+      close: "Close",
+      fallback:
+        "I don't have that answer on hand. Message us on Instagram (@howlofficial_) or TikTok (@howlofficial) and we'll reply directly.",
     },
     home: {
       metaTitle: "HOWL Official — Original streetwear, limited drops",
@@ -285,27 +291,6 @@ export const dictionaries = {
         {
           title: "Limited runs",
           text: "Each design gets printed once. Once it sells out, it's gone for good.",
-        },
-      ],
-      testimonialsHeading: "What people who already ordered say",
-      testimonials: [
-        {
-          name: "Marcos R.",
-          quote:
-            "The fabric is genuinely heavyweight, not like those thin tees from other stores. The scorpion print looks hand-screened.",
-          rating: 5,
-        },
-        {
-          name: "Elena V.",
-          quote:
-            "Ordered the Hollow Saints tee and it arrived in 3 days. The gothic moon looks brutal in person, better than the photos.",
-          rating: 5,
-        },
-        {
-          name: "Diego T.",
-          quote:
-            "Actually limited — tried to reorder a color and it was already gone. At least shipping was fast.",
-          rating: 4,
         },
       ],
       finalCtaHeading: "Step into HOWL",
@@ -405,6 +390,13 @@ export const dictionaries = {
       subtotal: "Subtotal",
       shipping: "Shipping",
       total: "Total",
+    },
+    cookieBanner: {
+      message:
+        "We use necessary technical cookies for the site to work. With your consent, we also enable Meta and TikTok pixels to measure our ad performance.",
+      accept: "Accept",
+      reject: "Reject",
+      learnMore: "Learn more",
     },
   },
 } as const;

@@ -1,13 +1,19 @@
 import { Anton, Oswald, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
+import { cookies } from "next/headers";
 import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 import { CartProvider } from "@/components/cart/CartContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { NewsletterModal } from "@/components/newsletter/NewsletterModal";
+import { FaqBot } from "@/components/faq/FaqBot";
 import { TikTokPixel } from "@/components/analytics/TikTokPixel";
 import { MetaPixel } from "@/components/analytics/MetaPixel";
+import {
+  CONSENT_COOKIE,
+  CookieConsentBanner,
+} from "@/components/analytics/CookieConsentBanner";
 import { locales, isLocale } from "@/lib/i18n/config";
 import { SITE_URL } from "@/lib/seo";
 
@@ -40,6 +46,11 @@ export default async function LocaleLayout({
 }>) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
+
+  const consent = (await cookies()).get(CONSENT_COOKIE)?.value;
+  const hasAnyPixel = Boolean(
+    process.env.META_PIXEL_ID || process.env.TIKTOK_PIXEL_ID
+  );
 
   const jsonLd = [
     {
@@ -80,10 +91,12 @@ export default async function LocaleLayout({
           <main className="flex-1">{children}</main>
           <Footer locale={locale} />
           <NewsletterModal locale={locale} />
+          <FaqBot locale={locale} liftedForCookieBanner={hasAnyPixel && !consent} />
         </CartProvider>
         <Analytics />
-        <TikTokPixel />
-        <MetaPixel />
+        <TikTokPixel enabled={consent === "accepted"} />
+        <MetaPixel enabled={consent === "accepted"} />
+        {hasAnyPixel && !consent && <CookieConsentBanner locale={locale} />}
       </body>
     </html>
   );

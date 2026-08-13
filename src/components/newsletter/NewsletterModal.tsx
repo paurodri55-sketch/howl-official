@@ -7,7 +7,7 @@ import type { Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
 const SEEN_KEY = "howl_newsletter_modal_seen";
-const TIME_TRIGGER_MS = 20_000;
+const TIME_TRIGGER_MS = 9_000;
 const SCROLL_TRIGGER_RATIO = 0.6;
 
 export function NewsletterModal({ locale }: { locale: Locale }) {

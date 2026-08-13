@@ -1,12 +1,13 @@
 import Script from "next/script";
 
 /**
- * Pixel base de TikTok. No hace nada si no hay TIKTOK_PIXEL_ID configurado
- * (en local o en Vercel), así que es seguro tenerlo siempre montado.
+ * Pixel base de TikTok. No hace nada si no hay TIKTOK_PIXEL_ID configurado,
+ * y no se monta hasta que el usuario da consentimiento explícito en el
+ * banner de cookies (ver CookieConsentBanner).
  */
-export function TikTokPixel() {
+export function TikTokPixel({ enabled }: { enabled: boolean }) {
   const pixelId = process.env.TIKTOK_PIXEL_ID;
-  if (!pixelId) return null;
+  if (!pixelId || !enabled) return null;
 
   return (
     <Script id="tiktok-pixel" strategy="afterInteractive">
