@@ -26,6 +26,10 @@ import type { Metadata } from "next";
 const marqueeBands = Array.from(
   new Set(getVisibleProducts().map((p) => p.band.toUpperCase()))
 );
+// Duración proporcional al nº de nombres — así el ritmo de paso (px/s) se
+// mantiene constante y lento aunque se añadan o quiten marcas visibles,
+// en vez de acelerarse cuando hay más texto que recorrer en el mismo tiempo fijo.
+const marqueeDurationSeconds = Math.max(50, marqueeBands.length * 9);
 
 const categoryTiles = [
   { category: "Camisetas" as const, slug: "answer-the-call-wolf" },
@@ -100,13 +104,16 @@ export default async function Home({
         </div>
 
         <div className="relative border-t border-ink-line bg-ink-soft py-3 overflow-hidden">
-          <div className="flex whitespace-nowrap animate-marquee w-max">
+          <div
+            className="flex whitespace-nowrap animate-marquee w-max"
+            style={{ animationDuration: `${marqueeDurationSeconds}s` }}
+          >
             {[...marqueeBands, ...marqueeBands].map((band, i) => (
               <span
                 key={`${band}-${i}`}
-                className="font-condensed uppercase tracking-widest text-sm text-cream-dim mx-6"
+                className="font-condensed uppercase tracking-widest text-sm text-cream-dim mx-8"
               >
-                {band} <span className="text-rust mx-6">✦</span>
+                {band} <span className="text-rust mx-8">✦</span>
               </span>
             ))}
           </div>
