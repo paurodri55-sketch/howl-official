@@ -1,7 +1,6 @@
 import { LinkButton } from "@/components/ui/Button";
 import { ProductCard } from "@/components/product/ProductCard";
 import { TeeMockup } from "@/components/product/TeeMockup";
-import { StarRating } from "@/components/ui/StarRating";
 import { Reveal } from "@/components/ui/Reveal";
 import { isDarkGarment } from "@/lib/color";
 import {
@@ -13,7 +12,6 @@ import {
 import { getProductPhoto } from "@/lib/photos";
 import { Logo } from "@/components/ui/Logo";
 import { NewsletterSection } from "@/components/newsletter/NewsletterSection";
-import { SHOW_SOCIAL_PROOF } from "@/lib/config";
 import { getDaysUntilLaunch } from "@/lib/launch";
 import { getRatingSummaries } from "@/lib/reviews";
 import Link from "next/link";
@@ -258,34 +256,6 @@ export default async function Home({
       </section>
 
       <NewsletterSection locale={locale} />
-
-      {/* Testimonios */}
-      {SHOW_SOCIAL_PROOF && (
-        <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <Reveal>
-            <h2 className="font-display uppercase text-cream text-3xl sm:text-4xl mb-8">
-              {t.testimonialsHeading}
-            </h2>
-          </Reveal>
-          <div className="grid gap-6 sm:grid-cols-3">
-            {t.testimonials.map((item, i) => (
-              <Reveal
-                key={item.name}
-                delay={i * 100}
-                className="border border-ink-line bg-ink-soft p-6"
-              >
-                <StarRating rating={item.rating} className="mb-3" />
-                <p className="text-cream-dim text-sm leading-relaxed">
-                  &ldquo;{item.quote}&rdquo;
-                </p>
-                <p className="mt-4 font-condensed uppercase tracking-widest text-xs text-rust-light">
-                  {item.name}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-        </section>
-      )}
 
       {/* CTA final */}
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 text-center">
