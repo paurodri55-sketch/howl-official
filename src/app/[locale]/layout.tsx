@@ -81,7 +81,6 @@ export default async function LocaleLayout({
       <body className="min-h-full flex flex-col bg-ink text-cream">
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <div className="grain-overlay" />

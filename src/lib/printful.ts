@@ -40,6 +40,7 @@ export async function createPrintfulOrder(
     return { configured: false, orderId: null };
   }
 
+  void items;
   throw new Error(
     "PRINTFUL_API_KEY está definido pero la integración real de Printful " +
       "todavía no está implementada. Completa createPrintfulOrder en lib/printful.ts."

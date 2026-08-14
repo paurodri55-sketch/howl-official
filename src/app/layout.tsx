@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/seo";
 
-const SITE_URL = "https://howlofficial.com";
 const SITE_NAME = "HOWL Official";
 const DESCRIPTION =
   "Camisetas y sudaderas de diseño propio. Estampados trabajados a mano, algodón pesado, tiradas limitadas.";
