@@ -440,7 +440,10 @@ export const products: Product[] = [
     logoStyle: { accentColor: "#8fb8c9" },
     tourDates: [],
     isNew: true,
-    backHeroPhoto: "ufo_scene-black",
+    backHeroPhotoByColor: {
+      "#1c1712": "ufo_scene-black",
+      "#e7d9b8": "ufo_scene-cream",
+    },
   },
   {
     id: "p21",
@@ -919,7 +922,10 @@ export const products: Product[] = [
     artworkImage: "/artwork/eternal_chest.png",
     backArtworkImage: "/artwork/eternal_back.png",
     frontLogoOnly: true,
-    backHeroPhoto: "eternal_back-denim",
+    backHeroPhotoByColor: {
+      "#3c4a5c": "eternal_back-denim",
+      "#1c1712": "eternal_back-black",
+    },
     logoStyle: { accentColor: "#efe4c8" },
     tourDates: [],
     isNew: true,
